@@ -30,7 +30,6 @@ global class XOMAutoTask_InvokeIntegrationProcedure implements vlocity_cmt.XOMOr
                 Id,
                 vlocity_cmt__OrchestrationPlanId__r.vlocity_cmt__OrderId__c,
                 vlocity_cmt__OrchestrationPlanId__r.vlocity_cmt__OrderId__r.AccountId,
-                vlocity_cmt__OrchestrationItemDefinitionId__r.Dataraptor_to_Invoke__c,
                 vlocity_cmt__OrchestrationItemDefinitionId__r.Integration_Procedure_to_Invoke__c
             from 
                 vlocity_cmt__OrchestrationItem__c where Id in :items];
