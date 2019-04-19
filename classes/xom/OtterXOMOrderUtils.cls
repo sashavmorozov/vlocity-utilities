@@ -16,72 +16,106 @@ global abstract with sharing class OtterXOMOrderUtils {
 
     /***************************************************************************************************************
     * @description submits order for fulfillment in asynchronous mode
-    * @param order SFDC ID
-    * @return ID of the created SFDC job
+    * @param order SFDC Id
+    * @return Id of the scheduled job 
     * @example
     *
-    *   OtterXOMOrderUtils.submitOrderAsync('8011U000000HP5c')
+    *   Map<String, Object> outputMap = new Map<String, Object>();
+    *   OtterXOMOrderUtils.submitOrderAsync('8011U000000HP5c', outputMap);
     */
 
-    public static Id submitOrderAsync(Id orderId) {
-        AsyncOrderSubmissionJob submitOrderJob = new AsyncOrderSubmissionJob(orderId);
-        Id jobId = System.enqueueJob(submitOrderJob);
+    public static Id submitOrderAsync(Id orderId, Map<String, Object> outputMap) {
+        AsyncOrderSubmissionJob submitOrderJob = new AsyncOrderSubmissionJob(orderId, outputMap);
+        Id submitOrderJobId = System.enqueueJob(submitOrderJob);
 
-        System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > submitOrderAsync: submission process for the order with Id ' + orderId + ' is scheduled. Follow the progress (and possible errors in Salesforce Job with Id ' + jobId);
-        return jobId;
+        System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > submitOrderAsync: submission process for the order with Id ' + orderId + ' is scheduled. Follow the progress (and possible errors) in Salesforce Job with Id ' + submitOrderJobId);
+
+        outputMap.put('submitOrderResult', OtterCommonConstants.CONST_SUCCESS);
+        outputMap.put('submitOrderJobId', submitOrderJobId);
+        outputMap.put('submitOrderMessage', 'Submission process for the order with Id ' + orderId + ' is scheduled. Follow the progress (and possible errors) in Salesforce Job with Id ' + submitOrderJobId);
+
+        return submitOrderJobId;
     }
 
 
     /***************************************************************************************************************
-    * @description submits order for fulfillment in asynchronous mode
-    * @param order SFDC ID
+    * @description submits order for fulfillment in synchronous mode
+    * @param order SFDC Id
     * @return submission acknowledgement
     * @example
     *
-    *   OtterXOMOrderUtils.submitOrderSync('8011U000000HP5c')
+    *   Map<String, Object> outputMap = new Map<String, Object>();
+    *   OtterXOMOrderUtils.submitOrderSync('8011U000000HP5c', outputMap);
     */
 
-    public static void submitOrderSync(Id orderId) {
+    public static Boolean submitOrderSync(Id orderId, Map<String, Object> outputMap) {
         Boolean isOmniScript = true;
-
-        if (!OtterXOMOrderUtils.validateOrderForSubmission(orderId)) {
-            System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > submitOrderSync: the order with Id ' + orderId + ' cannot be submitted');
-            return;
-        }
-
         String result = vlocity_cmt.SimpleDecompositionController.decomposeAndCreatePlanEx(orderId, isOmniScript);
         System.debug(LoggingLevel.INFO, 'OtterTools > OtterXOMOrderUtils > submitOrderAsync: order submission result = ' + result);
+
+        outputMap.put('submitOrderResult', OtterCommonConstants.CONST_SUCCESS);
+        outputMap.put('submitOrderJobId', null);
+        outputMap.put('submitOrderMessage', 'Submission process for the order with Id ' + orderId + ' is completed');
+
+        return true;
     }
 
     /***************************************************************************************************************
     * @description checks if an order can be submitted. By default only order status is verified. Add custom logic here if required
-    * @param order SFDC ID
+    * @param order SFDC Id
     * @return true if an order can be submitted, false otherwise
     * @example
-    *
-    * OtterXOMOrderUtils.validateOrderForSubmission('8011U000000HP5c')
+    * 
+    * Map<String, Object> outputMap = new Map<String, Object>();
+    * OtterXOMOrderUtils.validateOrderForSubmission('8011U000000HP5c', outputMap);
     */
 
-    public static Boolean validateOrderForSubmission(Id orderId) {
-        
+    public static Boolean validateOrderForSubmission(Id orderId, Map<String, Object> outputMap) {
+        String validationMessage = 'The order with Id ' + orderId + ' can be submitted';
+
         if (!OtterCommonUtils.isValidSalesforceId(orderId, Order.class)) {
-            System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > submitOrderAsync: orderId ' + orderId + ' is not of the Order type');
+            validationMessage = 'Id ' + orderId + ' is not of the Order type';
+            outputMap.put('validationMessage', validationMessage);
+            System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > submitOrderAsync: ' + validationMessage);
             return false;
         }
 
         if (!OtterCommonUtils.isExistingRecord(orderId, Order.class)) {
-            System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > submitOrderAsync: order with Id ' + orderId + ' does not exist');
+            validationMessage = 'Order with Id ' + orderId + ' does not exist';
+            outputMap.put('validationMessage', validationMessage);
+            System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > submitOrderAsync: ' + validationMessage);
             return false;
         }
 
-        List<String >  fieldsToRetrieve = new List<String >  {'Id', 'vlocity_cmt__FulfilmentStatus__c'};
+        List<String>  fieldsToRetrieve = new List<String>  {'Id', 'vlocity_cmt__FulfilmentStatus__c'};
         Order order = (Order) OtterCommonUtils.retrieveSingleRecordById(orderId, Order.class, fieldsToRetrieve);
 
+        //check order fulfillment status
         if (order.vlocity_cmt__FulfilmentStatus__c != OtterXOMConstants.CONST_ORDER_FULFILLMENT_STATUS_DRAFT) {
-            System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > validateOrderForSubmission: the order with Id ' + orderId + ' cannot be submitted because it is not in the Draft state');
+            validationMessage = 'The order with Id ' + orderId + ' cannot be submitted because it is not in the Draft state';
+            outputMap.put('validationMessage', validationMessage);
+            System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > validateOrderForSubmission: ' + validationMessage);
             return false;
         }
 
+        //check that at least one order item is available in the order
+        List<OrderItem> childOrderItemsList = [
+            select
+                Id
+            from
+                OrderItem
+            where
+                OrderId = :orderId
+        ];
+
+        if (childOrderItemsList.size() == 0) {
+            validationMessage = 'The order with Id ' + orderId + ' cannot be submitted because it does not contain any order items';
+            outputMap.put('validationMessage', validationMessage);
+            System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > validateOrderForSubmission: ' + validationMessage);
+            return false;
+        }
+
+        outputMap.put('validationMessage', validationMessage);
         return true;
     }
 
@@ -97,6 +131,7 @@ global abstract with sharing class OtterXOMOrderUtils {
 
     public class AsyncOrderSubmissionJob implements Queueable {
         private Id orderId;
+        private Map<String, Object> outputMap;
 
         /***************************************************************************************************************
         * @description simple constructor
@@ -106,8 +141,9 @@ global abstract with sharing class OtterXOMOrderUtils {
         *   AsyncOrderSubmissionJob submitOrderJob = new AsyncOrderSubmissionJob('8011U000000HPw3');
         */
 
-        public AsyncOrderSubmissionJob(Id orderId) {
+        public AsyncOrderSubmissionJob(Id orderId, Map<String, Object> outputMap) {
             this.orderId = orderId;
+            this.outputMap = outputMap;
         }
 
         /***************************************************************************************************************
@@ -119,7 +155,7 @@ global abstract with sharing class OtterXOMOrderUtils {
         */
 
         public void execute(QueueableContext context) {
-            submitOrderSync(this.orderId);       
+            submitOrderSync(this.orderId, this.outputMap);       
         }
 
     }
