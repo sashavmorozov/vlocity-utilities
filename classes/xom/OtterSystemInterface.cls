@@ -1,0 +1,55 @@
+/***************************************************************************************************************
+* @description custom extension of a default order management integration adapter for sync communication mode 
+*/
+
+global virtual class OtterSystemInterface extends vlocity_cmt.DefaultSystemInterface {
+    global OtterSystemInterface() {
+        
+    }
+    
+    /***************************************************************************************************************
+    * @description invokes default request generation logic and then stores generated request payload into a field
+    * @param 
+    * @return request payload 
+    * @example
+    *
+    *   invoked by Vlocity XOM, not invoked directly
+    */
+
+    global override virtual String generatePayload(vlocity_cmt__OrchestrationItem__c item, vlocity_cmt.XOMOrderDomainObject orderObj) {
+        
+        String request = super.generatePayload(item, orderObj);
+        item.Callout_Request_Payload__c = request;
+        
+        return request;
+    }
+
+    /***************************************************************************************************************
+    * @description invokes default response processing logic and then stores received payload into a field
+    * @param 
+    * @return nothing
+    * @example
+    *
+    *   invoked by Vlocity XOM, not invoked directly
+    */
+    
+    global override virtual void processResponse(
+        vlocity_cmt__OrchestrationItem__c item,
+        String url,
+        String path,
+        vlocity_cmt.XOMOrderDomainObject orderObj,
+        HttpResponse resp) {
+
+        super.processResponse(item, url, path, orderObj, resp);
+        
+        String response = resp.getBody();
+        item.Callout_Response_Payload_Sync__c = response;
+
+        /* additional error processing business logic */
+        /*
+        if (errorCodeFound) {
+            throw new DefaultInterfaceUnrecoverableException (errorDesc);
+        }
+        */
+    }
+}
