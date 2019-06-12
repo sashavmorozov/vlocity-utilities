@@ -40,6 +40,27 @@ global virtual class OtterSystemInterface extends vlocity_cmt.DefaultSystemInter
         vlocity_cmt.XOMOrderDomainObject orderObj,
         HttpResponse resp) {
 
+        //extension: log the timestamp of receiveing a sync-response
+        item.Callout_Response_Sync_Received__c = datetime.now();
+
+        //extension: add supporting information to the response to facilitate response processing business logic
+        String responseBody = resp.getBody();
+        Map<String, Object> responseObj = (Map<String, Object>) JSON.deserializeUntyped(responseBody);
+        responseObj.put('orchestrationItemId', item.Id);
+        responseObj.put('orchestrationPlanId', orderObj.getOrchestrationPlanId());
+
+        String orchestrationPlanSourceEntityType = orderObj.getObjectType().getDescribe().getLabel();
+        responseObj.put('orchestrationPlanSourceEntityType', orchestrationPlanSourceEntityType);
+
+        if (orchestrationPlanSourceEntityType == 'Order') {
+            responseObj.put('orderId', orderObj.getId());
+        } else {
+            //this is executed if orchestrationPlanSourceEntityType is Fulfilment Request
+            responseObj.put('fulfilmentRequestId', orderObj.getId());
+        }
+
+        resp.setBody(JSON.serialize(responseObj));
+
         super.processResponse(item, url, path, orderObj, resp);
         
         String response = resp.getBody();
@@ -51,5 +72,13 @@ global virtual class OtterSystemInterface extends vlocity_cmt.DefaultSystemInter
             throw new DefaultInterfaceUnrecoverableException (errorDesc);
         }
         */
+    }
+
+    global override virtual void executeItem(
+        String url, 
+        String path, 
+        vlocity_cmt__OrchestrationItem__c item) {
+        super.executeItem(url, path, item);
+        item.Callout_Request_Issued__c = datetime.now();
     }
 }
