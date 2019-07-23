@@ -30,17 +30,25 @@ global class XOMAutoTask_InvokeIntegrationProcedure implements vlocity_cmt.XOMOr
                 Id,
                 vlocity_cmt__OrchestrationPlanId__r.vlocity_cmt__OrderId__c,
                 vlocity_cmt__OrchestrationPlanId__r.vlocity_cmt__OrderId__r.AccountId,
-                vlocity_cmt__OrchestrationItemDefinitionId__r.Integration_Procedure_to_Invoke__c
+                vlocity_cmt__AutoTaskParameters__c
             from 
                 vlocity_cmt__OrchestrationItem__c where Id in :items];
 
         for (vlocity_cmt__OrchestrationItem__c item : itemsExt) {        
             
             /* Initialize variables */
-            String procedureName = item.vlocity_cmt__OrchestrationItemDefinitionId__r.Integration_Procedure_to_Invoke__c;
+            String autotaskParametersString = item.vlocity_cmt__AutoTaskParameters__c;
+            Map <String, Object> autotaskParametersMap = (Map <String, Object>) JSON.deserializeUntyped(autotaskParametersString);
+            String procedureName = (String) autotaskParametersMap.get('procedureName');
             Map <String, Object> ipInput = new Map <String, Object> ();
             Map <String, Object> ipOutput = new Map <String, Object> ();
             Map <String, Object> ipOptions = new Map <String, Object> ();
+
+            if (String.isBlank(procedureName)) {
+                SObjectException e = new SObjectException();
+                e.setMessage('Procedure name (procedureName) is not defined for the auto-task. Verify that the Auto Task Parameters field is properly populated');
+                throw e;
+            }
 
             /* Populating input map for an Integration Procedure. Follow whatever structure your VIP expects */
             /* If you need more input information for VIP, you can extend the code here. Alternatively, you can use dataraptors within your VIP to collect such information */
@@ -52,7 +60,7 @@ global class XOMAutoTask_InvokeIntegrationProcedure implements vlocity_cmt.XOMOr
             /* Call the IP via runIntegrationService, and save the output to ipOutput */
             ipOutput = (Map <String, Object>) vlocity_cmt.IntegrationProcedureService.runIntegrationService(procedureName, ipInput, ipOptions);
 
-            System.debug('Custom>DEBUG>XOMAutoTask_InvokeIntegrationProcedure: ipOutput = ' + ipOutput);
+            System.debug('Custom > DEBUG > XOMAutoTask_InvokeIntegrationProcedure: ipOutput = ' + ipOutput);
         }
     }
 }
