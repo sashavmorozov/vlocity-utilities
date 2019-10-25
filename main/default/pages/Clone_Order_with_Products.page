@@ -1,0 +1,5 @@
+<apex:page standardController="Order" extensions="OtterCommonOrderUtilsController" action="{!cloneOrderWithLineItems}">
+    <apex:form >
+        <apex:inputHidden value="{!order.Id}"/>
+    </apex:form>
+</apex:page>
