@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Clones an order with order line items</description>
+    <height>0</height>
+    <label>Clone with Products</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <page>Clone_Order_with_Products</page>
+    <type>VisualforcePage</type>
+    <width>-100</width>
+</QuickAction>

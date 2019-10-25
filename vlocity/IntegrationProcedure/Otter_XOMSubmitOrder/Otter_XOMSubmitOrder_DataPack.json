@@ -1,0 +1,31 @@
+{
+    "%vlocity_namespace%__AdditionalInformation__c": "Otter tools. The integration procedure allows to submit an order to Vlocity XOM using sync and async modes",
+    "%vlocity_namespace%__CustomJavaScript__c": "Otter_XOMSubmitOrder_SampleInput.json",
+    "%vlocity_namespace%__Element__c": [
+        "Otter_XOMSubmitOrder_Element_InputParametersValidationModeOrderId.json",
+        "Otter_XOMSubmitOrder_Element_GenerateErrorResponseEmptyOrderId.json",
+        "Otter_XOMSubmitOrder_Element_InputParametersValidationMode.json",
+        "Otter_XOMSubmitOrder_Element_GenerateErrorResponseEmptyMode.json",
+        "Otter_XOMSubmitOrder_Element_ValidateOrderForSubmission.json",
+        "Otter_XOMSubmitOrder_Element_OrderValidationBlock.json",
+        "Otter_XOMSubmitOrder_Element_GenerateErrorResponseInvalidOrder.json",
+        "Otter_XOMSubmitOrder_Element_OrderSubmission.json",
+        "Otter_XOMSubmitOrder_Element_SyncModeBlock.json",
+        "Otter_XOMSubmitOrder_Element_SubmitOrderSync.json",
+        "Otter_XOMSubmitOrder_Element_GenerateSuccessResponseSync.json",
+        "Otter_XOMSubmitOrder_Element_AsyncModeBlock.json",
+        "Otter_XOMSubmitOrder_Element_SubmitOrderAsync.json",
+        "Otter_XOMSubmitOrder_Element_GenerateSuccessResponseAsync.json"
+    ],
+    "%vlocity_namespace%__IsProcedure__c": true,
+    "%vlocity_namespace%__IsReusable__c": false,
+    "%vlocity_namespace%__Language__c": "Procedure",
+    "%vlocity_namespace%__ProcedureKey__c": "Otter_XOMSubmitOrder",
+    "%vlocity_namespace%__PropertySet__c": "Otter_XOMSubmitOrder_PropertySet.json",
+    "%vlocity_namespace%__SubType__c": "XOMSubmitOrder",
+    "%vlocity_namespace%__Type__c": "Otter",
+    "Name": "XOMSubmitOrder",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__OmniScript__c/Otter/XOMSubmitOrder/Procedure"
+}

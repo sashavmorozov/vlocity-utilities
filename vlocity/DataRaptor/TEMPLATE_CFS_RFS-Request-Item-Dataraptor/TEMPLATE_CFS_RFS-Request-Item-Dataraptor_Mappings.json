@@ -1,0 +1,58 @@
+[
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "orderItems",
+        "%vlocity_namespace%__GlobalKey__c": "8b7e159d-fcaa-88a8-6ab7-6e25d6119eaf",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "orderItemsWithAttrs",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "TEMPLATE_SOA ACTION-RFS Request Item DR BundleCustoma1A9E000001DY7cUAGItem1",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "TEMPLATE_CFS_RFS Request Item Dataraptor",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "orderItems:Attribute_Name",
+        "%vlocity_namespace%__GlobalKey__c": "07ac940f-b26c-78a8-b9c8-1d69d5f9685e",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "orderItemsWithAttrs:attrs:Attribute_Name",
+        "%vlocity_namespace%__IsDisabled__c": true,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "TEMPLATE_SOA ACTION-RFS Request Item DR BundleCustoma1A9E000001DY7cUAGItem3",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "TEMPLATE_CFS_RFS Request Item Dataraptor",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "orderItems:attrs",
+        "%vlocity_namespace%__GlobalKey__c": "0552d8c2-239f-b0f7-a489-21c2d183156e",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "orderItemsWithAttrs:attrs",
+        "%vlocity_namespace%__IsDisabled__c": true,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "TEMPLATE_SOA ACTION-RFS Request Item DR BundleCustoma1A9E000001DY7cUAGItem2",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "TEMPLATE_CFS_RFS Request Item Dataraptor",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "orderItems:id",
+        "%vlocity_namespace%__GlobalKey__c": "1294f4ed-536c-ba7b-1d8c-72ac7627a10a",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "orderItemsWithAttrs:id",
+        "%vlocity_namespace%__IsDisabled__c": true,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "TEMPLATE_SOA ACTION-RFS Request Item DR BundleCustoma1A9E000001DY7cUAGItem6",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "TEMPLATE_CFS_RFS Request Item Dataraptor",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    }
+]

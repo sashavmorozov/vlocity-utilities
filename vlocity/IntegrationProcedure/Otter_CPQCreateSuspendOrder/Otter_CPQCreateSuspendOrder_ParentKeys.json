@@ -1,0 +1,4 @@
+[
+    "DataRaptor/XOM_GetAllOrderLineItems",
+    "DataRaptor/XOM_UpdateOrderLineItems_Suspend"
+]

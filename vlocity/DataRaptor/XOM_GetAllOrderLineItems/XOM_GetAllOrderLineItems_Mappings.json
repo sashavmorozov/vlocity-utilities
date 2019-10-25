@@ -1,0 +1,35 @@
+[
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 0,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "orderItems",
+        "%vlocity_namespace%__FilterGroup__c": 0,
+        "%vlocity_namespace%__FilterOperator__c": "=",
+        "%vlocity_namespace%__FilterValue__c": "orderId",
+        "%vlocity_namespace%__GlobalKey__c": "49115389-2b8e-fc87-99ec-ae1281de5b6a",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "OrderId",
+        "%vlocity_namespace%__InterfaceObjectLookupOrder__c": 1,
+        "%vlocity_namespace%__InterfaceObjectName__c": "OrderItem",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "XOM_GetAllOrderLineItemsCustom9050",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "XOM_GetAllOrderLineItems",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "orderItems:Id",
+        "%vlocity_namespace%__GlobalKey__c": "98086c75-d54e-a283-e5bd-090d39998195",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "orderItems:Id",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "XOM_GetAllOrderLineItemsCustom8010",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "XOM_GetAllOrderLineItems",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    }
+]

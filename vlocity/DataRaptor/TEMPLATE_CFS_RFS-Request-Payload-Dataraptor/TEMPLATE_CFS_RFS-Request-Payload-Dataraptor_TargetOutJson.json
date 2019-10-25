@@ -1,0 +1,63 @@
+{
+    "CSOperationInfo": {
+        "channel": "tns16:channel",
+        "user": "tns16:user",
+        "uuid": "tns16:uuid"
+    },
+    "CSSwapMobileDirectoryNumberSwapInteraction": [
+        {
+            "CSOrder": {
+                "CSOffer": {
+                    "CSProduct": {
+                        "CSMobileDirectoryNumber": [
+                            {
+                                "mdn": "212500000001",
+                                "subType": "FINAL"
+                            },
+                            {
+                                "mdn": "212500000002",
+                                "subType": "PROVISONAL"
+                            }
+                        ],
+                        "additionalInfo": {
+                            "code": "ICC",
+                            "value": "812564789612345"
+                        }
+                    }
+                },
+                "captureID": "id"
+            },
+            "id": "id_1",
+            "isOldMdnPorted": "false",
+            "portabilityOperatorCode": "MARM1",
+            "reason": "ORDER_CUSTOMIZATION"
+        },
+        {
+            "CSOrder": {
+                "CSOffer": {
+                    "CSProduct": {
+                        "CSMobileDirectoryNumber": [
+                            {
+                                "mdn": "212500000003",
+                                "subType": "FINAL"
+                            },
+                            {
+                                "mdn": "212500000004",
+                                "subType": "PROVISONAL"
+                            }
+                        ],
+                        "additionalInfo": {
+                            "code": "ICC",
+                            "value": "812564789612345"
+                        }
+                    }
+                },
+                "captureID": "id"
+            },
+            "id": "id_2",
+            "isOldMdnPorted": "false",
+            "portabilityOperatorCode": "MARM1",
+            "reason": "ORDER_CUSTOMIZATION"
+        }
+    ]
+}
