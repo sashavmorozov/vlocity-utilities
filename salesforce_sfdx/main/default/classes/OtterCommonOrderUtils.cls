@@ -33,6 +33,7 @@ global abstract with sharing class OtterCommonOrderUtils {
 
             //clone order record (header)
             Order clonedOrder = originalOrder.clone();
+            clonedOrder.Status = 'Draft';
             insert clonedOrder;
 
             String orderItemsSoql = %vlocity_namespace%.DBHelper.getBaseQuery(ORDER_LINE_ITEM_RECORD_TYPE);
