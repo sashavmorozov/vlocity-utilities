@@ -589,5 +589,26 @@ global with sharing class OtterEPCUtils {
 
         return 'JSONAttribute will be refreshed for ' + productRecordList.size() + ' product records';
     }
+
+    /***************************************************************************************************************
+    * @description resets platform cache to ensure CPQ consumes the most recent catalog configuration
+    * @param nothing
+    * @return confirmation message
+    * @example
+    *   
+    *   OtterEPCtils.clearPlatformCache();
+    */
+
+    public static String clearPlatformCache () {
+
+        %vlocity_namespace%.TelcoAdminConsoleController adminCntrlr = new %vlocity_namespace%.TelcoAdminConsoleController();
+        adminCntrlr.setParameters('{"methodName":"clearPlatformCache"}');
+        adminCntrlr.invokeMethod();
+
+        String result = 'Clear platform cache job successfully started. Please allow some processing time to see the results in user interface';
+
+        System.debug(LoggingLevel.INFO, result);
+        return result;
+    }
     
 }

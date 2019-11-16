@@ -18,6 +18,10 @@ global with sharing class OtterEPCUtilsService implements %vlocity_namespace%.Vl
 
            OtterEPCUtilsService.regenerateJsonAttributesOpenInterface(inputMap, outputMap, optionsMap);
 
+        } if (methodName.equals('clearPlatformCache')) {
+
+           OtterEPCUtilsService.clearPlatformCacheOpenInterface(inputMap, outputMap, optionsMap);
+
         } else {
           result = false;
         }
@@ -128,5 +132,13 @@ global with sharing class OtterEPCUtilsService implements %vlocity_namespace%.Vl
         outputMap.put('Result', OtterEPCUtils.regenerateJsonAttributes(productCodesString));
         outputMap.put('Status', 'Success');
         outputMap.put('Message', 'JSONAttribute refresh job successfully started. Please allow some processing time to see the results in user interface');
+    }
+
+    public static void clearPlatformCacheOpenInterface (Map<String, Object> inputMap, Map<String, Object> outputMap, Map<String, Object> optionsMap) {
+
+        String result = OtterEPCUtils.clearPlatformCache();
+        outputMap.put('Result', result);
+        outputMap.put('Status', 'Success');
+        outputMap.put('Message', result);
     }
 }
