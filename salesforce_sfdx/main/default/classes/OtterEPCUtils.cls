@@ -545,6 +545,49 @@ global with sharing class OtterEPCUtils {
         }
     }
 
-    
+    /***************************************************************************************************************
+    * @description initiates a job to regenerate JSONAttribute__c for a set of products
+    * @param product codes (list of strings)
+    * @return nothing
+    * @example
+    *   List<String> productCodes = new List<String> {
+    *    'ACC_OFFER_MANAGED_WAN_PREMIUM',
+    *    'ACC_OFFER_MANAGED_WAN_STANDARD',
+    *    'ACC_OFFER_MANAGED_WAN_BASE'
+    *   };
+    *   OtterEPCtils.regenerateJsonAttributes(productCodes);
+    */
+
+    public static String regenerateJsonAttributes (List<String> productCodes) {
+        List<Product2> productRecordList = [
+            select
+                Id,
+                Name,
+                ProductCode,
+                %vlocity_namespace%__JSONAttribute__c
+            from
+                Product2
+            where
+                ProductCode in :productCodes
+                and ProductCode != null
+            LIMIT 10000
+        ];
+
+        List<Id> productIds = new List<Id>();
+
+        for (Product2 prod : productRecordList) {
+            prod.%vlocity_namespace%__JSONAttribute__c = 'JSONAttribute refresh job successfully started. Please allow some processing time to see the results in user interface';
+            productIds.add(prod.Id);
+        }
+
+        update productRecordList;
+
+        Database.executeBatch(new %vlocity_namespace%.EPCProductAttribJSONBatchJob(productIds), 1);
+
+        System.debug(LoggingLevel.INFO, 'JSONAttribute refresh job successfully started. Please allow some processing time to see the results in user interface');
+        System.debug(LoggingLevel.INFO, 'JSONAttribute will be refreshed for ' + productRecordList.size() + ' product records');
+
+        return 'JSONAttribute will be refreshed for ' + productRecordList.size() + ' product records';
+    }
     
 }

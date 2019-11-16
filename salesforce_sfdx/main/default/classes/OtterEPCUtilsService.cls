@@ -14,6 +14,10 @@ global with sharing class OtterEPCUtilsService implements %vlocity_namespace%.Vl
 
            OtterEPCUtilsService.getParentProductHierarchyPathOpenInterface(inputMap, outputMap, optionsMap);
 
+        } if (methodName.equals('regenerateJsonAttributes')) {
+
+           OtterEPCUtilsService.regenerateJsonAttributesOpenInterface(inputMap, outputMap, optionsMap);
+
         } else {
           result = false;
         }
@@ -92,5 +96,37 @@ global with sharing class OtterEPCUtilsService implements %vlocity_namespace%.Vl
         outputMap.put('Result', OtterEPCUtils.getParentProductHierarchyPath(childProductCode, parentProductCode));
         outputMap.put('Status', 'Success');
         outputMap.put('Message', 'Product hierarchy path is calculated successfully. If the returned value is empty - see logs for further instructions');
+    }
+
+    public static void regenerateJsonAttributesOpenInterface (Map<String, Object> inputMap, Map<String, Object> outputMap, Map<String, Object> optionsMap) {
+        
+        final String PRODUCT_CODES_KEY = 'productCodes';
+        
+        List<Object> productCodes = (List<Object>) inputMap.get(PRODUCT_CODES_KEY);
+        List<String> productCodesString = new List<String> ();
+        for (Object o : productCodes) {
+            productCodesString.add((String) o);
+        }
+        
+        if (productCodes.size() < 1) {
+            System.debug(
+              LoggingLevel.ERROR,
+              'OtterTools > OtterEPCUtilsService > getProductHierarchyPathOpenInterface: input value ' +
+              '(' + PRODUCT_CODES_KEY + ') is empty')
+            ;
+
+            outputMap.put('Status', 'Failed');
+            outputMap.put('Message', 'input value ' +
+              '(' + PRODUCT_CODES_KEY + ') is empty');
+            return;
+        }
+
+        System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtilsService > regenerateJsonAttributes: input value ' + 
+            '(' + PRODUCT_CODES_KEY + 
+            '): ' + productCodes);
+
+        outputMap.put('Result', OtterEPCUtils.regenerateJsonAttributes(productCodesString));
+        outputMap.put('Status', 'Success');
+        outputMap.put('Message', 'JSONAttribute refresh job successfully started. Please allow some processing time to see the results in user interface');
     }
 }

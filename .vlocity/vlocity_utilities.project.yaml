@@ -1,19 +1,11 @@
 Name: Vlocity Utilities
 VlocityDataPackKeys:
-    - flows/XOM_Assign_Task_to_Me.flow
-    - flows/XOM_Assign_Task_to_User.flow
-    - flows/XOM_Complete_Task.flow
-    - flows/XOM_Rerun_Task.flow
-    - flows/XOM_Return_Task_to_Queue.flow
-    - flows/XOM_Skip_Task.flow
-    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Assign_Task_to_Me.quickAction
-    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Assign_Task_to_User.quickAction
-    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Complete_Task.quickAction
-    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Rerun_Task.quickAction
-    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Return_Task_to_Queue.quickAction
-    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Skip_Task.quickAction
+    - IntegrationProcedure/EPC_RegenerateJSONAttributes
+    - classes/OtterEPCUtils.cls
+    - classes/OtterEPCUtilsService.cls
 VlocityTypesToFetch:
-
+    - IntegrationProcedure
 SalesforceTypesToFetch:
+    - ApexClass
     - Flow
     - QuickAction
