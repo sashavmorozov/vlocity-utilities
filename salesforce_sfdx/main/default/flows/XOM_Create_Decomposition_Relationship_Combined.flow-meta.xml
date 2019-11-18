@@ -43,6 +43,9 @@
             <conditions>
                 <leftValueReference>Decomposition_Relationship_Type_Picklist</leftValueReference>
                 <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Decompose_Another_Spec_Into_Current_Spec_Picklist_Value</elementReference>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Create_Decomposition_Relationship_Type2_Form</targetReference>
