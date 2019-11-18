@@ -1,11 +1,10 @@
 Name: Vlocity Utilities
 VlocityDataPackKeys:
-    - IntegrationProcedure/EPC_RegenerateJSONAttributes
-    - classes/OtterEPCUtils.cls
-    - classes/OtterEPCUtilsService.cls
+    - flows/XOM_Create_Decomposition_Relationship_Combined.flow
+    - quickActions/Product2.Create_Decomposition_Relationship.quickAction
 VlocityTypesToFetch:
-    - IntegrationProcedure
+
 SalesforceTypesToFetch:
-    - ApexClass
     - Flow
     - QuickAction
+    - WorkflowFlowAction
