@@ -1,0 +1,11 @@
+{
+    "%vlocity_namespace%__GlobalKey__c": "1c52b97b-36ee-b443-34d4-d9dc9eccd38d",
+    "%vlocity_namespace%__SystemInterface__c": "vlocity-mockable-io_SystemInterfaces.json",
+    "%vlocity_namespace%__URL__c": "https://demo3921983.mockable.io/",
+    "Image__c": "",
+    "Name": "vlocity.mockable.io",
+    "Online__c": true,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__System__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__System__c/vlocity.mockable.io"
+}

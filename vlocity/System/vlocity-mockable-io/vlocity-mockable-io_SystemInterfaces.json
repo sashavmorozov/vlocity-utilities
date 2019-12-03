@@ -1,0 +1,104 @@
+[
+    {
+        "%vlocity_namespace%__GlobalKey__c": "6eec9720-19b8-2091-4759-5fd092c584db",
+        "%vlocity_namespace%__Implementation__c": "DefaultSystemInterface",
+        "%vlocity_namespace%__Key__c": "vlocity.mockable.io:TMF641 Delete Service Order [DELETE]",
+        "%vlocity_namespace%__Path__c": "serviceOrder/{id}",
+        "%vlocity_namespace%__SystemId__c": {
+            "Name": "vlocity.mockable.io",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__System__c/vlocity.mockable.io",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__System__c"
+        },
+        "%vlocity_namespace%__SystemId__r.Name": "vlocity.mockable.io",
+        "Name": "TMF641 Delete Service Order [DELETE]",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__SystemInterface__c",
+        "VlocityRecordSourceKey": "%vlocity_namespace%__SystemInterface__c/Generated-865676779"
+    },
+    {
+        "%vlocity_namespace%__GlobalKey__c": "9057b922-01e2-a458-308d-8dbd4685d5a7",
+        "%vlocity_namespace%__Implementation__c": "DefaultSystemInterface",
+        "%vlocity_namespace%__Key__c": "vlocity.mockable.io:TMF641 Create Service Order [POST]",
+        "%vlocity_namespace%__Path__c": "serviceOrder",
+        "%vlocity_namespace%__SystemId__c": {
+            "Name": "vlocity.mockable.io",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__System__c/vlocity.mockable.io",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__System__c"
+        },
+        "%vlocity_namespace%__SystemId__r.Name": "vlocity.mockable.io",
+        "Name": "TMF641 Create Service Order [POST]",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__SystemInterface__c",
+        "VlocityRecordSourceKey": "%vlocity_namespace%__SystemInterface__c/Generated-1909457765"
+    },
+    {
+        "%vlocity_namespace%__GlobalKey__c": "a47954fd-793c-6684-73f6-86ddfcc992f2",
+        "%vlocity_namespace%__Implementation__c": "DefaultSystemInterface",
+        "%vlocity_namespace%__Key__c": "vlocity.mockable.io:TMF641 Retrieve Service Order [GET]",
+        "%vlocity_namespace%__Path__c": "serviceOrder/{id}",
+        "%vlocity_namespace%__SystemId__c": {
+            "Name": "vlocity.mockable.io",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__System__c/vlocity.mockable.io",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__System__c"
+        },
+        "%vlocity_namespace%__SystemId__r.Name": "vlocity.mockable.io",
+        "Name": "TMF641 Retrieve Service Order [GET]",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__SystemInterface__c",
+        "VlocityRecordSourceKey": "%vlocity_namespace%__SystemInterface__c/Generated787720161"
+    },
+    {
+        "%vlocity_namespace%__GlobalKey__c": "b6700b62-e4ee-1284-f27f-8973e2031060",
+        "%vlocity_namespace%__Implementation__c": "DefaultSystemInterface",
+        "%vlocity_namespace%__Key__c": "vlocity.mockable.io:Default",
+        "%vlocity_namespace%__Path__c": "default",
+        "%vlocity_namespace%__SystemId__c": {
+            "Name": "vlocity.mockable.io",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__System__c/vlocity.mockable.io",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__System__c"
+        },
+        "%vlocity_namespace%__SystemId__r.Name": "vlocity.mockable.io",
+        "Name": "Default",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__SystemInterface__c",
+        "VlocityRecordSourceKey": "%vlocity_namespace%__SystemInterface__c/Default/%vlocity_namespace%__System__c/vlocity.mockable.io"
+    },
+    {
+        "%vlocity_namespace%__GlobalKey__c": "be309c8b-48e0-5996-5055-5e63b889bc4f",
+        "%vlocity_namespace%__Implementation__c": "DefaultSystemInterface",
+        "%vlocity_namespace%__Key__c": "vlocity.mockable.io:TMF641 Patch Service Order [PATCH]",
+        "%vlocity_namespace%__Path__c": "serviceOrder/{id}",
+        "%vlocity_namespace%__SystemId__c": {
+            "Name": "vlocity.mockable.io",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__System__c/vlocity.mockable.io",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__System__c"
+        },
+        "%vlocity_namespace%__SystemId__r.Name": "vlocity.mockable.io",
+        "Name": "TMF641 Patch Service Order [PATCH]",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__SystemInterface__c",
+        "VlocityRecordSourceKey": "%vlocity_namespace%__SystemInterface__c/Generated-205707997"
+    },
+    {
+        "%vlocity_namespace%__GlobalKey__c": "f66f9355-53c2-0c86-5245-78775b685129",
+        "%vlocity_namespace%__Implementation__c": "DefaultSystemInterface",
+        "%vlocity_namespace%__Key__c": "vlocity.mockable.io:TMF641 List Service Orders [GET]",
+        "%vlocity_namespace%__Path__c": "serviceOrder",
+        "%vlocity_namespace%__SystemId__c": {
+            "Name": "vlocity.mockable.io",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__System__c/vlocity.mockable.io",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__System__c"
+        },
+        "%vlocity_namespace%__SystemId__r.Name": "vlocity.mockable.io",
+        "Name": "TMF641 List Service Orders [GET]",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__SystemInterface__c",
+        "VlocityRecordSourceKey": "%vlocity_namespace%__SystemInterface__c/Generated-1370051990"
+    }
+]
