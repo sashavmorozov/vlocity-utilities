@@ -1,0 +1,128 @@
+{
+    "@type": "ServiceOrder",
+    "category": "TMF resource illustration",
+    "completionDate": "",
+    "description": "Service order description",
+    "expectedCompletionDate": "2018-01-15T09:37:40.508Z",
+    "externalId": "OrangeBSS747",
+    "href": "http://serverlocation:port/serviceOrderingManagement/v4/serviceOrder/42",
+    "id": "42",
+    "note": [
+        {
+            "author": "Jean Pontus",
+            "date": "2018-01-15T09:37:40.508Z",
+            "text": "Some text"
+        }
+    ],
+    "orderDate": "2018-01-12T09:37:40.508Z",
+    "orderItem": [
+        {
+            "action": "add",
+            "id": "1",
+            "service": {
+                "@schemaLocation": "http//my.schemas/vCpe.schema.json",
+                "@type": "vCPE",
+                "serviceCharacteristic": [
+                    {
+                        "name": "vCPE_IP",
+                        "value": {
+                            "@schemaLocation": "http://my.schemas/IPAddress.schema.json",
+                            "@type": "IPAddress",
+                            "vCPE_IP": "193.218.236.21"
+                        },
+                        "valueType": "object"
+                    }
+                ],
+                "serviceSpecification": {
+                    "@schemaLocation": "http//my.schemas/OnapServiceSpec.schema.json",
+                    "@type": "ONAPServiceSpec",
+                    "href": "http://.../serviceSpecification/12",
+                    "id": "12",
+                    "invariantUUID": "456-852-357",
+                    "name": "vCPE",
+                    "targetServiceSchema": {
+                        "@schemaLocation": "http//my.schemas/vCpe.schema.json",
+                        "@type": "vCPE"
+                    },
+                    "toscaModelURL": "http//...",
+                    "version": "1"
+                },
+                "serviceType": "CFS",
+                "state": "active"
+            },
+            "state": "acknowledged"
+        },
+        {
+            "action": "modify",
+            "id": "2",
+            "service": {
+                "href": "http://serverlocation:port/serviceInventoryManagement/v4/service/456",
+                "id": "456",
+                "serviceCharacteristic": [
+                    {
+                        "name": "Characteristic1",
+                        "value": "newValue"
+                    }
+                ],
+                "serviceType": "CFS",
+                "state": "active",
+                "supportingResource": [
+                    {
+                        "@referredType": "CloudResource",
+                        "href": "http://...",
+                        "id": "3456_DFG5-H690"
+                    }
+                ]
+            },
+            "state": "acknowledged"
+        },
+        {
+            "action": "add",
+            "id": "3",
+            "service": {
+                "serviceRelationship": [
+                    {
+                        "relationshipType": "reliesOn",
+                        "service": {
+                            "href": "https://.../serviceManagement/v4/service/45",
+                            "id": "45"
+                        }
+                    }
+                ],
+                "serviceSpecification": {
+                    "href": "http//..../48",
+                    "id": "48",
+                    "name": "genericService48",
+                    "version": "2"
+                },
+                "serviceType": "CFS",
+                "state": "active"
+            },
+            "state": "acknowledged"
+        },
+        {
+            "action": "modify",
+            "id": "4",
+            "service": {
+                "href": "http://serverlocation:port/serviceInventoryManagement/v4/service/12",
+                "id": "12",
+                "state": "inactive"
+            },
+            "state": "acknowledged"
+        }
+    ],
+    "priority": "1",
+    "relatedParty": [
+        {
+            "@referredType": "Individual",
+            "href": "http://serverlocation:port/partyManagement/v4/party/456",
+            "id": "456",
+            "name": "Jean Pontus",
+            "role": "requester"
+        }
+    ],
+    "requestedCompletionDate": "2018-01-15T09:37:40.508Z",
+    "requestedStartDate": "2018-01-15T09:37:40.508Z",
+    "startDate": "2018-01-12T09:37:40.508Z",
+    "state": "acknowledged"
+}
