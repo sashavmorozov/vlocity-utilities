@@ -26,23 +26,25 @@
 
 public class TMF641ServiceOrderRequest {
 
-    public String id;
-    public String href;
-    public String externalId;
-    public String priority;
-    public String description;
     public String category;
-    public String state;
-    public String orderDate;
     public String completionDate;
-    public String requestedStartDate;
-    public String requestedCompletionDate;
+    public String description;
     public String expectedCompletionDate;
-    public String startDate;
-    public String type;
+    public String externalId;
+    public String href;
+    public String id;
     public List<Note> note;
-    public List<RelatedParty> relatedParty;
+    //public List<Object> notificationContact;
+    public String orderDate;
     public List<OrderItem> orderItem;
+    //public List<Object> orderRelationship;
+    public String priority;
+    public List<RelatedParty> relatedParty;
+    public String requestedCompletionDate;
+    public String requestedStartDate;
+    public String startDate;
+    public String state;
+    public String type;
 
     /***************************************************************************************************************
      * @description instantiates a TMF641-compliant payload object based on a JSON representation
@@ -64,8 +66,8 @@ public class TMF641ServiceOrderRequest {
      */
 
     public class Note {
-        public String date_timestamp;
         public String author;
+        public String date_timestamp;
         public String text;
     }
 
@@ -75,11 +77,10 @@ public class TMF641ServiceOrderRequest {
      */
 
     public class RelatedParty {
-        public String id;
         public String href;
-        public String role;
+        public String id;
         public String name;
-        public String referredType;
+        public String role;
     }
 
     /***************************************************************************************************************
@@ -88,10 +89,12 @@ public class TMF641ServiceOrderRequest {
      */
 
     public class OrderItem {
-        public String id;
         public String action;
-        public String state;
+        //public Object appointment;
+        public String id;
+        //public List<Object> orderItemRelationship;
         public Service service;
+        public String state;
     }
 
     /***************************************************************************************************************
@@ -100,14 +103,19 @@ public class TMF641ServiceOrderRequest {
      */
 
     public class Service {
-        public String type;
-        public String schemaLocation;
-        public String state;
-        public String serviceType;
+        public String category;
+        public String href;
+        public String id;
+        public String name;
+        //public List<Object> place;
+        //public List<RelatedParty> relatedParty;
         public List<ServiceCharacteristic> serviceCharacteristic;
-        public List<ServiceRelationship> serviceRelationship;
-        public List<SupportingResource> supportingResource;
+        //public List<Object> serviceRelationship;
         public ServiceSpecification serviceSpecification;
+        public String serviceType;
+        public String state;
+        //public List<Object> supportingResource;
+        //public List<Object> supportingService;
     }
 
     /***************************************************************************************************************
@@ -151,60 +159,15 @@ public class TMF641ServiceOrderRequest {
     }
 
     /***************************************************************************************************************
-     * @description complex value for a complex (object) characteristic
-     * 
-     */
-
-    public class Value {
-        public String type;
-        public Map<String, String> atomicKeyValues;
-    }
-
-    /***************************************************************************************************************
-     * @description serviceRelationship-element of a TMF641 message for atomic value
-     * 
-     */
-
-    public class ServiceRelationship {
-        public String relationshipType;
-        public ServiceReference service;
-    }
-
-    /***************************************************************************************************************
-     * @description serviceReference-element of a TMF641 message for atomic value
-     * 
-     */
-
-    public class ServiceReference {
-        public String id;
-        public String href;
-    }
-
-    /***************************************************************************************************************
-     * @description supportingResource-element of a TMF641 message for atomic value
-     * 
-     */
-
-    public class SupportingResource {
-        public String id;
-        public String href;
-        public String referredType;
-    }
-
-    /***************************************************************************************************************
      * @description serviceSpecification-element of a TMF641 message for atomic value
      * 
      */
 
     public class ServiceSpecification {
-        public String type;
-        public String schemaLocation;
-        public String id;
         public String href;
+        public String id;
         public String name;
         public String version;
-        public String invariantUUID;
-        public String toscaModelURL;
         public TargetServiceSchema targetServiceSchema;
     }
 
