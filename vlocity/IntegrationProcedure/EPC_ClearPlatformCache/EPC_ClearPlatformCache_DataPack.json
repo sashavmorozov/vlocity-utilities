@@ -1,0 +1,16 @@
+{
+    "%vlocity_namespace%__AdditionalInformation__c": "[Otter] Clears platform cache",
+    "%vlocity_namespace%__CustomJavaScript__c": "{}",
+    "%vlocity_namespace%__Element__c": "EPC_ClearPlatformCache_Element_Clear-Platform-Cache.json",
+    "%vlocity_namespace%__IsProcedure__c": true,
+    "%vlocity_namespace%__IsReusable__c": false,
+    "%vlocity_namespace%__Language__c": "Procedure",
+    "%vlocity_namespace%__ProcedureKey__c": "EPC_ClearPlatformCache",
+    "%vlocity_namespace%__PropertySet__c": "EPC_ClearPlatformCache_PropertySet.json",
+    "%vlocity_namespace%__SubType__c": "ClearPlatformCache",
+    "%vlocity_namespace%__Type__c": "EPC",
+    "Name": "ClearPlatformCache",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__OmniScript__c/EPC/ClearPlatformCache/Procedure"
+}

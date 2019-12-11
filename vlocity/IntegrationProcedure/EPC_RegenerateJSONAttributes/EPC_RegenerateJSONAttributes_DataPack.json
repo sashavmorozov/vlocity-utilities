@@ -1,0 +1,19 @@
+{
+    "%vlocity_namespace%__AdditionalInformation__c": "[Otter] Regenerates JSONAttribute__c field for products identified by codes",
+    "%vlocity_namespace%__CustomJavaScript__c": "EPC_RegenerateJSONAttributes_SampleInput.json",
+    "%vlocity_namespace%__Element__c": [
+        "EPC_RegenerateJSONAttributes_Element_RA_OtterEPCUtilsService_regenerateJsonAttributes.json",
+        "EPC_RegenerateJSONAttributes_Element_Generate-Response.json"
+    ],
+    "%vlocity_namespace%__IsProcedure__c": true,
+    "%vlocity_namespace%__IsReusable__c": false,
+    "%vlocity_namespace%__Language__c": "Procedure",
+    "%vlocity_namespace%__ProcedureKey__c": "EPC_RegenerateJSONAttributes",
+    "%vlocity_namespace%__PropertySet__c": "EPC_RegenerateJSONAttributes_PropertySet.json",
+    "%vlocity_namespace%__SubType__c": "RegenerateJSONAttributes",
+    "%vlocity_namespace%__Type__c": "EPC",
+    "Name": "RegenerateJSONAttributes",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__OmniScript__c/EPC/RegenerateJSONAttributes/Procedure"
+}

@@ -22,6 +22,10 @@ global with sharing class OtterEPCUtilsService implements %vlocity_namespace%.Vl
 
            OtterEPCUtilsService.clearPlatformCacheOpenInterface(inputMap, outputMap, optionsMap);
 
+        } if (methodName.equals('RegenerateLayoutsForObjectType')) {
+
+           OtterEPCUtilsService.replicateLayoutOpenInterface(inputMap, outputMap, optionsMap);
+
         } else {
           result = false;
         }
@@ -140,5 +144,43 @@ global with sharing class OtterEPCUtilsService implements %vlocity_namespace%.Vl
         outputMap.put('Result', result);
         outputMap.put('Status', 'Success');
         outputMap.put('Message', result);
+    }
+
+    public static void replicateLayoutOpenInterface (Map<String, Object> inputMap, Map<String, Object> outputMap, Map<String, Object> optionsMap) {
+        
+        final String SOURCE_OBJECT_TYPE_CODE_KEY = 'sourceObjectTypeName';
+        final String TARGET_OBJECT_TYPE_CODE_KEY = 'targetObjectTypeName';
+        
+        String sourceObjectTypeName = (String) inputMap.get(SOURCE_OBJECT_TYPE_CODE_KEY);
+        String targetObjectTypeName = (String) inputMap.get(TARGET_OBJECT_TYPE_CODE_KEY);
+        
+        if (String.isBlank(sourceObjectTypeName) || String.isBlank(targetObjectTypeName)) {
+            System.debug(
+              LoggingLevel.ERROR,
+              'OtterTools > OtterEPCUtilsService > replicateLayoutOpenInterface: input value ' +
+              '(' + SOURCE_OBJECT_TYPE_CODE_KEY + ') ' +
+              'or (' + TARGET_OBJECT_TYPE_CODE_KEY + ') is empty')
+            ;
+
+            outputMap.put('Status', 'Failed');
+            outputMap.put('Message', 'input value ' +
+              '(' + SOURCE_OBJECT_TYPE_CODE_KEY + ') ' +
+              'or (' + TARGET_OBJECT_TYPE_CODE_KEY + ') is empty');
+            return;
+        }
+
+        System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtilsService > replicateLayoutOpenInterface: input value ' + 
+            '(' + SOURCE_OBJECT_TYPE_CODE_KEY + 
+            '): ' + sourceObjectTypeName);
+
+        System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtilsService > replicateLayoutOpenInterface: input value ' + 
+            '(' + TARGET_OBJECT_TYPE_CODE_KEY + 
+            '): ' + targetObjectTypeName);
+
+        OtterEPCUtils.replicateLayout(sourceObjectTypeName, targetObjectTypeName);
+
+        outputMap.put('Result', '');
+        outputMap.put('Status', 'Success');
+        outputMap.put('Message', 'result - need to get output from OtterEPCUtils');
     }
 }

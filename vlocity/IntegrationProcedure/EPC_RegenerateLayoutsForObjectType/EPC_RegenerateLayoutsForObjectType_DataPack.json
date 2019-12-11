@@ -1,0 +1,16 @@
+{
+    "%vlocity_namespace%__AdditionalInformation__c": "[Otter] Reinherits layout for a given object type from Produc2 object type",
+    "%vlocity_namespace%__CustomJavaScript__c": "EPC_RegenerateLayoutsForObjectType_SampleInput.json",
+    "%vlocity_namespace%__Element__c": "EPC_RegenerateLayoutsForObjectType_Element_Regenerate-Layouts-For-Object-Type.json",
+    "%vlocity_namespace%__IsProcedure__c": true,
+    "%vlocity_namespace%__IsReusable__c": false,
+    "%vlocity_namespace%__Language__c": "Procedure",
+    "%vlocity_namespace%__ProcedureKey__c": "EPC_RegenerateLayoutsForObjectType",
+    "%vlocity_namespace%__PropertySet__c": "EPC_RegenerateLayoutsForObjectType_PropertySet.json",
+    "%vlocity_namespace%__SubType__c": "RegenerateLayoutsForObjectType",
+    "%vlocity_namespace%__Type__c": "EPC",
+    "Name": "RegenerateLayoutsForObjectType",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__OmniScript__c/EPC/RegenerateLayoutsForObjectType/Procedure"
+}
