@@ -9,13 +9,7 @@ public class OtterCommonOrderUtilsController {
 
     public PageReference cloneOrderWithLineItems() {
         String clonedOrderId = OtterCommonOrderUtils.cloneOrderWithLineItems(String.valueOf(inputOrder.Id));
-        PageReference pageRef;
-        if (!String.isBlank(clonedOrderId)) {
-                pageRef = new PageReference('/' + clonedOrderId);
-            }
-        else {
-            pageRef = new PageReference('/' + inputOrder.Id);
-        }
+        PageReference pageRef = new PageReference('/' + clonedOrderId);
         pageRef.setRedirect(true);
 
         return pageRef;
