@@ -3,17 +3,17 @@ global with sharing class JSONRecordHelper {
     public static Set<String> resultRecordKeys = new Set<String> {
 
         // Line items are items that are already added -- these are the order products
-        vlocity_cmt.JSONResult.JSON_KEY_LINEITEMS_RESULT,
+        %vlocity_namespace%.JSONResult.JSON_KEY_LINEITEMS_RESULT,
 
         // these are the line items COULD be added (e.g. with “Add to cart” button - note these CAN already be in line items as well
-        vlocity_cmt.JSONResult.JSON_KEY_CHILDPRODUCTS_RESULT,
-        vlocity_cmt.JSONResult.JSON_KEY_PRODUCTGROUPS_RESULT
+        %vlocity_namespace%.JSONResult.JSON_KEY_CHILDPRODUCTS_RESULT,
+        %vlocity_namespace%.JSONResult.JSON_KEY_PRODUCTGROUPS_RESULT
     };
 
     /**
-     * Prints vlocity_cmt.JSONRecord records (from Vlocity API response) in a human-readable format
+     * Prints %vlocity_namespace%.JSONRecord records (from Vlocity API response) in a human-readable format
      *
-     * @param {List<vlocity_cmt.JSONRecord>} records - Vlocity CPQ API response content structured as vlocity_cmt.JSONRecord-s
+     * @param {List<%vlocity_namespace%.JSONRecord>} records - Vlocity CPQ API response content structured as %vlocity_namespace%.JSONRecord-s
      * @param {Boolean} printFields - additional option to include/exclude Salesforce fields into/from the output
      * @return {void} - nothing
      *
@@ -29,16 +29,15 @@ global with sharing class JSONRecordHelper {
      *     Map<String, Object> options = new Map<String, Object> {};
      *     
      *     // call API
-     *     new vlocity_cmt.CpqAppHandler().invokeMethod((String) input.get('methodName'), input, output, options);
-     *     vlocity_cmt.JSONResult result = (vlocity_cmt.JSONResult) output.get('result');
-     *     printRecords(result.records, false)
+     *     new %vlocity_namespace%.CpqAppHandler().invokeMethod((String) input.get('methodName'), input, output, options);
+     *     %vlocity_namespace%.JSONResult result = (%vlocity_namespace%.JSONResult) output.get('result');
     */
 
-    public static void printRecords(List<vlocity_cmt.JSONRecord> records, Boolean printFields) {
-        for(vlocity_cmt.JSONRecord rec : records) {
+    public static void printRecords(List<%vlocity_namespace%.JSONRecord> records, Boolean printFields) {
+        for(%vlocity_namespace%.JSONRecord rec : records) {
             String path = (String)rec.fields.get('productHierarchyPath');
             String itemType = (String)rec.fields.get('itemType');
-            String productName = (String)rec.fields.get(vlocity_cmt.JSONResult.JSON_KEY_NAME);
+            String productName = (String)rec.fields.get(%vlocity_namespace%.JSONResult.JSON_KEY_NAME);
             Integer productLevel = path.countMatches('<');
 
             System.debug( ('L' + productLevel + ' >> [' +itemType.toUpperCase() + '] ').rightPad(21) + productName);// + ': ' + rec.nameResult.keySet());
@@ -48,7 +47,7 @@ global with sharing class JSONRecordHelper {
             }
 
             for(String key : resultRecordKeys) {
-                vlocity_cmt.JSONResult result = rec.nameResult.get(key);
+                %vlocity_namespace%.JSONResult result = rec.nameResult.get(key);
 
                 if (result != null) {
                     printRecords(result.records, printFields);
@@ -60,23 +59,23 @@ global with sharing class JSONRecordHelper {
     /**
      * Helper-function that contains the business logic to mark a record (line item) orderable or not
      *
-     * @param {vlocity_cmt.JSONRecord} record - Vlocity CPQ API response-item content structured as vlocity_cmt.JSONRecord
+     * @param {%vlocity_namespace%.JSONRecord} record - Vlocity CPQ API response-item content structured as %vlocity_namespace%.JSONRecord
      * @return {Boolean} - true (orderable) or false (non-orderable)
      *
      * @example
-     *    //List<vlocity_cmt.JSONRecord> records = GET_FROM_VLOCITY_CPQ_API;
-     *    for (vlocity_cmt.JSONRecord rec : records) {
+     *    //List<%vlocity_namespace%.JSONRecord> records = GET_FROM_VLOCITY_CPQ_API;
+     *    for (%vlocity_namespace%.JSONRecord rec : records) {
      *        if (!isRecordOrderable(rec)) {
-     *            //your logic if record is non-orderable
-     *        } else {
      *            //your logic if record is orderable
+     *        } else {
+     *            //your logic if record is non-orderable
      *        }
      *    }
     */
 
-    public static Boolean isRecordOrderable(vlocity_cmt.JSONRecord record) {
+    public static Boolean isRecordOrderable(%vlocity_namespace%.JSONRecord record) {
 
-        String productName = (String)record.fields.get(vlocity_cmt.JSONResult.JSON_KEY_NAME);
+        String productName = (String)record.fields.get(%vlocity_namespace%.JSONResult.JSON_KEY_NAME);
         String itemType = (String)record.fields.get('itemType'); // can be: productGroup, lineItem -or- childProduct
 
         if (itemType == 'lineItem') {
@@ -126,17 +125,17 @@ global with sharing class JSONRecordHelper {
      * Removes non-orderable records (line items) from Vlocity CPQ API output. The modified Vlocity CPQ API output
      * will be routed further to the API client (e.g. Vlocity CPQ App)
      *
-     * @param {List<vlocity_cmt.JSONRecord>} record - Vlocity CPQ API response content structured as vlocity_cmt.JSONRecord-s
-     * @return {List<vlocity_cmt.JSONRecord>} - modified Vlocity CPQ API output
+     * @param {List<%vlocity_namespace%.JSONRecord>} record - Vlocity CPQ API response content structured as %vlocity_namespace%.JSONRecord-s
+     * @return {List<%vlocity_namespace%.JSONRecord>} - modified Vlocity CPQ API output
      *
      * @example
-     *    //List<vlocity_cmt.JSONRecord> records = GET_FROM_VLOCITY_CPQ_API;
+     *    //List<%vlocity_namespace%.JSONRecord> records = GET_FROM_VLOCITY_CPQ_API;
      *    removeNoneOrderableRecords(records);
     */
 
-    public static List<vlocity_cmt.JSONRecord> removeNoneOrderableRecords(List<vlocity_cmt.JSONRecord> records) {
-        List<vlocity_cmt.JSONRecord> updatedRecords = new List<vlocity_cmt.JSONRecord>();
-        for (vlocity_cmt.JSONRecord rec : records) {
+    public static List<%vlocity_namespace%.JSONRecord> removeNoneOrderableRecords(List<%vlocity_namespace%.JSONRecord> records) {
+        List<%vlocity_namespace%.JSONRecord> updatedRecords = new List<%vlocity_namespace%.JSONRecord>();
+        for (%vlocity_namespace%.JSONRecord rec : records) {
             if (!isRecordOrderable(rec)) {
                 continue;
             }
@@ -146,7 +145,7 @@ global with sharing class JSONRecordHelper {
 
             // remove childs we don't want to see
             for (String key : resultRecordKeys) {
-                vlocity_cmt.JSONResult result = rec.nameResult.get(key);
+                %vlocity_namespace%.JSONResult result = rec.nameResult.get(key);
 
                 if (result != null) {
                     result.records = removeNoneOrderableRecords(result.records);
@@ -160,7 +159,7 @@ global with sharing class JSONRecordHelper {
     /**
      * Little playground
      *
-     * @param {List<vlocity_cmt.JSONRecord>} record - Vlocity CPQ API response content structured as vlocity_cmt.JSONRecord-s
+     * @param {List<%vlocity_namespace%.JSONRecord>} record - Vlocity CPQ API response content structured as %vlocity_namespace%.JSONRecord-s
      * @return {nothing} - nothing
      *
      * @example
@@ -183,8 +182,8 @@ global with sharing class JSONRecordHelper {
         Map<String, Object> options = new Map<String, Object> {};
 
         // call API
-        new vlocity_cmt.CpqAppHandler().invokeMethod((String) input.get('methodName'), input, output, options);
-        vlocity_cmt.JSONResult result = (vlocity_cmt.JSONResult) output.get('result');
+        new %vlocity_namespace%.CpqAppHandler().invokeMethod((String) input.get('methodName'), input, output, options);
+        %vlocity_namespace%.JSONResult result = (%vlocity_namespace%.JSONResult) output.get('result');
 
         // Print results
         System.debug('>> Orginal Response:');
