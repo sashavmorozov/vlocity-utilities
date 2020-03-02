@@ -1,4 +1,4 @@
-global with sharing class OtterCpqAppHandlerHook implements vlocity_cmt.VlocityOpenInterface {
+global with sharing class OtterCpqAppHandlerHook implements %vlocity_namespace%.VlocityOpenInterface {
     public static SObjectType lineItemTypeForPage;
 
     /**
@@ -87,7 +87,7 @@ global with sharing class OtterCpqAppHandlerHook implements vlocity_cmt.VlocityO
         System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke: ' + message);
 
         //Getting access to Vlocity API response payload (JSON Result)       
-        vlocity_cmt.JSONResult jsonResult = getJSONResult(inputMap, outputMap);        
+        %vlocity_namespace%.JSONResult jsonResult = getJSONResult(inputMap, outputMap);        
         System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > inputMap: ' + inputMap);
         System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > inputMap: ' + outputMap);
         System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > jsonResult.records: ');
@@ -129,12 +129,12 @@ global with sharing class OtterCpqAppHandlerHook implements vlocity_cmt.VlocityO
     }
 
     /* helper function. add apex docs */
-    vlocity_cmt.JSONResult getJSONResult(Map <String, Object> inputMap, Map <String, Object> outputMap) {
+    %vlocity_namespace%.JSONResult getJSONResult(Map <String, Object> inputMap, Map <String, Object> outputMap) {
         if (outputMap.get('result') != null) {
             Id cartId = (Id) inputMap.get('cartId');
             lineItemTypeForPage = getObjectType(cartId);
             if (lineItemTypeForPage == OrderItem.SObjectType) {
-                vlocity_cmt.JSONResult res = (vlocity_cmt.JSONResult) outputMap.get('result');
+                %vlocity_namespace%.JSONResult res = (%vlocity_namespace%.JSONResult) outputMap.get('result');
                 //processResultForUpdate(res);
                 if (res != null) {
                     return res;
