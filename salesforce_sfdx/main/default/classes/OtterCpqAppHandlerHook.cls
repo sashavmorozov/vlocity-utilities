@@ -1,4 +1,4 @@
-global with sharing class OtterCpqAppHandlerHook implements %vlocity_namespace%.VlocityOpenInterface {
+global with sharing class OtterCpqAppHandlerHook implements vlocity_cmt.VlocityOpenInterface {
     public static SObjectType lineItemTypeForPage;
 
     /**
@@ -63,7 +63,45 @@ global with sharing class OtterCpqAppHandlerHook implements %vlocity_namespace%.
     /* todo. add apex docs */
     private void postCartsItemsPreInvoke(Map <String, Object> inputMap, Map <String, Object> outputMap, Map <String, Object> optionsMap) {
         String message = 'Hello from postCartsItemsPreInvoke';
-        System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > postCartsItemsPreInvoke: ' + message);
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > postCartsItemsPreInvoke: ' + message);
+
+    }
+
+    /**
+     * Method contains the business logic that is executed AFTER a new line item is added into a cart
+     * but BEFORE it is sent back to the client (e.g. CPQ App). This is a great place to 
+     * manipulate with the default output of Vlocity CPQ API (e.g. hide specific child items based 
+     * on conditions).
+     * For more information on Vlocity CPQ API, refer to docs.vlocity.com
+     *
+     * @param {Map <String, Object>} inputMap - Vlocity CPQ API call input (cart Id, field list, etc.)
+     * @param {Map <String, Object>} outputMap - Vlocity CPQ API call output (line items, attributes, etc.)
+     * @param {Map <String, Object>} optionsMap - Additional options for Vlocity CPQ API call
+     * @return {void} - nothing
+     *
+     * @example
+     *     Not invoked directly. The method is invoked by Vlocity platform. 
+    */
+
+    private void postCartsItemsPostInvoke(Map <String, Object> inputMap, Map <String, Object> outputMap, Map <String, Object> optionsMap) {
+        String message = 'Hello from postCartsItemsPostInvoke';
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > postCartsItemsPostInvoke: ' + message);
+
+        //Getting access to Vlocity API response payload (JSON Result)       
+        vlocity_cmt.JSONResult jsonResult = getJSONResult(inputMap, outputMap);        
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > inputMap: ' + inputMap);
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > outputMap: ' + outputMap);
+        
+        //Applying custom transformation logic to standard Vlocity CPQ API output     
+        //uncomment to put your business logic
+        //OtterCPQResponseTransformation.removeNoneOrderableChildRecords(jsonResult.records);
+
+    }
+
+    /* todo. add apex docs */
+    private void getCartsItemsPreInvoke(Map <String, Object> inputMap, Map <String, Object> outputMap, Map <String, Object> optionsMap) {
+        String message = 'Hello from getCartsItemsPreInvoke';
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPreInvoke: ' + message);
 
     }
 
@@ -84,57 +122,82 @@ global with sharing class OtterCpqAppHandlerHook implements %vlocity_namespace%.
 
     private void getCartsItemsPostInvoke(Map <String, Object> inputMap, Map <String, Object> outputMap, Map <String, Object> optionsMap) {
         String message = 'Hello from getCartsItemsPostInvoke';
-        System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke: ' + message);
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke: ' + message);
 
         //Getting access to Vlocity API response payload (JSON Result)       
-        %vlocity_namespace%.JSONResult jsonResult = getJSONResult(inputMap, outputMap);        
-        System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > inputMap: ' + inputMap);
-        System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > inputMap: ' + outputMap);
-        System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > jsonResult.records: ');
-        JSONRecordHelper.printRecords(jsonResult.records, false);
-
+        vlocity_cmt.JSONResult jsonResult = getJSONResult(inputMap, outputMap);        
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > inputMap: ' + inputMap);
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > outputMap: ' + outputMap);
+        
         //Applying custom transformation logic to standard Vlocity CPQ API output       
-        JSONRecordHelper.removeNoneOrderableRecords(jsonResult.records);
-        System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > jsonResult.records: ');
-        JSONRecordHelper.printRecords(jsonResult.records, false);
-
-    }
-
-    /* todo. add apex docs */
-    private void getCartsItemsPreInvoke(Map <String, Object> inputMap, Map <String, Object> outputMap, Map <String, Object> optionsMap) {
-        String message = 'Hello from getCartsItemsPreInvoke';
-        System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke: ' + message);
-
-    }
-
-    /* todo. add apex docs */
-    private void postCartsItemsPostInvoke(Map <String, Object> inputMap, Map <String, Object> outputMap, Map <String, Object> optionsMap) {
-        String message = 'Hello from postCartsItemsPostInvoke';
-        System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > postCartsItemsPostInvoke: ' + message);
-
+        OtterCPQResponseTransformation.removeNoneOrderableChildRecords(jsonResult.records);
     }
 
     /* todo. add apex docs */
     private void putCartsItemsPreInvoke(Map <String, Object> inputMap, Map <String, Object> outputMap, Map <String, Object> optionsMap) {
         String message = 'Hello from putCartsItemsPreInvoke';
-        System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPreInvoke: ' + message);
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPreInvoke: ' + message);
 
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPreInvoke > VARIABLE > inputMap: ' + inputMap);
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPreInvoke > VARIABLE > outputMap: ' + outputMap);
+        
+        //navigating through the API input map to access new attribute values
+        Map<String, Object> items = (Map<String, Object>) inputMap.get('items');
+        List <Object> items_records = (List <Object>) items.get('records');
+
+        for (Object item : items_records) {
+            Map<String, Object> attributeCategories = (Map<String, Object>) ((Map<String, Object>) item).get('attributeCategories');
+            List <Object> attributeCategories_records = (List <Object>) attributeCategories.get('records');
+
+            for (Object attributeCategory : attributeCategories_records) {
+                Map<String, Object> productAttributes = (Map<String, Object>) ((Map<String, Object>) attributeCategory).get('productAttributes');
+                List <Object> productAttributes_records = (List <Object>) productAttributes.get('records');
+
+                for (Object productAttribute : productAttributes_records) {
+                    Map<String, Object> attr = (Map<String, Object>) productAttribute;
+                    System.debug('**** Attribute:value pair: ' + attr.get('code') + ': ' + attr.get('userValues'));
+
+                    //sample condition and attribute update
+                    //this is where we can check if an attribute is calculable and how exactly
+                    if (attr.get('userValues') == 9) {
+                        system.debug('I AM 9');
+                        attr.put('userValues', 34);
+                    }
+                }
+            }
+    
+        }
     }
 
     /* todo. add apex docs */
     private void putCartsItemsPostInvoke(Map <String, Object> inputMap, Map <String, Object> outputMap, Map <String, Object> optionsMap) {
         String message = 'Hello from putCartsItemsPostInvoke';
-        System.debug(LoggingLevel.INFO, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPostInvoke: ' + message);
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPostInvoke: ' + message);
 
+        //Getting access to Vlocity API response payload (JSON Result)       
+        vlocity_cmt.JSONResult jsonResult = getJSONResult(inputMap, outputMap);        
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPostInvoke > VARIABLE > inputMap: ' + inputMap);
+        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPostInvoke > VARIABLE > outputMap: ' + outputMap);
+        
+
+        //THIS DOESN'T WORK. DOES API INCLUDES ONLY CHANGE LINE ITEMS?
+        //Applying custom transformation logic to standard Vlocity CPQ API output     
+        System.debug('********BEFORE:');
+        JSONRecordHelper.printRecords(jsonResult.records, false);  
+        OtterCPQResponseTransformation.removeNoneOrderableChildRecords(jsonResult.records);
+
+        System.debug('********AFTER:');
+        JSONRecordHelper.printRecords(jsonResult.records, false);
     }
 
     /* helper function. add apex docs */
-    %vlocity_namespace%.JSONResult getJSONResult(Map <String, Object> inputMap, Map <String, Object> outputMap) {
+    //this works for post hooks only
+    vlocity_cmt.JSONResult getJSONResult(Map <String, Object> inputMap, Map <String, Object> outputMap) {
         if (outputMap.get('result') != null) {
             Id cartId = (Id) inputMap.get('cartId');
             lineItemTypeForPage = getObjectType(cartId);
             if (lineItemTypeForPage == OrderItem.SObjectType) {
-                %vlocity_namespace%.JSONResult res = (%vlocity_namespace%.JSONResult) outputMap.get('result');
+                vlocity_cmt.JSONResult res = (vlocity_cmt.JSONResult) outputMap.get('result');
                 //processResultForUpdate(res);
                 if (res != null) {
                     return res;

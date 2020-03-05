@@ -1,3 +1,0 @@
-String cartId = '8014J000002m7o7QAA';
-String methodName = 'getCartsItems';
-JSONRecordHelper.testSnippet(cartId, methodName);
