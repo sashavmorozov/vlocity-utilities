@@ -2,3 +2,11 @@
 .vlocity/vlocity_utilities.project.yaml
 
 .vlocity/vlocity_utilities_local.project.yaml
+
+.sfdx/tools/tempApex.input
+
+.sfdx/tools/apex.db
+
+.sfdx/sfdx-config.json
+
+.sfdx/orgs/kcom0319\@comms.demo/metadataTypeInfos.json
