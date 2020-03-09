@@ -87,15 +87,6 @@ global with sharing class OtterCpqAppHandlerHook implements vlocity_cmt.VlocityO
         String message = 'Hello from postCartsItemsPostInvoke';
         System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > postCartsItemsPostInvoke: ' + message);
 
-        //Getting access to Vlocity API response payload (JSON Result)       
-        vlocity_cmt.JSONResult jsonResult = getJSONResult(inputMap, outputMap);        
-        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > inputMap: ' + inputMap);
-        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > outputMap: ' + outputMap);
-        
-        //Applying custom transformation logic to standard Vlocity CPQ API output     
-        //uncomment to put your business logic
-        //OtterCPQResponseTransformation.removeNoneOrderableChildRecords(jsonResult.records);
-
     }
 
     /* todo. add apex docs */
@@ -129,8 +120,13 @@ global with sharing class OtterCpqAppHandlerHook implements vlocity_cmt.VlocityO
         System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > inputMap: ' + inputMap);
         System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > getCartsItemsPostInvoke > VARIABLE > outputMap: ' + outputMap);
         
-        //Applying custom transformation logic to standard Vlocity CPQ API output       
-        OtterCPQResponseTransformation.removeNoneOrderableChildRecords(jsonResult.records);
+        //Applying custom transformation logic to standard Vlocity CPQ API output
+
+        //This will apply simple conditions for filtering       
+        //OtterCPQResponseTransformation.removeNonOrderableRecordsWithSimpleConditions(jsonResult.records);
+        
+        //This will apply more advanced attribute-based conditions for filtering
+        //OtterCPQResponseTransformation.removeNonOrderableChildRecordsWithAdvancedConditionsNew(jsonResult.records, null);
     }
 
     /* todo. add apex docs */
@@ -174,20 +170,6 @@ global with sharing class OtterCpqAppHandlerHook implements vlocity_cmt.VlocityO
         String message = 'Hello from putCartsItemsPostInvoke';
         System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPostInvoke: ' + message);
 
-        //Getting access to Vlocity API response payload (JSON Result)       
-        vlocity_cmt.JSONResult jsonResult = getJSONResult(inputMap, outputMap);        
-        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPostInvoke > VARIABLE > inputMap: ' + inputMap);
-        System.debug(LoggingLevel.DEBUG, 'OtterTools > OtterCpqAppHandlerHook > putCartsItemsPostInvoke > VARIABLE > outputMap: ' + outputMap);
-        
-
-        //THIS DOESN'T WORK. DOES API INCLUDES ONLY CHANGE LINE ITEMS?
-        //Applying custom transformation logic to standard Vlocity CPQ API output     
-        System.debug('********BEFORE:');
-        JSONRecordHelper.printRecords(jsonResult.records, false);  
-        OtterCPQResponseTransformation.removeNoneOrderableChildRecords(jsonResult.records);
-
-        System.debug('********AFTER:');
-        JSONRecordHelper.printRecords(jsonResult.records, false);
     }
 
     /* helper function. add apex docs */
