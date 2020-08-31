@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Generic email template that can be copied and further tailored</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Salesforce Baseline Email Template</name>
+    <style>none</style>
+    <subject>Hello, this is a sample email</subject>
+    <textOnly>Something important happened with record {!Record.Name}.
+
+A little more information on what is happened and what is the next best action (do nothing, review, submit, correct, etc.).
+
+Here is what you need to know:
+
+- Record Name: {!Record.Name}
+- Record Id: {!Record.Id}
+- Record Field 3: {!Record.Field3__c}
+- Record Field 4: {!Record.Field4__c}
+
+
+_________________________
+
+%Company Name%, %Streed Address%, %City%, %PostalCode%</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
