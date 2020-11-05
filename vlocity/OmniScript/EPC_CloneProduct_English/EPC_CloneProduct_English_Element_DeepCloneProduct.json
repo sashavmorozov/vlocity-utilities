@@ -1,0 +1,81 @@
+{
+    "%vlocity_namespace%__Active__c": true,
+    "%vlocity_namespace%__OmniScriptId__c": {
+        "Name": "Clone Product",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__OmniScript__c/EPC/CloneProduct/English",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c"
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+        "HTMLTemplateId": "",
+        "businessCategory": "",
+        "businessEvent": "",
+        "controlWidth": 12,
+        "enableActionMessage": false,
+        "enableDefaultAbort": false,
+        "errorMessage": {
+            "custom": [
+            ],
+            "default": null
+        },
+        "extraPayload": {
+            "cloneAttributeAssignments": "%ProcessConfiguration:CloneCoreProductComponents:CloneAttributeAssignments%",
+            "cloneCatalogAssignments": "%ProcessConfiguration:CloneOtherAssignmentsAndRelationships:CloneCatalogAssignments%",
+            "cloneDecompositionRelationships": "%ProcessConfiguration:CloneOtherAssignmentsAndRelationships:CloneDecompositionRelationships%",
+            "cloneOrchestrationScenarios": "%ProcessConfiguration:CloneOtherAssignmentsAndRelationships:CloneOrchestrationScenarios%",
+            "clonePriceAndCostConfiguration": "%ProcessConfiguration:CloneCoreProductComponents:ClonePriceAndCostConfiguration%",
+            "cloneProductStructure": "%ProcessConfiguration:CloneCoreProductComponents:CloneProductStructure%",
+            "clonePromotionAssignments": "%ProcessConfiguration:CloneOtherAssignmentsAndRelationships:ClonePromotionAssignments%",
+            "cloneRuleAssignments": "%ProcessConfiguration:CloneOtherAssignmentsAndRelationships:CloneRulesAssignments%",
+            "productId": "%sourceProductProperties:obj|1:Id%"
+        },
+        "failureAbortLabel": "Abort",
+        "failureAbortMessage": "Are you sure?",
+        "failureGoBackLabel": "Go Back",
+        "failureNextLabel": "Continue",
+        "inProgressMessage": "In Progress",
+        "integrationProcedureKey": "EPC_CloneProduct",
+        "label": "Deep Clone Product",
+        "message": {
+        },
+        "postMessage": "Done",
+        "postTransformBundle": "",
+        "preTransformBundle": "",
+        "pubsub": false,
+        "redirectNextLabel": "Next",
+        "redirectNextWidth": 3,
+        "redirectPageName": "",
+        "redirectPreviousLabel": "Previous",
+        "redirectPreviousWidth": 3,
+        "redirectTemplateUrl": "vlcAcknowledge.html",
+        "remoteOptions": {
+            "chainable": false,
+            "postTransformBundle": "",
+            "preTransformBundle": "",
+            "useFuture": false
+        },
+        "remoteTimeout": 30000,
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "sendJSONNode": "",
+        "sendJSONPath": "clonedProductId",
+        "show": null,
+        "showPersistentComponent": [
+            true,
+            false
+        ],
+        "ssm": false,
+        "svgIcon": "",
+        "svgSprite": "",
+        "toastComplete": true,
+        "useContinuation": false,
+        "validationRequired": "Step",
+        "wpm": false
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": true,
+    "%vlocity_namespace%__Type__c": "Integration Procedure Action",
+    "Name": "DeepCloneProduct",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__Element__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/EPC/CloneProduct/English/DeepCloneProduct"
+}

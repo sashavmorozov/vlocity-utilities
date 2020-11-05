@@ -1,0 +1,73 @@
+[
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "Product2",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Description",
+        "%vlocity_namespace%__GlobalKey__c": "5d3076aa-dc6a-4b77-75f6-af8ec437b69a",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "obj:Description",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "Core_SetProductDetailsCustom8896",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "Core_SetProductDetails",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "Product2",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Id",
+        "%vlocity_namespace%__GlobalKey__c": "aa2d39eb-a655-ee62-e5c3-292998aa9d7b",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "obj:Id",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": true,
+        "%vlocity_namespace%__MapId__c": "Core_SetProductDetailsCustom3331",
+        "%vlocity_namespace%__UpsertKey__c": true,
+        "Name": "Core_SetProductDetails",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__ConfigurationValue__c": "FAKEMAPPING",
+        "%vlocity_namespace%__DomainObjectAPIName__c": "Product2",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Id",
+        "%vlocity_namespace%__FilterOperator__c": "=",
+        "%vlocity_namespace%__GlobalKey__c": "70db7ce6-bd8d-22ba-28ca-dadfa5b02b87",
+        "%vlocity_namespace%__IsDisabled__c": true,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "Core_SetProductDetailsCustom8587",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "Core_SetProductDetails",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "Product2",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Name",
+        "%vlocity_namespace%__GlobalKey__c": "4e2c05c5-979a-dfba-33e7-278ab51be5a9",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "obj:Name",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": true,
+        "%vlocity_namespace%__MapId__c": "Core_SetProductDetailsCustom2537",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "Core_SetProductDetails",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "Product2",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "ProductCode",
+        "%vlocity_namespace%__GlobalKey__c": "bd282ad8-07bc-c8a8-456e-646dad3dfcf2",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "obj:ProductCode",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": true,
+        "%vlocity_namespace%__MapId__c": "Core_SetProductDetailsCustom6811",
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "Core_SetProductDetails",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    }
+]

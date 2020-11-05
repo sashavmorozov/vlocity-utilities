@@ -1,0 +1,40 @@
+Name: vlocity-utilities-project
+ignoreDependencies: false
+VlocityDataPackKeys:
+    - DataRaptor/Core_GetProductDetails
+    - DataRaptor/Core_SetProductDetails
+    - IntegrationProcedure/EPC_CloneProduct
+    - OmniScript/EPC_CloneProduct_English
+    - classes/OtterCopierUtils.cls
+    - customMetadata/Otter_Copier_Configuration.Product_Attribute_Assignments.md
+    - customMetadata/Otter_Copier_Configuration.Product_Attribute_Assignments_OFA.md
+    - customMetadata/Otter_Copier_Configuration.Product_Attribute_Overrides.md
+    - customMetadata/Otter_Copier_Configuration.Product_Catalog_Relationships.md
+    - customMetadata/Otter_Copier_Configuration.Product_Decomposition_Relationship_Src.md
+    - customMetadata/Otter_Copier_Configuration.Product_Orchestration_Scenarios.md
+    - customMetadata/Otter_Copier_Configuration.Product_PCIs.md
+    - customMetadata/Otter_Copier_Configuration.Product_Pricelist_Entries.md
+    - customMetadata/Otter_Copier_Configuration.Product_Product_Relationships.md
+    - customMetadata/Otter_Copier_Configuration.Product_Promotion_Items.md
+    - customMetadata/Otter_Copier_Configuration.Product_Rule_Assignments.md
+    - layouts/Otter_Copier_Configuration__mdt-Otter Copier Configuration Layout
+    - objects/Otter_Copier_Configuration__mdt/fields/cloningScopeProperty__c.field
+    - objects/Otter_Copier_Configuration__mdt/fields/filter__c.field
+    - objects/Otter_Copier_Configuration__mdt/fields/foreingKeyApiName__c.field
+    - objects/Otter_Copier_Configuration__mdt/fields/objectApiName__c.field
+    - objects/Otter_Copier_Configuration__mdt/fields/relatedItemObjectApiName__c.field
+    - objects/Otter_Copier_Configuration__mdt/Otter_Copier_Configuration__mdt.object
+    - objects/Product2/webLinks/Clone_Product.webLink
+VlocityTypesToFetch:
+    - DataRaptor
+    - IntegrationProcedure
+    - OmniScript
+SalesforceTypesToFetch:
+    - ApexClass
+    - CustomField
+    - CustomMetadata
+    - CustomObject
+    - Layout
+    - ListView
+    - QuickAction
+    - WebLink

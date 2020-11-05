@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clone_Product</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Clone Product</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/lightning/cmp/vlocity_cmt__vlocityLWCOmniWrapper?c__target=c%3AePCCloneProductEnglish&amp;c__layout=lightning&amp;c__tabIcon=custom%3Acustom18&amp;c__ContextId={!Product2.Id}</url>
+</WebLink>
