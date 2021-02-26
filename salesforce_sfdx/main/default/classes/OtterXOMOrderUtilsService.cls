@@ -1,4 +1,4 @@
-global with sharing class OtterXOMOrderUtilsService implements %vlocity_namespace%.VlocityOpenInterface {
+global with sharing class OtterXOMOrderUtilsService implements vlocity_cmt.VlocityOpenInterface {
 
     global Boolean invokeMethod(String methodName, Map<String, Object> inputMap, Map<String, Object> outputMap, Map<String, Object> optionsMap) {
         Boolean result = true;

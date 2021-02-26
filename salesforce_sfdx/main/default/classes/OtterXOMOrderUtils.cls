@@ -50,7 +50,7 @@ global abstract with sharing class OtterXOMOrderUtils {
 
     public static Boolean submitOrderSync(Id orderId, Map<String, Object> outputMap) {
         Boolean isOmniScript = true;
-        String result = %vlocity_namespace%.SimpleDecompositionController.decomposeAndCreatePlanEx(orderId, isOmniScript);
+        String result = vlocity_cmt.SimpleDecompositionController.decomposeAndCreatePlanEx(orderId, isOmniScript);
         System.debug(LoggingLevel.INFO, 'OtterTools > OtterXOMOrderUtils > submitOrderAsync: order submission result = ' + result);
 
         outputMap.put('submitOrderResult', OtterCommonConstants.CONST_SUCCESS);
@@ -87,11 +87,11 @@ global abstract with sharing class OtterXOMOrderUtils {
             return false;
         }
 
-        List<String>  fieldsToRetrieve = new List<String>  {'Id', '%vlocity_namespace%__FulfilmentStatus__c'};
+        List<String>  fieldsToRetrieve = new List<String>  {'Id', 'vlocity_cmt__FulfilmentStatus__c'};
         Order order = (Order) OtterCommonUtils.retrieveSingleRecordById(orderId, Order.class, fieldsToRetrieve);
 
         //check order fulfillment status
-        if (order.%vlocity_namespace%__FulfilmentStatus__c != OtterXOMConstants.CONST_ORDER_FULFILLMENT_STATUS_DRAFT) {
+        if (order.vlocity_cmt__FulfilmentStatus__c != OtterXOMConstants.CONST_ORDER_FULFILLMENT_STATUS_DRAFT) {
             validationMessage = 'The order with Id ' + orderId + ' cannot be submitted because it is not in the Draft state';
             outputMap.put('validationMessage', validationMessage);
             System.debug(LoggingLevel.ERROR, 'OtterTools > OtterXOMOrderUtils > validateOrderForSubmission: ' + validationMessage);

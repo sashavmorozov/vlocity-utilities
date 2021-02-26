@@ -1,6 +1,6 @@
 global abstract with sharing class OtterXOMConstants {
 
-    //Order.%vlocity_namespace%__FulfilmentStatus__c
+    //Order.vlocity_cmt__FulfilmentStatus__c
     public static final String CONST_ORDER_FULFILLMENT_STATUS_DRAFT         = 'Draft';
     public static final String CONST_ORDER_FULFILLMENT_STATUS_IN_PROGRESS   = 'In Progress';
     public static final String CONST_ORDER_FULFILLMENT_STATUS_ACTIVATED     = 'Activated';
@@ -15,7 +15,7 @@ global abstract with sharing class OtterXOMConstants {
     public static final String CONST_ORDER_LINE_ITEM_ACTION_SUSPEND         = 'Suspend';
     public static final String CONST_ORDER_LINE_ITEM_ACTION_RESUME          = 'Resume';
 
-    //Order Item.%vlocity_namespace%__ProvisioningStatus__c
+    //Order Item.vlocity_cmt__ProvisioningStatus__c
     public static final String CONST_ORDER_LINE_ITEM_PROVISIONING_STATUS_NO_CHANGE  = 'NoChange';
     public static final String CONST_ORDER_LINE_ITEM_PROVISIONING_STATUS_NEW        = 'New';
     public static final String CONST_ORDER_LINE_ITEM_PROVISIONING_STATUS_CHANGED    = 'Changed';

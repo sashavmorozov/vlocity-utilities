@@ -33,29 +33,29 @@ global with sharing class OtterEPCUtils {
     *        | |\ \       || )
     *       (_/ (_/      ((_/    
     * @param product code (List<String>)
-    * @return list of direct product child items (List<%vlocity_namespace%__ProductChildItem__c>)
+    * @return list of direct product child items (List<vlocity_cmt__ProductChildItem__c>)
     * @example
     *   OtterEPCUtils.getProductChildItems(new List<String> {'ACC_OFFERING_MOBILE_SUBSCRIPTION_BASIC'})
     */
 
-    public static List<%vlocity_namespace%__ProductChildItem__c> getProductChildItems(List<String> parentProductCodesList) {
+    public static List<vlocity_cmt__ProductChildItem__c> getProductChildItems(List<String> parentProductCodesList) {
 
-        List <%vlocity_namespace%__ProductChildItem__c> productChildItemsList = [
+        List <vlocity_cmt__ProductChildItem__c> productChildItemsList = [
             Select 
             Id, 
             Name, 
-            %vlocity_namespace%__ChildProductId__c, 
-            %vlocity_namespace%__IsRootProductChildItem__c, 
-            %vlocity_namespace%__ParentProductId__c, 
-            %vlocity_namespace%__RelationshipType__c, 
-            %vlocity_namespace%__IsVirtualItem__c,
-            %vlocity_namespace%__ParentProductId__r.ProductCode,
-            %vlocity_namespace%__ChildProductId__r.ProductCode 
+            vlocity_cmt__ChildProductId__c, 
+            vlocity_cmt__IsRootProductChildItem__c, 
+            vlocity_cmt__ParentProductId__c, 
+            vlocity_cmt__RelationshipType__c, 
+            vlocity_cmt__IsVirtualItem__c,
+            vlocity_cmt__ParentProductId__r.ProductCode,
+            vlocity_cmt__ChildProductId__r.ProductCode 
             from 
-                %vlocity_namespace%__ProductChildItem__c
+                vlocity_cmt__ProductChildItem__c
             where
-                %vlocity_namespace%__IsRootProductChildItem__c = false
-                and %vlocity_namespace%__ParentProductId__r.ProductCode in :parentProductCodesList];
+                vlocity_cmt__IsRootProductChildItem__c = false
+                and vlocity_cmt__ParentProductId__r.ProductCode in :parentProductCodesList];
 
         return productChildItemsList;
     }
@@ -64,26 +64,26 @@ global with sharing class OtterEPCUtils {
     /***************************************************************************************************************
     * @description returns a list of product child item records for a given product (identified with product code). The entier hierarchy is returned
     * @param product code (List<String>)
-    * @return list of product child items (List<%vlocity_namespace%__ProductChildItem__c>)
+    * @return list of product child items (List<vlocity_cmt__ProductChildItem__c>)
     * @example
     *   OtterEPCUtils.getProductChildItemsWithHierarchy(new List<String> {'ACC_OFFERING_MOBILE_SUBSCRIPTION_BASIC'})
     */
 
-    public static List<%vlocity_namespace%__ProductChildItem__c> getProductChildItemsWithHierarchy(List<String> parentProductCodesList) {
+    public static List<vlocity_cmt__ProductChildItem__c> getProductChildItemsWithHierarchy(List<String> parentProductCodesList) {
     
         currentHierarchyLevel++;
         System.debug('TOOLS>DEBUG>OtterEPCUtils>getProductChildItemsWithHierarchy: currentHierarchyLevel: ' + currentHierarchyLevel);
-        List <%vlocity_namespace%__ProductChildItem__c> currentLevelList = getProductChildItems(parentProductCodesList);
+        List <vlocity_cmt__ProductChildItem__c> currentLevelList = getProductChildItems(parentProductCodesList);
         if (currentLevelList.size() == 0) {
             System.debug('TOOLS>DEBUG>OtterEPCUtils>getProductChildItemsWithHierarchy: reached the exit for recursion');
             return currentLevelList;
         } else {
             System.debug('TOOLS>DEBUG>OtterEPCUtils>getProductChildItemsWithHierarchy: call recursion path');
-            if (currentHierarchyLevel > MAX_HIERARCHY_DEPTH_CONST) return new List<%vlocity_namespace%__ProductChildItem__c>();
+            if (currentHierarchyLevel > MAX_HIERARCHY_DEPTH_CONST) return new List<vlocity_cmt__ProductChildItem__c>();
 
             List <String> childProductCodesList = new List <String>();
-            for (%vlocity_namespace%__ProductChildItem__c pci : currentLevelList) {
-                childProductCodesList.add(pci.%vlocity_namespace%__ChildProductId__r.ProductCode);
+            for (vlocity_cmt__ProductChildItem__c pci : currentLevelList) {
+                childProductCodesList.add(pci.vlocity_cmt__ChildProductId__r.ProductCode);
             }
 
             currentLevelList.addAll(getProductChildItemsWithHierarchy(childProductCodesList));
@@ -117,14 +117,14 @@ global with sharing class OtterEPCUtils {
         if (childProductCode == parentProductCode) return childProductCode;
 
         currentHierarchyLevel = 0;
-        List <%vlocity_namespace%__ProductChildItem__c> childProductItemsWithHierarchy = getProductChildItemsWithHierarchy(new List <String> {parentProductCode});
+        List <vlocity_cmt__ProductChildItem__c> childProductItemsWithHierarchy = getProductChildItemsWithHierarchy(new List <String> {parentProductCode});
         
         Map <String, String> productCodeToParentProductCodeMap = new Map <String, String>();
         Map <String, String> productIdToParentProductIdMap = new Map <String, String>();
 
-        for (%vlocity_namespace%__ProductChildItem__c pci : childProductItemsWithHierarchy) {
-            productCodeToParentProductCodeMap.put(pci.%vlocity_namespace%__ChildProductId__r.ProductCode, pci.%vlocity_namespace%__ParentProductId__r.ProductCode);
-            productIdToParentProductIdMap.put(pci.%vlocity_namespace%__ChildProductId__c, pci.%vlocity_namespace%__ParentProductId__c);
+        for (vlocity_cmt__ProductChildItem__c pci : childProductItemsWithHierarchy) {
+            productCodeToParentProductCodeMap.put(pci.vlocity_cmt__ChildProductId__r.ProductCode, pci.vlocity_cmt__ParentProductId__r.ProductCode);
+            productIdToParentProductIdMap.put(pci.vlocity_cmt__ChildProductId__c, pci.vlocity_cmt__ParentProductId__c);
         }
 
         String pathText = childProductCode;
@@ -213,33 +213,33 @@ global with sharing class OtterEPCUtils {
 
     public static void removeConfiguredLayout(String objectTypeName) {
         try {
-            %vlocity_namespace%__ObjectClass__c objectType = [
+            vlocity_cmt__ObjectClass__c objectType = [
                 select 
                     Id, 
                     Name
                 from
-                    %vlocity_namespace%__ObjectClass__c 
+                    vlocity_cmt__ObjectClass__c 
                 where
                     Name = :objectTypeName];
 
             System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtils > removeConfiguredLayout: objectType = ' + objectType);
 
-            List<%vlocity_namespace%__ObjectLayout__c> objectLayoutList = [
+            List<vlocity_cmt__ObjectLayout__c> objectLayoutList = [
             select 
                 Id,
                 Name,
-                %vlocity_namespace%__IsActive__c,
-                %vlocity_namespace%__IsDefault__c,
-                %vlocity_namespace%__ObjectClassId__c,
-                %vlocity_namespace%__ObjectClassId__r.Name,
-                %vlocity_namespace%__SubclassId__c
+                vlocity_cmt__IsActive__c,
+                vlocity_cmt__IsDefault__c,
+                vlocity_cmt__ObjectClassId__c,
+                vlocity_cmt__ObjectClassId__r.Name,
+                vlocity_cmt__SubclassId__c
             from 
-                %vlocity_namespace%__ObjectLayout__c 
+                vlocity_cmt__ObjectLayout__c 
             where 
-                (%vlocity_namespace%__ObjectClassId__c = :objectType.Id 
-                and %vlocity_namespace%__SubclassId__c = NULL) 
-                or (%vlocity_namespace%__ObjectClassId__r.Name = 'Product2 Object' 
-                and %vlocity_namespace%__SubclassId__c = :objectType.Id)
+                (vlocity_cmt__ObjectClassId__c = :objectType.Id 
+                and vlocity_cmt__SubclassId__c = NULL) 
+                or (vlocity_cmt__ObjectClassId__r.Name = 'Product2 Object' 
+                and vlocity_cmt__SubclassId__c = :objectType.Id)
             ];
 
             System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtils > removeConfiguredLayout: objectLayoutList = ' + objectLayoutList);
@@ -273,32 +273,32 @@ global with sharing class OtterEPCUtils {
         /* String sourceObjectTypeName = 'Product2 Object';
         String targetObjectTypeName = 'H3G MSISDN Object Type'; */
 
-        List<%vlocity_namespace%__ObjectLayout__c> objectLayoutsForInsert   = new List<%vlocity_namespace%__ObjectLayout__c>();
-        List<%vlocity_namespace%__ObjectFacet__c> objectFacetsForInsert     = new List<%vlocity_namespace%__ObjectFacet__c>();
-        List<%vlocity_namespace%__ObjectSection__c> objectSectionsForInsert = new List<%vlocity_namespace%__ObjectSection__c>();
-        List<%vlocity_namespace%__ObjectElement__c> objectElementsForInsert = new List<%vlocity_namespace%__ObjectElement__c>();
+        List<vlocity_cmt__ObjectLayout__c> objectLayoutsForInsert   = new List<vlocity_cmt__ObjectLayout__c>();
+        List<vlocity_cmt__ObjectFacet__c> objectFacetsForInsert     = new List<vlocity_cmt__ObjectFacet__c>();
+        List<vlocity_cmt__ObjectSection__c> objectSectionsForInsert = new List<vlocity_cmt__ObjectSection__c>();
+        List<vlocity_cmt__ObjectElement__c> objectElementsForInsert = new List<vlocity_cmt__ObjectElement__c>();
 
-        Map<Id, %vlocity_namespace%__ObjectFacet__c> sourceObjectFacetIdToClonedObjectFacet         = new Map<Id, %vlocity_namespace%__ObjectFacet__c>();
-        Map<Id, %vlocity_namespace%__ObjectSection__c> sourceObjectSectionIdToClonedObjectSection   = new Map<Id, %vlocity_namespace%__ObjectSection__c>();
-        Map<Id, %vlocity_namespace%__ObjectElement__c> sourceObjectElementIdToClonedObjectElement   = new Map<Id, %vlocity_namespace%__ObjectElement__c>();
+        Map<Id, vlocity_cmt__ObjectFacet__c> sourceObjectFacetIdToClonedObjectFacet         = new Map<Id, vlocity_cmt__ObjectFacet__c>();
+        Map<Id, vlocity_cmt__ObjectSection__c> sourceObjectSectionIdToClonedObjectSection   = new Map<Id, vlocity_cmt__ObjectSection__c>();
+        Map<Id, vlocity_cmt__ObjectElement__c> sourceObjectElementIdToClonedObjectElement   = new Map<Id, vlocity_cmt__ObjectElement__c>();
 
 
         try {
-            %vlocity_namespace%__ObjectClass__c sourceObjectType = [
+            vlocity_cmt__ObjectClass__c sourceObjectType = [
                 select 
                     Id, 
                     Name
                 from
-                    %vlocity_namespace%__ObjectClass__c 
+                    vlocity_cmt__ObjectClass__c 
                 where
                     Name = :sourceObjectTypeName];
 
-            %vlocity_namespace%__ObjectClass__c targetObjectType = [
+            vlocity_cmt__ObjectClass__c targetObjectType = [
                 select 
                     Id, 
                     Name
                 from
-                    %vlocity_namespace%__ObjectClass__c 
+                    vlocity_cmt__ObjectClass__c 
                 where
                     Name = :targetObjectTypeName];
 
@@ -309,67 +309,67 @@ global with sharing class OtterEPCUtils {
             removeConfiguredLayout(targetObjectTypeName);
 
             //collect references to layouts, facets, sections and elements to clone
-            List<%vlocity_namespace%__ObjectLayout__c> sourceObjectLayoutList = [
+            List<vlocity_cmt__ObjectLayout__c> sourceObjectLayoutList = [
                 select 
                     Id,
                     Name,
-                    %vlocity_namespace%__IsActive__c,
-                    %vlocity_namespace%__IsDefault__c,
-                    %vlocity_namespace%__ObjectClassId__c,
-                    %vlocity_namespace%__ObjectClassId__r.Name,
-                    %vlocity_namespace%__SubclassId__c
+                    vlocity_cmt__IsActive__c,
+                    vlocity_cmt__IsDefault__c,
+                    vlocity_cmt__ObjectClassId__c,
+                    vlocity_cmt__ObjectClassId__r.Name,
+                    vlocity_cmt__SubclassId__c
                 from 
-                    %vlocity_namespace%__ObjectLayout__c 
+                    vlocity_cmt__ObjectLayout__c 
                 where 
-                    (%vlocity_namespace%__ObjectClassId__c = :sourceObjectType.Id 
-                    and %vlocity_namespace%__SubclassId__c = NULL) 
-                    or (%vlocity_namespace%__ObjectClassId__r.Name = 'Product2 Object'
-                    and %vlocity_namespace%__SubclassId__c = :sourceObjectType.Id)
+                    (vlocity_cmt__ObjectClassId__c = :sourceObjectType.Id 
+                    and vlocity_cmt__SubclassId__c = NULL) 
+                    or (vlocity_cmt__ObjectClassId__r.Name = 'Product2 Object'
+                    and vlocity_cmt__SubclassId__c = :sourceObjectType.Id)
                 limit 1];
 
-            List<%vlocity_namespace%__ObjectFacet__c> sourceObjectFacetList = [
+            List<vlocity_cmt__ObjectFacet__c> sourceObjectFacetList = [
                 select 
                     Id,
                     Name,
-                    %vlocity_namespace%__Sequence__c,
-                    %vlocity_namespace%__ObjectLayoutId__c,
-                    %vlocity_namespace%__FacetId__c,
-                    %vlocity_namespace%__FacetId__r.Name
+                    vlocity_cmt__Sequence__c,
+                    vlocity_cmt__ObjectLayoutId__c,
+                    vlocity_cmt__FacetId__c,
+                    vlocity_cmt__FacetId__r.Name
                 from
-                    %vlocity_namespace%__ObjectFacet__c
+                    vlocity_cmt__ObjectFacet__c
                 where
-                    %vlocity_namespace%__ObjectLayoutId__c in :sourceObjectLayoutList
+                    vlocity_cmt__ObjectLayoutId__c in :sourceObjectLayoutList
             ];
 
-            List <%vlocity_namespace%__ObjectSection__c> sourceObjectSectionList = [
+            List <vlocity_cmt__ObjectSection__c> sourceObjectSectionList = [
                     select
                         Id,
                         Name,
-                        %vlocity_namespace%__ObjectFacetId__c,
-                        %vlocity_namespace%__Sequence__c,
-                        %vlocity_namespace%__SectionId__c,
-                        %vlocity_namespace%__SectionId__r.Name,
-                        %vlocity_namespace%__ViewType__c,
-                        %vlocity_namespace%__ViewUri__c
+                        vlocity_cmt__ObjectFacetId__c,
+                        vlocity_cmt__Sequence__c,
+                        vlocity_cmt__SectionId__c,
+                        vlocity_cmt__SectionId__r.Name,
+                        vlocity_cmt__ViewType__c,
+                        vlocity_cmt__ViewUri__c
                     from
-                        %vlocity_namespace%__ObjectSection__c
+                        vlocity_cmt__ObjectSection__c
                     where 
-                        %vlocity_namespace%__ObjectFacetId__c in :sourceObjectFacetList
+                        vlocity_cmt__ObjectFacetId__c in :sourceObjectFacetList
                 ];
 
-            List <%vlocity_namespace%__ObjectElement__c> sourceObjectElementList = [
+            List <vlocity_cmt__ObjectElement__c> sourceObjectElementList = [
                         select
                             id,
                             name,
-                            %vlocity_namespace%__ObjectSectionId__c,
-                            %vlocity_namespace%__Sequence__c,
-                            %vlocity_namespace%__FieldApiName__c,
-                            %vlocity_namespace%__AttributeId__c,
-                            %vlocity_namespace%__IsRequired__c
+                            vlocity_cmt__ObjectSectionId__c,
+                            vlocity_cmt__Sequence__c,
+                            vlocity_cmt__FieldApiName__c,
+                            vlocity_cmt__AttributeId__c,
+                            vlocity_cmt__IsRequired__c
                         from
-                            %vlocity_namespace%__ObjectElement__c
+                            vlocity_cmt__ObjectElement__c
                         where 
-                            %vlocity_namespace%__ObjectSectionId__c in :sourceObjectSectionList
+                            vlocity_cmt__ObjectSectionId__c in :sourceObjectSectionList
                     ];
 
             System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtils > replicateLayout: sourceObjectLayoutList = ' + sourceObjectLayoutList);
@@ -388,22 +388,22 @@ global with sharing class OtterEPCUtils {
 
             //cloning business logic (bulk)
             //cloning object layouts
-            %vlocity_namespace%__ObjectLayout__c sourceObjectLayout = sourceObjectLayoutList[0];
-            %vlocity_namespace%__ObjectLayout__c clonedSourceLayout = sourceObjectLayout.clone(preserveId, isDeepClone, preserveReadonlyTimestamps, preserveAutonumber);
+            vlocity_cmt__ObjectLayout__c sourceObjectLayout = sourceObjectLayoutList[0];
+            vlocity_cmt__ObjectLayout__c clonedSourceLayout = sourceObjectLayout.clone(preserveId, isDeepClone, preserveReadonlyTimestamps, preserveAutonumber);
             clonedSourceLayout.name = '(Reinherited) ' + targetObjectTypeName + ' Layout from ' + sourceObjectTypeName;
             clonedSourceLayout.name = clonedSourceLayout.name.left(80); //trim layout name due to managed package limitations
-            clonedSourceLayout.%vlocity_namespace%__SubclassId__c = targetObjectType.Id;
+            clonedSourceLayout.vlocity_cmt__SubclassId__c = targetObjectType.Id;
             objectLayoutsForInsert.add(clonedSourceLayout);
 
             insert objectLayoutsForInsert;
 
             //cloning object facets
-            for (%vlocity_namespace%__ObjectFacet__c ofc : sourceObjectFacetList) {
+            for (vlocity_cmt__ObjectFacet__c ofc : sourceObjectFacetList) {
                 System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtils > replicateLayout: currently clone ObjectFacet = ' + ofc);
-                %vlocity_namespace%__ObjectFacet__c clonedOfc = ofc.clone(preserveId, isDeepClone, preserveReadonlyTimestamps, preserveAutonumber);
-                clonedOfc.name = '(Reinherited) ' + ofc.%vlocity_namespace%__FacetId__r.Name + ' Facet from ' + sourceObjectTypeName;
+                vlocity_cmt__ObjectFacet__c clonedOfc = ofc.clone(preserveId, isDeepClone, preserveReadonlyTimestamps, preserveAutonumber);
+                clonedOfc.name = '(Reinherited) ' + ofc.vlocity_cmt__FacetId__r.Name + ' Facet from ' + sourceObjectTypeName;
                 clonedOfc.name = clonedOfc.name.left(80); //trim layout name due to managed package limitations
-                clonedOfc.%vlocity_namespace%__ObjectLayoutId__c = clonedSourceLayout.Id; 
+                clonedOfc.vlocity_cmt__ObjectLayoutId__c = clonedSourceLayout.Id; 
                 objectFacetsForInsert.add(clonedOfc);
 
                 sourceObjectFacetIdToClonedObjectFacet.put(ofc.Id, clonedOfc);
@@ -412,12 +412,12 @@ global with sharing class OtterEPCUtils {
             insert objectFacetsForInsert;
 
             //cloning object sections
-            for (%vlocity_namespace%__ObjectSection__c os : sourceObjectSectionList) {
+            for (vlocity_cmt__ObjectSection__c os : sourceObjectSectionList) {
                 System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtils > replicateLayout: currently clone ObjectSection = ' + os);
-                %vlocity_namespace%__ObjectSection__c clonedOs = os.clone(preserveId, isDeepClone, preserveReadonlyTimestamps, preserveAutonumber);
-                clonedOs.name = '(Reinherited) ' + os.%vlocity_namespace%__SectionId__r.Name + ' Section from ' + sourceObjectTypeName;
+                vlocity_cmt__ObjectSection__c clonedOs = os.clone(preserveId, isDeepClone, preserveReadonlyTimestamps, preserveAutonumber);
+                clonedOs.name = '(Reinherited) ' + os.vlocity_cmt__SectionId__r.Name + ' Section from ' + sourceObjectTypeName;
                 clonedOs.name = clonedOs.name.left(80); //trim layout name due to managed package limitations
-                clonedOs.%vlocity_namespace%__ObjectFacetId__c = ((%vlocity_namespace%__ObjectFacet__c) sourceObjectFacetIdToClonedObjectFacet.get(os.%vlocity_namespace%__ObjectFacetId__c)).Id;
+                clonedOs.vlocity_cmt__ObjectFacetId__c = ((vlocity_cmt__ObjectFacet__c) sourceObjectFacetIdToClonedObjectFacet.get(os.vlocity_cmt__ObjectFacetId__c)).Id;
                 objectSectionsForInsert.add(clonedOs);
 
                 sourceObjectSectionIdToClonedObjectSection.put(os.Id, clonedOs);
@@ -426,10 +426,10 @@ global with sharing class OtterEPCUtils {
             insert objectSectionsForInsert;
 
             //cloning object elements
-            for (%vlocity_namespace%__ObjectElement__c oe : sourceObjectElementList) {
+            for (vlocity_cmt__ObjectElement__c oe : sourceObjectElementList) {
                 System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtils > replicateLayout: currently clone ObjectElement = ' + oe);
-                %vlocity_namespace%__ObjectElement__c clonedOe = oe.clone(preserveId, isDeepClone, preserveReadonlyTimestamps, preserveAutonumber);
-                clonedOe.%vlocity_namespace%__ObjectSectionId__c = ((%vlocity_namespace%__ObjectSection__c) sourceObjectSectionIdToClonedObjectSection.get(oe.%vlocity_namespace%__ObjectSectionId__c)).Id;
+                vlocity_cmt__ObjectElement__c clonedOe = oe.clone(preserveId, isDeepClone, preserveReadonlyTimestamps, preserveAutonumber);
+                clonedOe.vlocity_cmt__ObjectSectionId__c = ((vlocity_cmt__ObjectSection__c) sourceObjectSectionIdToClonedObjectSection.get(oe.vlocity_cmt__ObjectSectionId__c)).Id;
                 objectElementsForInsert.add(clonedOe);
             }
 
@@ -457,80 +457,80 @@ global with sharing class OtterEPCUtils {
 
             //String objectTypeName = 'Steroids Child Object Type';
 
-            %vlocity_namespace%__ObjectClass__c objectType = [
+            vlocity_cmt__ObjectClass__c objectType = [
                 select 
                     Id, 
                     Name
                 from
-                    %vlocity_namespace%__ObjectClass__c 
+                    vlocity_cmt__ObjectClass__c 
                 where
                     Name = :objectTypeName];
 
             System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtils > enrichAttributesSection: objectType = ' + objectType);
 
-            %vlocity_namespace%__ObjectFacet__c generalPropertiesFacet = [
+            vlocity_cmt__ObjectFacet__c generalPropertiesFacet = [
                 select 
                     Id,
                     Name,
-                    %vlocity_namespace%__Sequence__c,
-                    %vlocity_namespace%__ObjectLayoutId__c,
-                    %vlocity_namespace%__FacetId__c,
-                    %vlocity_namespace%__FacetId__r.Name,
-                    %vlocity_namespace%__ObjectLayoutId__r.%vlocity_namespace%__ObjectClassId__r.Name,
-                    %vlocity_namespace%__ObjectLayoutId__r.%vlocity_namespace%__SubclassId__c 
+                    vlocity_cmt__Sequence__c,
+                    vlocity_cmt__ObjectLayoutId__c,
+                    vlocity_cmt__FacetId__c,
+                    vlocity_cmt__FacetId__r.Name,
+                    vlocity_cmt__ObjectLayoutId__r.vlocity_cmt__ObjectClassId__r.Name,
+                    vlocity_cmt__ObjectLayoutId__r.vlocity_cmt__SubclassId__c 
                 from
-                    %vlocity_namespace%__ObjectFacet__c
+                    vlocity_cmt__ObjectFacet__c
                 where
-                    %vlocity_namespace%__FacetId__r.Name = 'General Properties'
-                    and (%vlocity_namespace%__ObjectLayoutId__r.%vlocity_namespace%__ObjectClassId__r.Name = 'Product2 Object'
-                    and %vlocity_namespace%__ObjectLayoutId__r.%vlocity_namespace%__SubclassId__c = :objectType.Id)
+                    vlocity_cmt__FacetId__r.Name = 'General Properties'
+                    and (vlocity_cmt__ObjectLayoutId__r.vlocity_cmt__ObjectClassId__r.Name = 'Product2 Object'
+                    and vlocity_cmt__ObjectLayoutId__r.vlocity_cmt__SubclassId__c = :objectType.Id)
                 ];
 
             System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtils > enrichAttributesSection: obgeneralPropertiesFacetjectType = ' + generalPropertiesFacet);
 
-            %vlocity_namespace%__ObjectSection__c additionalPropertiesObjectSection = new %vlocity_namespace%__ObjectSection__c();
+            vlocity_cmt__ObjectSection__c additionalPropertiesObjectSection = new vlocity_cmt__ObjectSection__c();
             additionalPropertiesObjectSection.Name = '(Enriched) Additional Properties Section';
-            additionalPropertiesObjectSection.%vlocity_namespace%__Sequence__c = 1000;
-            additionalPropertiesObjectSection.%vlocity_namespace%__SectionId__c = [select Id from %vlocity_namespace%__UISection__c where Name = 'Additional Properties' limit 1].Id;
-            additionalPropertiesObjectSection.%vlocity_namespace%__ObjectFacetId__c = generalPropertiesFacet.Id;
-            additionalPropertiesObjectSection.%vlocity_namespace%__ViewType__c = 'Field Layout';
-            additionalPropertiesObjectSection.%vlocity_namespace%__ViewUri__c = '';
+            additionalPropertiesObjectSection.vlocity_cmt__Sequence__c = 1000;
+            additionalPropertiesObjectSection.vlocity_cmt__SectionId__c = [select Id from vlocity_cmt__UISection__c where Name = 'Additional Properties' limit 1].Id;
+            additionalPropertiesObjectSection.vlocity_cmt__ObjectFacetId__c = generalPropertiesFacet.Id;
+            additionalPropertiesObjectSection.vlocity_cmt__ViewType__c = 'Field Layout';
+            additionalPropertiesObjectSection.vlocity_cmt__ViewUri__c = '';
 
             insert additionalPropertiesObjectSection;
 
             System.debug(LoggingLevel.INFO, 'OtterTools > OtterEPCUtils > enrichAttributesSection: additionalPropertiesObjectSection = ' + additionalPropertiesObjectSection);
 
-            List<%vlocity_namespace%__ObjectFieldAttribute__c> directlyAssignedAttributesList = [
+            List<vlocity_cmt__ObjectFieldAttribute__c> directlyAssignedAttributesList = [
                 select 
                     Id,
                     Name,
-                    %vlocity_namespace%__AttributeId__c,
-                    %vlocity_namespace%__AttributeId__r.Name,
-                    %vlocity_namespace%__AttributeId__r.%vlocity_namespace%__DisplaySequence__c,
-                    %vlocity_namespace%__FieldApiName__c,
-                    %vlocity_namespace%__ObjectClassId__c,
-                    %vlocity_namespace%__ObjectType__c,
-                    %vlocity_namespace%__SubClassId__c,
-                    %vlocity_namespace%__ObjectClassId__r.Name
+                    vlocity_cmt__AttributeId__c,
+                    vlocity_cmt__AttributeId__r.Name,
+                    vlocity_cmt__AttributeId__r.vlocity_cmt__DisplaySequence__c,
+                    vlocity_cmt__FieldApiName__c,
+                    vlocity_cmt__ObjectClassId__c,
+                    vlocity_cmt__ObjectType__c,
+                    vlocity_cmt__SubClassId__c,
+                    vlocity_cmt__ObjectClassId__r.Name
                 from 
-                    %vlocity_namespace%__ObjectFieldAttribute__c
+                    vlocity_cmt__ObjectFieldAttribute__c
                 where 
-                    %vlocity_namespace%__ObjectClassId__c = :objectType.Id
-                    and %vlocity_namespace%__ObjectType__c = '%vlocity_namespace%__ObjectClass__c'
-                    and %vlocity_namespace%__AttributeId__c != null
+                    vlocity_cmt__ObjectClassId__c = :objectType.Id
+                    and vlocity_cmt__ObjectType__c = 'vlocity_cmt__ObjectClass__c'
+                    and vlocity_cmt__AttributeId__c != null
                 ];
             
-            List <%vlocity_namespace%__ObjectElement__c> objectElementsForInsert = new List <%vlocity_namespace%__ObjectElement__c>();
+            List <vlocity_cmt__ObjectElement__c> objectElementsForInsert = new List <vlocity_cmt__ObjectElement__c>();
 
-            for (%vlocity_namespace%__ObjectFieldAttribute__c ofa : directlyAssignedAttributesList) {
+            for (vlocity_cmt__ObjectFieldAttribute__c ofa : directlyAssignedAttributesList) {
 
-                %vlocity_namespace%__ObjectElement__c oe = new %vlocity_namespace%__ObjectElement__c();
-                oe.Name = ofa.%vlocity_namespace%__AttributeId__r.Name;
-                oe.%vlocity_namespace%__ObjectSectionId__c = additionalPropertiesObjectSection.Id;
-                oe.%vlocity_namespace%__Sequence__c = ofa.%vlocity_namespace%__AttributeId__r.%vlocity_namespace%__DisplaySequence__c;
-                oe.%vlocity_namespace%__FieldApiName__c = '';
-                oe.%vlocity_namespace%__AttributeId__c = ofa.%vlocity_namespace%__AttributeId__c;
-                oe.%vlocity_namespace%__IsRequired__c = false;
+                vlocity_cmt__ObjectElement__c oe = new vlocity_cmt__ObjectElement__c();
+                oe.Name = ofa.vlocity_cmt__AttributeId__r.Name;
+                oe.vlocity_cmt__ObjectSectionId__c = additionalPropertiesObjectSection.Id;
+                oe.vlocity_cmt__Sequence__c = ofa.vlocity_cmt__AttributeId__r.vlocity_cmt__DisplaySequence__c;
+                oe.vlocity_cmt__FieldApiName__c = '';
+                oe.vlocity_cmt__AttributeId__c = ofa.vlocity_cmt__AttributeId__c;
+                oe.vlocity_cmt__IsRequired__c = false;
 
                 objectElementsForInsert.add(oe);
             }
@@ -564,7 +564,7 @@ global with sharing class OtterEPCUtils {
                 Id,
                 Name,
                 ProductCode,
-                %vlocity_namespace%__JSONAttribute__c
+                vlocity_cmt__JSONAttribute__c
             from
                 Product2
             where
@@ -576,13 +576,13 @@ global with sharing class OtterEPCUtils {
         List<Id> productIds = new List<Id>();
 
         for (Product2 prod : productRecordList) {
-            prod.%vlocity_namespace%__JSONAttribute__c = 'JSONAttribute refresh job successfully started. Please allow some processing time to see the results in user interface';
+            prod.vlocity_cmt__JSONAttribute__c = 'JSONAttribute refresh job successfully started. Please allow some processing time to see the results in user interface';
             productIds.add(prod.Id);
         }
 
         update productRecordList;
 
-        Database.executeBatch(new %vlocity_namespace%.EPCProductAttribJSONBatchJob(productIds), 1);
+        Database.executeBatch(new vlocity_cmt.EPCProductAttribJSONBatchJob(productIds), 1);
 
         System.debug(LoggingLevel.INFO, 'JSONAttribute refresh job successfully started. Please allow some processing time to see the results in user interface');
         System.debug(LoggingLevel.INFO, 'JSONAttribute will be refreshed for ' + productRecordList.size() + ' product records');
@@ -601,7 +601,7 @@ global with sharing class OtterEPCUtils {
 
     public static String clearPlatformCache () {
 
-        %vlocity_namespace%.TelcoAdminConsoleController adminCntrlr = new %vlocity_namespace%.TelcoAdminConsoleController();
+        vlocity_cmt.TelcoAdminConsoleController adminCntrlr = new vlocity_cmt.TelcoAdminConsoleController();
         adminCntrlr.setParameters('{"methodName":"clearPlatformCache"}');
         adminCntrlr.invokeMethod();
 

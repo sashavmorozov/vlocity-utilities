@@ -4,7 +4,7 @@
     <packageVersions>
         <majorNumber>900</majorNumber>
         <minorNumber>208</minorNumber>
-        <namespace>%vlocity_namespace%</namespace>
+        <namespace>vlocity_cmt</namespace>
     </packageVersions>
     <status>Active</status>
 </ApexClass>

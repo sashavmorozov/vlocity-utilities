@@ -2,7 +2,7 @@
 * @description custom extension of a default order management integration adapter for sync communication mode 
 */
 
-global virtual class OtterSystemInterface extends %vlocity_namespace%.DefaultSystemInterface {
+global virtual class OtterSystemInterface extends vlocity_cmt.DefaultSystemInterface {
     global OtterSystemInterface() {
         
     }
@@ -16,7 +16,7 @@ global virtual class OtterSystemInterface extends %vlocity_namespace%.DefaultSys
     *   invoked by Vlocity XOM, not invoked directly
     */
 
-    global override virtual String generatePayload(%vlocity_namespace%__OrchestrationItem__c item, %vlocity_namespace%.XOMOrderDomainObject orderObj) {
+    global override virtual String generatePayload(vlocity_cmt__OrchestrationItem__c item, vlocity_cmt.XOMOrderDomainObject orderObj) {
         
         String request = super.generatePayload(item, orderObj);
         item.Callout_Request_Payload__c = request;
@@ -34,10 +34,10 @@ global virtual class OtterSystemInterface extends %vlocity_namespace%.DefaultSys
     */
     
     global override virtual void processResponse(
-        %vlocity_namespace%__OrchestrationItem__c item,
+        vlocity_cmt__OrchestrationItem__c item,
         String url,
         String path,
-        %vlocity_namespace%.XOMOrderDomainObject orderObj,
+        vlocity_cmt.XOMOrderDomainObject orderObj,
         HttpResponse resp) {
 
         //extension: log the timestamp of receiveing a sync-response
@@ -77,7 +77,7 @@ global virtual class OtterSystemInterface extends %vlocity_namespace%.DefaultSys
     global override virtual void executeItem(
         String url, 
         String path, 
-        %vlocity_namespace%__OrchestrationItem__c item) {
+        vlocity_cmt__OrchestrationItem__c item) {
         super.executeItem(url, path, item);
         item.Callout_Request_Issued__c = datetime.now();
     }

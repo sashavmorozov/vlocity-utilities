@@ -75,7 +75,7 @@ global abstract with sharing class OtterCommonUtils {
     * @return retrieved record
     * @example
     *
-    * List<String> fieldsToRetrieve = new List<String> {'Id', 'Name', '%vlocity_namespace%__FulfilmentStatus__c'};
+    * List<String> fieldsToRetrieve = new List<String> {'Id', 'Name', 'vlocity_cmt__FulfilmentStatus__c'};
     * System.debug(OtterCommonUtils.retrieveRecordsById('8011U000000HP5c', Order.class, fieldsToRetrieve));
     */
 

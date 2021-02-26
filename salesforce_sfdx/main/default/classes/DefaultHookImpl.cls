@@ -1,4 +1,4 @@
-global class DefaultHookImpl implements %vlocity_namespace%.VlocityOpenInterface {
+global class DefaultHookImpl implements vlocity_cmt.VlocityOpenInterface {
     global Boolean invokeMethod(String methodName,
         Map <String, Object> inputs,
         Map <String, Object> output,

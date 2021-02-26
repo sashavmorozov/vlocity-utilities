@@ -15,7 +15,7 @@
 * corresponding supporting specifications)
 */
 
-global virtual class TMF641SystemInterface extends %vlocity_namespace%.DefaultSystemInterface {
+global virtual class TMF641SystemInterface extends vlocity_cmt.DefaultSystemInterface {
     global TMF641SystemInterface() {
 
     }
@@ -28,19 +28,19 @@ global virtual class TMF641SystemInterface extends %vlocity_namespace%.DefaultSy
      * invoked by Vlocity XOM, not invoked directly
      */
 
-    global override virtual String generatePayload(%vlocity_namespace%__OrchestrationItem__c item, %vlocity_namespace%.XOMOrderDomainObject orderObj) {
+    global override virtual String generatePayload(vlocity_cmt__OrchestrationItem__c item, vlocity_cmt.XOMOrderDomainObject orderObj) {
 
         /* Test data for troubleshooting */
-        //%vlocity_namespace%__OrchestrationItem__c item = [select Id from %vlocity_namespace%__OrchestrationItem__c where Id = 'a2b4J000000E9lGQAS'];
+        //vlocity_cmt__OrchestrationItem__c item = [select Id from vlocity_cmt__OrchestrationItem__c where Id = 'a2b4J000000E9lGQAS'];
 
-        %vlocity_namespace%__OrchestrationItem__c itemExt = [
+        vlocity_cmt__OrchestrationItem__c itemExt = [
             select
                 Id,
                 Name,
-                %vlocity_namespace%__FulfilmentRequestLineId__r.%vlocity_namespace%__FulfilmentRequestID__c,
-                %vlocity_namespace%__AutoTaskParameters__c
+                vlocity_cmt__FulfilmentRequestLineId__r.vlocity_cmt__FulfilmentRequestID__c,
+                vlocity_cmt__AutoTaskParameters__c
             from
-                %vlocity_namespace%__OrchestrationItem__c
+                vlocity_cmt__OrchestrationItem__c
             where
                 Id =: item.Id
         ];
@@ -48,48 +48,48 @@ global virtual class TMF641SystemInterface extends %vlocity_namespace%.DefaultSy
         System.debug('***** itemExt: ' + itemExt);
 
         /* collecing fulfillment request lines for an orchestration item */
-        %vlocity_namespace%__FulfilmentRequestLine__c fulfilmentRequestLine = [
+        vlocity_cmt__FulfilmentRequestLine__c fulfilmentRequestLine = [
             select
                 Id,
                 Name
             from
-                %vlocity_namespace%__FulfilmentRequestLine__c
+                vlocity_cmt__FulfilmentRequestLine__c
             where
-                Id =: itemExt.%vlocity_namespace%__FulfilmentRequestLineId__c
+                Id =: itemExt.vlocity_cmt__FulfilmentRequestLineId__c
             limit
                 1
         ];
 
         if (fulfilmentRequestLine == null) {
-            throw new %vlocity_namespace%.DefaultSystemInterface.DefaultInterfaceUnrecoverableException ('Unrecoverable exception: ' + 
+            throw new vlocity_cmt.DefaultSystemInterface.DefaultInterfaceUnrecoverableException ('Unrecoverable exception: ' + 
                 'No fulfilment request record found for an orchestration item');
         }
 
         /* Generate a new TMF641-compliant message using an external class and standard payload for further merge */
         
         //String tmf641DRName = 'TMF641 Message Shell Generator';
-        String tmf641DRName = (String) ((Map <String, Object>) JSON.deserializeUntyped(itemExt.%vlocity_namespace%__AutoTaskParameters__c)).get('shellRequestDataRaptorName');
+        String tmf641DRName = (String) ((Map <String, Object>) JSON.deserializeUntyped(itemExt.vlocity_cmt__AutoTaskParameters__c)).get('shellRequestDataRaptorName');
         
         if (String.isBlank(tmf641DRName)) {
-            throw new %vlocity_namespace%.DefaultSystemInterface.DefaultInterfaceUnrecoverableException ('Unrecoverable exception: ' + 
+            throw new vlocity_cmt.DefaultSystemInterface.DefaultInterfaceUnrecoverableException ('Unrecoverable exception: ' + 
                 'No dataraptor attached to the callout to generate a payload');
         }
 
         Map <String, String> sourceJson = new Map <String, String> {
 			'fulfilmentRequestLineId' => fulfilmentRequestLine.Id
 		}; 
-        %vlocity_namespace%.DRProcessResult drResult = %vlocity_namespace%.DRGlobal.process(sourceJson, tmf641DRName);
+        vlocity_cmt.DRProcessResult drResult = vlocity_cmt.DRGlobal.process(sourceJson, tmf641DRName);
         TMF641ServiceOrderRequest tmf641Request = TMF641ServiceOrderRequest.parse(drResult.toResponseString());
 
 		if (tmf641Request == null) {
-            throw new %vlocity_namespace%.DefaultSystemInterface.DefaultInterfaceUnrecoverableException ('Unrecoverable exception: ' + 
+            throw new vlocity_cmt.DefaultSystemInterface.DefaultInterfaceUnrecoverableException ('Unrecoverable exception: ' + 
                 'Unable to craft TMF641 Request. Check TMF641 dataraptor configuration');
         }
     
         String defaultRequest = super.generatePayload(item, orderObj);
 
         if (String.isBlank(defaultRequest)) {
-            throw new %vlocity_namespace%.DefaultSystemInterface.DefaultInterfaceUnrecoverableException ('Unrecoverable exception: ' + 
+            throw new vlocity_cmt.DefaultSystemInterface.DefaultInterfaceUnrecoverableException ('Unrecoverable exception: ' + 
                 'Default payload is empty. Check no request dataraptors attached to the callout');
         }
 
@@ -166,10 +166,10 @@ global virtual class TMF641SystemInterface extends %vlocity_namespace%.DefaultSy
     /***************************************************************************************************************
      * @description Invokes default response processing logic and then stores received payload into a field.
      * Extends a returned callout with additional values to assist with response processing
-     * @param %vlocity_namespace%__OrchestrationItem__c item
+     * @param vlocity_cmt__OrchestrationItem__c item
      * @param String url
      * @param String path
-     * @param %vlocity_namespace%.XOMOrderDomainObject orderObj
+     * @param vlocity_cmt.XOMOrderDomainObject orderObj
      * @param HttpResponse resp
      * @return 
      * @example
@@ -177,10 +177,10 @@ global virtual class TMF641SystemInterface extends %vlocity_namespace%.DefaultSy
      */
 
     global override virtual void processResponse(
-        %vlocity_namespace%__OrchestrationItem__c item,
+        vlocity_cmt__OrchestrationItem__c item,
         String url,
         String path,
-        %vlocity_namespace%.XOMOrderDomainObject orderObj,
+        vlocity_cmt.XOMOrderDomainObject orderObj,
         HttpResponse resp) {
 
         //extension: add supporting information to the response to facilitate response processing business logic
@@ -209,7 +209,7 @@ global virtual class TMF641SystemInterface extends %vlocity_namespace%.DefaultSy
         /* additional error processing business logic */
         /*
            if (errorCodeFound) {
-            throw new %vlocity_namespace%.DefaultSystemInterface.DefaultInterfaceUnrecoverableException (errorDesc);
+            throw new vlocity_cmt.DefaultSystemInterface.DefaultInterfaceUnrecoverableException (errorDesc);
            }
         */
     }
@@ -219,7 +219,7 @@ global virtual class TMF641SystemInterface extends %vlocity_namespace%.DefaultSy
      * @description Default item execution business logic
      * @param String url
      * @param String path
-     * @param %vlocity_namespace%__OrchestrationItem__c item
+     * @param vlocity_cmt__OrchestrationItem__c item
      * @return 
      * @example
      * invoked by Vlocity XOM, not invoked directly
@@ -228,7 +228,7 @@ global virtual class TMF641SystemInterface extends %vlocity_namespace%.DefaultSy
     global override virtual void executeItem(
         String url,
         String path,
-        %vlocity_namespace%__OrchestrationItem__c item) {
+        vlocity_cmt__OrchestrationItem__c item) {
         super.executeItem(url, path, item);
     }
 

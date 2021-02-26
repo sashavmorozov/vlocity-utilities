@@ -19,38 +19,38 @@ global with sharing class XOMAsyncResponseRESTServiceTemplate {
         String orchItemId = req.requestURI.substring(req.requestURI.lastIndexOf('/') + 1);
 
         //retrieve OrchestrationItem with additional paramters that may be needed to execute the business logic
-        List <%vlocity_namespace%__OrchestrationItem__c> items = [
+        List <vlocity_cmt__OrchestrationItem__c> items = [
             SELECT 
-                %vlocity_namespace%__State__c,
-                %vlocity_namespace%__ResponseVlocityDataRaptorBundleId__r.Name,
-                %vlocity_namespace%__ResponseItemsVlocityDataRaptorBundleId__r.Name,
-                %vlocity_namespace%__ResponseAttrsVlocityDataRaptorBundleId__r.Name,
-                %vlocity_namespace%__AttributesEncodingStyle__c,
-                %vlocity_namespace%__OrderItemsNodeName__c,
-                %vlocity_namespace%__OrchestrationItemDefinitionId__r.%vlocity_namespace%__CustomTaskExecutionURL__c,
-                %vlocity_namespace%__OrderItemId__r.OrderId,
-                %vlocity_namespace%__FulfilmentRequestLineId__r.%vlocity_namespace%__FulfilmentRequestID__c
+                vlocity_cmt__State__c,
+                vlocity_cmt__ResponseVlocityDataRaptorBundleId__r.Name,
+                vlocity_cmt__ResponseItemsVlocityDataRaptorBundleId__r.Name,
+                vlocity_cmt__ResponseAttrsVlocityDataRaptorBundleId__r.Name,
+                vlocity_cmt__AttributesEncodingStyle__c,
+                vlocity_cmt__OrderItemsNodeName__c,
+                vlocity_cmt__OrchestrationItemDefinitionId__r.vlocity_cmt__CustomTaskExecutionURL__c,
+                vlocity_cmt__OrderItemId__r.OrderId,
+                vlocity_cmt__FulfilmentRequestLineId__r.vlocity_cmt__FulfilmentRequestID__c
             FROM 
-                %vlocity_namespace%__OrchestrationItem__c
+                vlocity_cmt__OrchestrationItem__c
             WHERE 
                 Id =: orchItemId 
-                AND %vlocity_namespace%__State__c = 'Running'
+                AND vlocity_cmt__State__c = 'Running'
         ];
 
         //if found
         if (items.size() == 1) {
-            %vlocity_namespace%__OrchestrationItem__c item = items[0];
+            vlocity_cmt__OrchestrationItem__c item = items[0];
 
             //add custom callback processing logic section
 
 
             //update orchestration Item state to completed
-            item.%vlocity_namespace%__State__c = 'Completed';
+            item.vlocity_cmt__State__c = 'Completed';
             update item;
 
             // commit
             // so we can save any changes happen to OrderDomainObject/OrderItemDomainObjects in processResponseDeferred
-            %vlocity_namespace%.XOMObjectFactory.commitObjs();
+            vlocity_cmt.XOMObjectFactory.commitObjs();
         } else {
             //skip
             System.debug(LoggingLevel.ERROR, 'Skipping request for orchestration item ' + orchItemId +

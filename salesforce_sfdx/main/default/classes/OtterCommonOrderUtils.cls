@@ -27,7 +27,7 @@ global abstract with sharing class OtterCommonOrderUtils {
             String ORDER_RECORD_TYPE            = 'Order';
             String ORDER_LINE_ITEM_RECORD_TYPE  = 'OrderItem';
 
-            String orderSoql = %vlocity_namespace%.DBHelper.getBaseQuery(ORDER_RECORD_TYPE);
+            String orderSoql = vlocity_cmt.DBHelper.getBaseQuery(ORDER_RECORD_TYPE);
             orderSoql += ' where Id = \'' + orderId + '\'';
             Order originalOrder = Database.query(orderSoql);
 
@@ -35,7 +35,7 @@ global abstract with sharing class OtterCommonOrderUtils {
             Order clonedOrder = originalOrder.clone();
             insert clonedOrder;
 
-            String orderItemsSoql = %vlocity_namespace%.DBHelper.getBaseQuery(ORDER_LINE_ITEM_RECORD_TYPE);
+            String orderItemsSoql = vlocity_cmt.DBHelper.getBaseQuery(ORDER_LINE_ITEM_RECORD_TYPE);
             orderItemsSoql += ' where OrderId = \'' + orderId + '\'';
             List<OrderItem> originalOrderItems = Database.query(orderItemsSoql);
         
