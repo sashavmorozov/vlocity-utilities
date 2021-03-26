@@ -10,3 +10,9 @@
 .sfdx/sfdx-config.json
 
 .sfdx/orgs/kcom0319\@comms.demo/metadataTypeInfos.json
+
+.sfdx/tools/debug/logs/
+
+.sfdx/typings/lwc/
+
+*.log
