@@ -29,12 +29,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%vlocity_namespace%__AssignedToUserId__c</field>
+            <field>vlocity_cmt__AssignedToUserId__c</field>
             <value>
                 <elementReference>Selected_User_Record_Id</elementReference>
             </value>
         </inputAssignments>
-        <object>%vlocity_namespace%__OrchestrationItem__c</object>
+        <object>vlocity_cmt__OrchestrationItem__c</object>
     </recordUpdates>
     <screens>
         <name>Assign_To</name>
@@ -49,7 +49,7 @@
         </connector>
         <fields>
             <name>Specify_User_Instruction</name>
-            <fieldText>&lt;p&gt;Select a user to assign the task to&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p>Select a user to assign the task to&lt;/p></fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -59,7 +59,7 @@
             <inputParameters>
                 <name>fieldApiName</name>
                 <value>
-                    <stringValue>%vlocity_namespace%__AssignedToUserId__c</stringValue>
+                    <stringValue>vlocity_cmt__AssignedToUserId__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -71,7 +71,7 @@
             <inputParameters>
                 <name>objectApiName</name>
                 <value>
-                    <stringValue>%vlocity_namespace%__OrchestrationItem__c</stringValue>
+                    <stringValue>vlocity_cmt__OrchestrationItem__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -93,7 +93,13 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
-    <startElementReference>Assign_To</startElementReference>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Assign_To</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <variables>
         <name>recordId</name>

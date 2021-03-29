@@ -17,24 +17,53 @@ VlocityDataPackKeys:
     - customMetadata/Otter_Copier_Configuration.Product_Product_Relationships.md
     - customMetadata/Otter_Copier_Configuration.Product_Promotion_Items.md
     - customMetadata/Otter_Copier_Configuration.Product_Rule_Assignments.md
+    - email/Otter_Email_Templates/XOM_Order_Completed.email
+    - email/Otter_Email_Templates/XOM_Order_Submitted.email
+    - email/Otter_Email_Templates/XOM_SIM_Shipped.email
+    - email/Otter_Email_Templates/XOM_Task_Assigned.email
+    - flows/XOM_Assign_Task_to_Me.flow
+    - flows/XOM_Assign_Task_to_User.flow
+    - flows/XOM_Complete_Task.flow
+    - flows/XOM_Create_Decomposition_Relationship_Combined.flow
+    - flows/XOM_Create_Dependency_Relationship.flow
+    - flows/XOM_Notify_user_when_task_is_assigned.flow
+    - flows/XOM_Rerun_Task.flow
+    - flows/XOM_Reset_Failed_Task.flow
+    - flows/XOM_Return_Task_to_Queue.flow
+    - flows/XOM_Skip_Task.flow
     - layouts/Otter_Copier_Configuration__mdt-Otter Copier Configuration Layout
+    - objects/%vlocity_namespace%__OrchestrationItem__c/fields/Order_Number__c.field
+    - objects/%vlocity_namespace%__OrchestrationItem__c/fields/Record_URL__c.field
     - objects/Otter_Copier_Configuration__mdt/fields/cloningScopeProperty__c.field
     - objects/Otter_Copier_Configuration__mdt/fields/filter__c.field
     - objects/Otter_Copier_Configuration__mdt/fields/foreingKeyApiName__c.field
     - objects/Otter_Copier_Configuration__mdt/fields/objectApiName__c.field
     - objects/Otter_Copier_Configuration__mdt/fields/relatedItemObjectApiName__c.field
     - objects/Otter_Copier_Configuration__mdt/Otter_Copier_Configuration__mdt.object
-    - objects/Product2/webLinks/Clone_Product.webLink
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Assign_Task_to_Me.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Assign_Task_to_User.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Complete_Task.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Rerun_Task.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Return_Task_to_Queue.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Skip_Task.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItemDefinition__c.Create_Dependency.quickAction
+    - quickActions/Product2.Create_Decomposition_Relationship.quickAction
+    - flexipages/Orchestration_Item_Definition_Record_Page.flexipage
 VlocityTypesToFetch:
     - DataRaptor
     - IntegrationProcedure
     - OmniScript
 SalesforceTypesToFetch:
     - ApexClass
+    - BusinessProcess
     - CustomField
     - CustomMetadata
     - CustomObject
+    - EmailTemplate
+    - FlexiPage
+    - Flow
     - Layout
     - ListView
     - QuickAction
     - WebLink
+    - WorkflowAlert

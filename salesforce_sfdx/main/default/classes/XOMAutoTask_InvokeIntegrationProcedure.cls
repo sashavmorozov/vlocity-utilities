@@ -40,7 +40,7 @@ global class XOMAutoTask_InvokeIntegrationProcedure implements vlocity_cmt.XOMOr
             String autotaskParametersString = item.vlocity_cmt__AutoTaskParameters__c;
             Map <String, Object> autotaskParametersMap = (Map <String, Object>) JSON.deserializeUntyped(autotaskParametersString);
             String procedureName = (String) autotaskParametersMap.get('procedureName');
-            Map <String, Object> ipInput = new Map <String, Object> ();
+            Map <String, Object> ipInput = autotaskParametersMap;
             Map <String, Object> ipOutput = new Map <String, Object> ();
             Map <String, Object> ipOptions = new Map <String, Object> ();
 

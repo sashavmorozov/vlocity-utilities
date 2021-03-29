@@ -37,12 +37,12 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>%vlocity_namespace%__AssignedToUserId__c</field>
+            <field>vlocity_cmt__AssignedToUserId__c</field>
             <value>
                 <elementReference>Current_User</elementReference>
             </value>
         </inputAssignments>
-        <object>%vlocity_namespace%__OrchestrationItem__c</object>
+        <object>vlocity_cmt__OrchestrationItem__c</object>
     </recordUpdates>
     <screens>
         <name>Confirmation_Step</name>
@@ -54,13 +54,19 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Confirmation</name>
-            <fieldText>&lt;p&gt;The task is assigned to you&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p>The task is assigned to you&lt;/p></fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
-    <startElementReference>Update_Task</startElementReference>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Update_Task</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <variables>
         <name>recordId</name>

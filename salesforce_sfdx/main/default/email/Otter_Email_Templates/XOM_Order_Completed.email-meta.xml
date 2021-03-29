@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>A customer-facing email that is sent when order processing is completed</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>XOM: Order Completed</name>
+    <style>none</style>
+    <subject>Your Order Is Completed, {!Contact.FirstName} ({!Order.OrderNumber})</subject>
+    <textOnly>Your order is completed
+
+Hey again, {!Contact.FirstName}!
+
+Your order is completed now. Everything is shipped, received and activated.
+
+We are happy to have you here and hope your experience with us will be outstanding. You can always see and manage your services online using our customer portal.
+
+Now go and seize the day!
+
+
+Still have questions? Contact our customer care team
+
+Lunch&amp;Learn, Rembrandtplein 19, 1017 CT Amsterdam</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

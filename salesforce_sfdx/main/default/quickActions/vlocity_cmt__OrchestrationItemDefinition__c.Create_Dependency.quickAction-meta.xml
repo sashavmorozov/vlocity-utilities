@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Creates a dependency relationship for a given orchestration item</description>
+    <fieldOverrides>
+        <field>Name</field>
+        <formula>"DR: " + vlocity_cmt__OrchestrationItemDefinition__c.Name + " depends on " + "XYZ"</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>vlocity_cmt__DependencyType__c</field>
+        <literalValue>Depends On</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>vlocity_cmt__Scope__c</field>
+        <literalValue>Swimlane</literalValue>
+    </fieldOverrides>
+    <label>Create Dependency</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Name</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>vlocity_cmt__DependencyType__c</field>
+                <uiBehavior>Readonly</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>vlocity_cmt__Scope__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>vlocity_cmt__OrchestrationItemDefinitionId__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>vlocity_cmt__DependencyItemDefinitionId__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <successMessage>A dependency relationship is created</successMessage>
+    <targetObject>vlocity_cmt__OrchestrationDependencyDefinition__c</targetObject>
+    <targetParentField>vlocity_cmt__OrchestrationItemDefinitionId__c</targetParentField>
+    <type>Create</type>
+</QuickAction>

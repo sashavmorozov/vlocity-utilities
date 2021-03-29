@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>A customer-facing email that is sent when a SIM card is shipped</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>XOM: SIM Shipped</name>
+    <style>none</style>
+    <subject>Your SIM Is on Its Way, {!Contact.FirstName} ({!Order.OrderNumber})</subject>
+    <textOnly>Your SIM card is on its way
+
+Still there, {!Contact.FirstName}?
+
+Our delivery partner has just confirmed that your SIM card is on its way.
+
+Once you receive the SIM card, plug it into your phone and activate it using our mobile app.
+
+Not sure how to do that? Check this article for more details
+
+
+Still have questions? Contact our customer care team
+
+Lunch&amp;Learn, Rembrandtplein 19, 1017 CT Amsterdam</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

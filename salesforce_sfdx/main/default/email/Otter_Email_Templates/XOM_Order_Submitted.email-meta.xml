@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>A customer-facing email that is sent when order processing is started</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>XOM: Order Submitted</name>
+    <style>none</style>
+    <subject>Your Order Is Received, {!Contact.FirstName} ({!Order.OrderNumber})</subject>
+    <textOnly>Your order is submitted and we are on it
+
+Hey {!Contact.FirstName}!
+
+Your order is confirmed. And we are just as excited as you are.
+
+Here is a couple of things you may need to know:
+
+- Order Number: {!Order.Number}
+- Expected Delivery Date: {!Order.vlocity_cmt__RequestDate__c}
+- Order One-Time Charges: {!Order.vlocity_cmt__EffectiveOneTimeTotal__c}
+- Order Recurring Charges: {!Order.vlocity_cmt__EffectiveRecurringTotal__c}
+
+
+We will deliver the order to {!Order.ShippingAddress} shortly. Not the right address? Let us know.
+
+
+Still have questions? Contact our customer care team
+
+Lunch&amp;Learn, Rembrandtplein 19, 1017 CT Amsterdam</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

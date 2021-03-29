@@ -78,13 +78,19 @@
             <label>Same Source and Target</label>
         </rules>
     </decisions>
-    <description>Allows to create new decomposition relationships</description>
-    <interviewLabel>[XOM] Create Decomposition Relationship (Combined) {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>[XOM] Create Decomposition Relationship</label>
+    <description>Allows to create a dependency relationship between orchestration items</description>
+    <interviewLabel>[XOM] Create Dependency Relationship {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>[XOM] Create Dependency Relationship</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -119,6 +125,7 @@
         </inputAssignments>
         <object>vlocity_cmt__DecompositionRelationship__c</object>
     </recordCreates>
+    <runInMode>DefaultMode</runInMode>
     <screens>
         <name>Choose_Decomposition_Type_Step</name>
         <label>Choose Decomposition Type Step</label>
@@ -371,7 +378,7 @@
             <targetReference>Choose_Decomposition_Type_Step</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
