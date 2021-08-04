@@ -8,7 +8,7 @@
 * 
 *******************************************************************/
 
-global class XOMAutoTask_InvokeIntegrationProcedure implements vlocity_cmt.XOMOrchestrationInterfaces.IAutoTask {
+global class XOMAutoTask_InvokeIntegrationProcedure implements vlocity_cmt.XOMOrchestrationInterfaces.IAutoTask, Database.AllowsCallouts {
 
     /***************************************************************************************************************
     * @description Executes auto-task business logic 
