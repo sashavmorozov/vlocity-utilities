@@ -19,7 +19,7 @@ global virtual class OtterSystemInterface extends vlocity_cmt.DefaultSystemInter
     global override virtual String generatePayload(vlocity_cmt__OrchestrationItem__c item, vlocity_cmt.XOMOrderDomainObject orderObj) {
         
         String request = super.generatePayload(item, orderObj);
-        item.Callout_Request_Payload__c = request;
+        item.vlocity_cmt__Request__c = request;
         
         return request;
     }
@@ -41,7 +41,7 @@ global virtual class OtterSystemInterface extends vlocity_cmt.DefaultSystemInter
         HttpResponse resp) {
 
         //extension: log the timestamp of receiveing a sync-response
-        item.Callout_Response_Sync_Received__c = datetime.now();
+        //item.Callout_Response_Sync_Received__c = datetime.now();
 
         //extension: add supporting information to the response to facilitate response processing business logic
         String responseBody = resp.getBody();
@@ -64,7 +64,7 @@ global virtual class OtterSystemInterface extends vlocity_cmt.DefaultSystemInter
         super.processResponse(item, url, path, orderObj, resp);
         
         String response = resp.getBody();
-        item.Callout_Response_Payload_Sync__c = response;
+        item.vlocity_cmt__Response__c = response;
 
         /* additional error processing business logic */
         /*
@@ -79,6 +79,6 @@ global virtual class OtterSystemInterface extends vlocity_cmt.DefaultSystemInter
         String path, 
         vlocity_cmt__OrchestrationItem__c item) {
         super.executeItem(url, path, item);
-        item.Callout_Request_Issued__c = datetime.now();
+        //item.Callout_Request_Issued__c = datetime.now();
     }
 }

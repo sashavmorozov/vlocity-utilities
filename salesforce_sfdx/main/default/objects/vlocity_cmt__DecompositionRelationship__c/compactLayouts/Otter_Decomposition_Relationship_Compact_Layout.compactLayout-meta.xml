@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Decomposition_Relationship_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>vlocity_cmt__SourceProductId__c</fields>
+    <fields>vlocity_cmt__DestinationProductId__c</fields>
+    <label>Otter Decomposition Relationship Compact Layout</label>
+</CompactLayout>

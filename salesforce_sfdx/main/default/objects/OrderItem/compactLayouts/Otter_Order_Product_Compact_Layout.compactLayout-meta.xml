@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Order_Product_Compact_Layout</fullName>
+    <fields>vlocity_cmt__Product2Id__c</fields>
+    <fields>OrderId</fields>
+    <fields>vlocity_cmt__Action__c</fields>
+    <fields>vlocity_cmt__ProvisioningStatus__c</fields>
+    <fields>vlocity_cmt__OneTimeCharge__c</fields>
+    <fields>vlocity_cmt__RecurringCharge__c</fields>
+    <label>Otter Order Product Compact Layout</label>
+</CompactLayout>

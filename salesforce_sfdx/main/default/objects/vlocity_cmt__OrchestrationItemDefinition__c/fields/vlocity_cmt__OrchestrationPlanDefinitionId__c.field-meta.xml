@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__OrchestrationPlanDefinitionId__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Orchestration Plan Definition</label>
+    <referenceTo>vlocity_cmt__OrchestrationPlanDefinition__c</referenceTo>
+    <relationshipLabel>Orchestration Item Definitions</relationshipLabel>
+    <relationshipName>OrchestrationItemDefinitions</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

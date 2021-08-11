@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>vlocity_cmt__FulfilmentRequestLine__c</entityName>
+    <fieldName>vlocity_cmt__FulfilmentStatus__c</fieldName>
+    <masterLabel>Otter Fulfilment Request LineStatus Path</masterLabel>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

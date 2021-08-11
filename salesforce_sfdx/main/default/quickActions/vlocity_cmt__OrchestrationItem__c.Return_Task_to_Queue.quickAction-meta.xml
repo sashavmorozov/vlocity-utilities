@@ -2,7 +2,7 @@
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Returns the task to the queue</description>
     <flowDefinition>XOM_Return_Task_to_Queue</flowDefinition>
-    <label>↩ Return Task to Queue</label>
+    <label>Return to Queue</label>
     <optionsCreateFeedItem>false</optionsCreateFeedItem>
     <type>Flow</type>
 </QuickAction>

@@ -1,0 +1,9 @@
+{
+    "%vlocity_namespace%__GlobalKey__c": "90998e65-4f79-9146-f1ec-831a0aedb046",
+    "%vlocity_namespace%__Implementation__c": "XOMAutoTask_AutoTaskTemplate",
+    "%vlocity_namespace%__ThorImplementation__c": "",
+    "Name": "XOMAutoTask_AutoTaskTemplate",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__ItemImplementation__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__ItemImplementation__c/XOMAutoTask_AutoTaskTemplate"
+}

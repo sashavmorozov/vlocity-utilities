@@ -1,0 +1,28 @@
+Name: xom-ux-improvement
+ignoreDependencies: false
+VlocityDataPackKeys:
+    - flexipages/Otter_Orchestration_Plan_Record_Page.flexipage
+    - flows/Set_Plan_Execution_Completed_At_on_Orchestration_Plan.flow
+    - flows/Set_Plan_Execution_Started_At_on_Orchestration_Plan.flow
+    - layouts/vlocity_cmt__OrchestrationPlan__c-Otter Orchestration Plan Layout.layout
+    - objects/vlocity_cmt__OrchestrationPlan__c/fields/Is_PONR_Reached__c.field
+    - objects/vlocity_cmt__OrchestrationPlan__c/fields/Plan_Execution_Completed_At__c.field
+    - objects/vlocity_cmt__OrchestrationPlan__c/fields/Plan_Execution_Started_At__c.field
+    - objects/vlocity_cmt__OrchestrationPlan__c/fields/Point_of_No_Return_Tasks_Started__c.field
+    - objects/vlocity_cmt__OrchestrationPlan__c/webLinks/View_Order.webLink
+    - objects/vlocity_cmt__OrchestrationPlan__c/compactLayouts/Otter_Orchestration_Plan_Compact_Layout.compactLayout
+VlocityTypesToFetch:
+
+SalesforceTypesToFetch:
+    - BusinessProcess
+    - CompactLayout
+    - CustomApplication
+    - CustomApplicationComponent
+    - CustomField
+    - CustomObject
+    - FlexiPage
+    - Flow
+    - Layout
+    - QuickAction
+    - WebLink
+    - Workflow

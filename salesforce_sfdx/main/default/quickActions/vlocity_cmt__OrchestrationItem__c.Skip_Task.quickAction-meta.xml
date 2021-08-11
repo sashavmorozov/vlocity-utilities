@@ -2,7 +2,7 @@
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Skips the task</description>
     <flowDefinition>XOM_Skip_Task</flowDefinition>
-    <label>↠ Skip Task</label>
+    <label>Skip</label>
     <optionsCreateFeedItem>false</optionsCreateFeedItem>
     <type>Flow</type>
 </QuickAction>

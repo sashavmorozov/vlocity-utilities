@@ -3,9 +3,46 @@ ignoreDependencies: false
 VlocityDataPackKeys:
     - DataRaptor/Core_GetProductDetails
     - DataRaptor/Core_SetProductDetails
+    - DataRaptor/TEMPLATE_CFS_RFS Request Item Dataraptor
+    - DataRaptor/TEMPLATE_CFS_RFS Request Payload Dataraptor
+    - DataRaptor/TMF641 Message Shell Generator
+    - DataRaptor/XOM_GetAllOrderLineItems
+    - DataRaptor/XOM_UpdateOrderLineItems_Resume
+    - DataRaptor/XOM_UpdateOrderLineItems_Suspend
+    - IntegrationProcedure/EPC_ClearPlatformCache
     - IntegrationProcedure/EPC_CloneProduct
+    - IntegrationProcedure/EPC_RegenerateJSONAttributes
+    - IntegrationProcedure/EPC_RegenerateLayoutsForObjectType
+    - IntegrationProcedure/Otter_CPQCreateResumeOrder
+    - IntegrationProcedure/Otter_CPQCreateSuspendOrder
+    - IntegrationProcedure/Otter_XOMSendEmail
+    - IntegrationProcedure/Otter_XOMSubmitOrder
     - OmniScript/EPC_CloneProduct_English
+    - classes/.sfdx/tools/debug/logs/07L3L000002F23RUAS.log
+    - classes/.sfdx/tools/debug/logs/07L3L000002F2ZMUA0.log
+    - classes/DefaultHookImpl.cls
+    - classes/JSONRecordHelper.cls
+    - classes/OtterCommonConstants.cls
+    - classes/OtterCommonOrderUtils.cls
+    - classes/OtterCommonOrderUtilsController.cls
+    - classes/OtterCommonUtils.cls
+    - classes/OtterCommonUtilsService.cls
     - classes/OtterCopierUtils.cls
+    - classes/OtterCpqAppHandlerHook.cls
+    - classes/OtterCPQResponseTransformation.cls
+    - classes/OtterCustomVlocityFunctions.cls
+    - classes/OtterEPCUtils.cls
+    - classes/OtterEPCUtilsService.cls
+    - classes/OtterSystemInterface.cls
+    - classes/OtterXOMConstants.cls
+    - classes/OtterXOMOrderUtils.cls
+    - classes/OtterXOMOrderUtilsService.cls
+    - classes/TMF641ServiceOrderRequest.cls
+    - classes/TMF641SystemInterface.cls
+    - classes/VlocityOpenInterfaceBoilerplate.cls
+    - classes/XOMAsyncResponseRESTServiceTemplate.cls
+    - classes/XOMAutoTask_AutoTaskTemplate.cls
+    - classes/XOMAutoTask_InvokeIntegrationProcedure.cls
     - customMetadata/Otter_Copier_Configuration.Product_Attribute_Assignments.md
     - customMetadata/Otter_Copier_Configuration.Product_Attribute_Assignments_OFA.md
     - customMetadata/Otter_Copier_Configuration.Product_Attribute_Overrides.md
@@ -17,7 +54,32 @@ VlocityDataPackKeys:
     - customMetadata/Otter_Copier_Configuration.Product_Product_Relationships.md
     - customMetadata/Otter_Copier_Configuration.Product_Promotion_Items.md
     - customMetadata/Otter_Copier_Configuration.Product_Rule_Assignments.md
-    - layouts/Otter_Copier_Configuration__mdt-Otter Copier Configuration Layout
+    - email/Otter_Email_Templates.emailFolder
+    - email/Otter_Email_Templates/XOM_Order_Completed.email
+    - email/Otter_Email_Templates/XOM_Order_Submitted.email
+    - email/Otter_Email_Templates/XOM_SIM_Shipped.email
+    - email/Otter_Email_Templates/XOM_Task_Assigned.email
+    - email/unfiled$public/Salesforce_Baseline_Email_Template.email
+    - flexipages/Orchestration_Item_Definition_Record_Page.flexipage
+    - flexipages/Otter_Orchestration_Dependency_Definition_Record_Page.flexipage
+    - flexipages/Otter_Orchestration_Item_Definition_Record_Page.flexipage
+    - flexipages/Otter_Orchestration_Plan_Definition_Record_Page.flexipage
+    - flows/XOM_Assign_Task_to_Me.flow
+    - flows/XOM_Assign_Task_to_User.flow
+    - flows/XOM_Complete_Task.flow
+    - flows/XOM_Create_Decomposition_Relationship_Combined.flow
+    - flows/XOM_Create_Dependency_Relationship.flow
+    - flows/XOM_Notify_user_when_task_is_assigned.flow
+    - flows/XOM_Rerun_Task.flow
+    - flows/XOM_Reset_Failed_Task.flow
+    - flows/XOM_Return_Task_to_Queue.flow
+    - flows/XOM_Skip_Task.flow
+    - layouts/Otter_Copier_Configuration__mdt-Otter Copier Configuration Layout.layout
+    - layouts/vlocity_cmt__OrchestrationPlanDefinition__c-Otter Orchestration Plan Definition %28Vlocity XOM%29 Layout.layout
+    - objects/%vlocity_namespace%__OrchestrationItem__c/fields/Callout_Request_Issued__c.field
+    - objects/%vlocity_namespace%__OrchestrationItem__c/fields/Callout_Request_Payload__c.field
+    - objects/%vlocity_namespace%__OrchestrationItem__c/fields/Callout_Response_Payload_Sync__c.field
+    - objects/%vlocity_namespace%__OrchestrationItem__c/fields/Callout_Response_Sync_Received__c.field
     - objects/Otter_Copier_Configuration__mdt/fields/cloningScopeProperty__c.field
     - objects/Otter_Copier_Configuration__mdt/fields/filter__c.field
     - objects/Otter_Copier_Configuration__mdt/fields/foreingKeyApiName__c.field
@@ -25,14 +87,204 @@ VlocityDataPackKeys:
     - objects/Otter_Copier_Configuration__mdt/fields/relatedItemObjectApiName__c.field
     - objects/Otter_Copier_Configuration__mdt/Otter_Copier_Configuration__mdt.object
     - objects/Product2/webLinks/Clone_Product.webLink
+    - objects/vlocity_cmt__OrchestrationDependencyDefinition__c/compactLayouts/Otter_Orchestration_Dependency_Definition_Compact_Layout.compactLayout
+    - objects/vlocity_cmt__OrchestrationItem__c/fields/Order_Number__c.field
+    - objects/vlocity_cmt__OrchestrationItem__c/fields/Record_URL__c.field
+    - objects/vlocity_cmt__OrchestrationItemDefinition__c/compactLayouts/Otter_Orchestration_Item_Definition_Compact_Layout.compactLayout
+    - objects/vlocity_cmt__OrchestrationPlanDefinition__c/compactLayouts/Otter_Orchestration_Plan_Definition_Compact_Layout.compactLayout
+    - pages/Clone_Order_with_Products.page
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Assign_Task_to_Me.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Assign_Task_to_User.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Complete_Task.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Rerun_Task.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Return_Task_to_Queue.quickAction
+    - quickActions/%vlocity_namespace%__OrchestrationItem__c.Skip_Task.quickAction
+    - quickActions/Order.Clone_with_Products.quickAction
+    - quickActions/Product2.Create_Decomposition_Relationship.quickAction
+    - quickActions/vlocity_cmt__OrchestrationItem__c.Assign_Task_to_Me.quickAction
+    - quickActions/vlocity_cmt__OrchestrationItem__c.Assign_Task_to_User.quickAction
+    - quickActions/vlocity_cmt__OrchestrationItem__c.Complete_Task.quickAction
+    - quickActions/vlocity_cmt__OrchestrationItem__c.Rerun_Task.quickAction
+    - quickActions/vlocity_cmt__OrchestrationItem__c.Return_Task_to_Queue.quickAction
+    - quickActions/vlocity_cmt__OrchestrationItem__c.Skip_Task.quickAction
+    - quickActions/vlocity_cmt__OrchestrationItemDefinition__c.Create_Dependency.quickAction
+    - DataRaptor/XOM_GetConsumerContactByAccountId
 VlocityTypesToFetch:
     - DataRaptor
     - IntegrationProcedure
     - OmniScript
 SalesforceTypesToFetch:
+    - AccessControlPolicy
+    - ActionLinkGroupTemplate
+    - AIAssistantTemplate
+    - AnalyticSnapshot
     - ApexClass
+    - ApexComponent
+    - ApexPage
+    - ApexTestSuite
+    - ApexTrigger
+    - AppMenu
+    - ApprovalProcess
+    - AssignmentRules
+    - AuraDefinitionBundle
+    - AuthProvider
+    - AutoResponseRules
+    - BrandingSet
+    - BusinessProcess
+    - CallCenter
+    - CampaignInfluenceModel
+    - CaseSubjectParticle
+    - Certificate
+    - ChannelLayout
+    - ChatterExtension
+    - CleanDataService
+    - CMSConnectSource
+    - Community
+    - CommunityTemplateDefinition
+    - CommunityThemeDefinition
+    - CompactLayout
+    - ConnectedApp
+    - ContentAsset
+    - CorsWhitelistOrigin
+    - CspTrustedSite
+    - CustomApplication
+    - CustomApplicationComponent
+    - CustomFeedFilter
     - CustomField
+    - CustomHelpMenuSection
+    - CustomLabels
     - CustomMetadata
+    - CustomNotificationType
     - CustomObject
+    - CustomPageWebLink
+    - CustomPermission
+    - CustomSite
+    - CustomTab
+    - Dashboard
+    - DataCategoryGroup
+    - DelegateGroup
+    - Document
+    - DuplicateRule
+    - EclairGeoData
+    - EmailServicesFunction
+    - EmailTemplate
+    - EmbeddedServiceBranding
+    - EmbeddedServiceConfig
+    - EmbeddedServiceFieldService
+    - EmbeddedServiceFlowConfig
+    - EmbeddedServiceLiveAgent
+    - EntitlementProcess
+    - EntitlementTemplate
+    - EntityImplements
+    - EscalationRules
+    - EventDelivery
+    - EventSubscription
+    - ExternalDataSource
+    - ExternalServiceRegistration
+    - FeatureParameterBoolean
+    - FeatureParameterDate
+    - FeatureParameterInteger
+    - FieldSet
+    - FlexiPage
+    - Flow
+    - FlowCategory
+    - Form
+    - FormSection
+    - GlobalPicklistValue
+    - GlobalValueSet
+    - GlobalValueSetTranslation
+    - Group
+    - HomePageComponent
+    - HomePageLayout
+    - Index
+    - IntegrationHubSettingsType
+    - KeywordList
     - Layout
+    - Letterhead
+    - LicenseDefinition
+    - LightningBolt
+    - LightningComponentBundle
+    - LightningExperienceTheme
+    - ListView
+    - LiveChatAgentConfig
+    - LiveChatButton
+    - LiveChatDeployment
+    - LiveChatSensitiveDataRule
+    - ManagedTopics
+    - MatchingRules
+    - MilestoneType
+    - ModerationRule
+    - NamedCredential
+    - Network
+    - NetworkBranding
+    - Orchestration
+    - OrchestrationContext
+    - PathAssistant
+    - PermissionSet
+    - PermissionSetGroup
+    - PicklistValue
+    - PlatformCachePartition
+    - PlatformEventChannel
+    - Portal
+    - PostTemplate
+    - PresenceDeclineReason
+    - PresenceUserConfig
+    - Profile
+    - ProfilePasswordPolicy
+    - ProfileSessionSetting
+    - Queue
+    - QueueRoutingConfig
+    - QuickAction
+    - RecommendationStrategy
+    - RecordActionDeployment
+    - RecordType
+    - RemoteSiteSetting
+    - Report
+    - ReportType
+    - Role
+    - SamlSsoConfig
+    - ServiceChannel
+    - ServicePresenceStatus
+    - Settings
+    - SharingCriteriaRule
+    - SharingOwnerRule
+    - SharingReason
+    - SharingSet
+    - SharingTerritoryRule
+    - SiteDotCom
+    - Skill
+    - StandardValue
+    - StandardValueSet
+    - StandardValueSetTranslation
+    - StaticResource
+    - SynonymDictionary
+    - Territory
+    - Territory2
+    - Territory2Model
+    - Territory2Rule
+    - Territory2Type
+    - TimeSheetTemplate
+    - TopicsForObjects
+    - TransactionSecurityPolicy
+    - Translations
+    - UiPlugin
+    - UserCriteria
+    - ValidationRule
+    - WaveApplication
+    - WaveDashboard
+    - WaveDataflow
+    - WaveDataset
+    - WaveLens
+    - WaveRecipe
+    - WaveTemplateBundle
+    - WaveXmd
     - WebLink
+    - Workflow
+    - WorkflowAlert
+    - WorkflowFieldUpdate
+    - WorkflowFlowAction
+    - WorkflowKnowledgePublish
+    - WorkflowOutboundMessage
+    - WorkflowRule
+    - WorkflowSend
+    - WorkflowTask

@@ -1,0 +1,67 @@
+Name: xom-ux-improvement
+ignoreDependencies: false
+VlocityDataPackKeys:
+    - flexipages/Otter_Account_Discount_Record_Page.flexipage
+    - flexipages/Otter_Asset_Record_Page.flexipage
+    - flexipages/Otter_Decomposition_Relationship_Record_Page.flexipage
+    - flexipages/Otter_Fulfilment_Request_Line_Record_Page.flexipage
+    - flexipages/Otter_Fulfilment_Request_Record_Page.flexipage
+    - flexipages/Otter_Inventory_Item_Record_Page.flexipage
+    - flexipages/Otter_Item_Implementation_Record_Page.flexipage
+    - flexipages/Otter_Manual_Queue_Assignment_Rule_Record_Page.flexipage
+    - flexipages/Otter_Manual_Queue_Record_Page.flexipage
+    - flexipages/Otter_Orchestration_Dependency_Definition_Record_Page.flexipage
+    - flexipages/Otter_Orchestration_Item_Definition_Record_Page.flexipage
+    - flexipages/Otter_Orchestration_Item_Record_Page.flexipage
+    - flexipages/Otter_Orchestration_Plan_Definition_Record_Page.flexipage
+    - flexipages/Otter_Orchestration_Plan_Record_Page.flexipage
+    - flexipages/Otter_Orchestration_Scenario_Record_Page.flexipage
+    - flexipages/Otter_Order_Record_Page.flexipage
+    - flexipages/Otter_System_Interface_Record_Page.flexipage
+    - flexipages/Otter_System_Record_Page.flexipage
+    - flows/Set_Customer_Order_on_Fulfilment_Request_Line.flow
+    - flows/Set_Plan_Execution_Completed_At_on_Orchestration_Plan.flow
+    - flows/Set_Plan_Execution_Started_At_on_Orchestration_Plan.flow
+    - layouts/%vlocity_namespace%__FulfilmentRequest__c-Otter Fulfilment Request Layout
+    - layouts/%vlocity_namespace%__ItemImplementation__c-Otter Item Implementation Layout
+    - layouts/%vlocity_namespace%__ManualQueue__c-Otter Manual Queue Layout
+    - layouts/%vlocity_namespace%__OrchestrationPlan__c-Otter Orchestration Plan Layout
+    - layouts/%vlocity_namespace%__OrchestrationPlanDefinition__c-Otter Orchestration Plan Definition Layout
+    - layouts/%vlocity_namespace%__System__c-Otter System Layout
+    - layouts/Asset-Otter Asset Layout
+    - objects/%vlocity_namespace%__AssignmentRule__c/compactLayouts/Otter_Manual_Queue_Assignment_Rule_Compact_Layout.compactLayout
+    - objects/%vlocity_namespace%__DecompositionRelationship__c/compactLayouts/Otter_Decomposition_Relationship_Compact_Layout.compactLayout
+    - objects/%vlocity_namespace%__FulfilmentRequest__c/compactLayouts/Otter_Fulfilment_Request_Compact_Layout.compactLayout
+    - objects/%vlocity_namespace%__FulfilmentRequestLine__c/compactLayouts/Otter_Fulfillment_Request_Line_Compact_Layout.compactLayout
+    - objects/%vlocity_namespace%__InventoryItem__c/compactLayouts/Otter_Inventory_Item_Compact_Layout.compactLayout
+    - objects/%vlocity_namespace%__OrchestrationDependencyDefinition__c/compactLayouts/Otter_Orchestration_Dependency_Definition_Compact_Layout.compactLayout
+    - objects/%vlocity_namespace%__OrchestrationItem__c/compactLayouts/Otter_Orchestration_Item_Compact_Layout.compactLayout
+    - objects/%vlocity_namespace%__OrchestrationItemDefinition__c/compactLayouts/Otter_Orchestration_Item_Definition_Compact_Layout.compactLayout
+    - objects/%vlocity_namespace%__OrchestrationPlan__c/compactLayouts/Otter_Orchestration_Plan_Compact_Layout.compactLayout
+    - objects/%vlocity_namespace%__OrchestrationPlanDefinition__c/compactLayouts/Otter_Orchestration_Plan_Definition_Compact_Layout.compactLayout
+    - objects/%vlocity_namespace%__OrchestrationScenario__c/compactLayouts/Otter_Orchestration_Scenario_Compact_Layout.compactLayout
+    - objects/Asset/compactLayouts/Otter_Asset_Compact_Layout.compactLayout
+    - pathAssistants/Otter_Fulfilment_Request_LineStatus_Path.pathAssistant
+    - pathAssistants/Otter_Fulfilment_Request_Status_Path.pathAssistant
+    - pathAssistants/Otter_Orchestration_Item_State_Path.pathAssistant
+    - pathAssistants/Otter_Order_Fulfillment_Status_Path.pathAssistant
+    - profiles/Admin.profile
+    - quickActions/Order.Clone_with_Products.quickAction
+    - layouts/Order-Otter Order Layout
+VlocityTypesToFetch:
+
+SalesforceTypesToFetch:
+    - BusinessProcess
+    - CompactLayout
+    - CustomApplication
+    - CustomApplicationComponent
+    - CustomField
+    - CustomObject
+    - FlexiPage
+    - Flow
+    - Layout
+    - PathAssistant
+    - Profile
+    - QuickAction
+    - WebLink
+    - Workflow

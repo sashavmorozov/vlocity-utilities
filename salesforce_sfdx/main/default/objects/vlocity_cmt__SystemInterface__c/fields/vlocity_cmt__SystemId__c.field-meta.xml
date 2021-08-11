@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__SystemId__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>System</label>
+    <referenceTo>vlocity_cmt__System__c</referenceTo>
+    <relationshipLabel>System</relationshipLabel>
+    <relationshipName>SystemInterfaces</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Manual_Queue_Assignment_Rule_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>vlocity_cmt__AssignmentType__c</fields>
+    <fields>vlocity_cmt__Priority__c</fields>
+    <fields>vlocity_cmt__SourceQueueId__c</fields>
+    <fields>vlocity_cmt__DestinationQueueId__c</fields>
+    <fields>vlocity_cmt__DestinationUserId__c</fields>
+    <label>Otter Manual Queue Assignment Rule Compact Layout</label>
+</CompactLayout>

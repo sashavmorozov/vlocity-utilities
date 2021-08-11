@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_PONR_Reached__c</fullName>
+    <description>[Otter] Is point of no return (any of them) reached</description>
+    <externalId>false</externalId>
+    <formula>IF(Point_of_No_Return_Tasks_Started__c&gt;0, true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Is point of no return (any of them) reached</inlineHelpText>
+    <label>Is PONR Reached</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

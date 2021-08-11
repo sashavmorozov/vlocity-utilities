@@ -2,7 +2,7 @@
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Assigns the task to the current user</description>
     <flowDefinition>XOM_Assign_Task_to_Me</flowDefinition>
-    <label>👤 Assign Task to Me</label>
+    <label>Assign to Me</label>
     <optionsCreateFeedItem>false</optionsCreateFeedItem>
     <type>Flow</type>
 </QuickAction>

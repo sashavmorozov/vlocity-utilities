@@ -1,0 +1,9 @@
+{
+    "%vlocity_namespace%__GlobalKey__c": "42117fc5-8c1c-e1be-e42f-5bb860bf4fca",
+    "%vlocity_namespace%__Implementation__c": "XOMAutoTask_InvokeIntegrationProcedure",
+    "%vlocity_namespace%__ThorImplementation__c": "",
+    "Name": "XOMAutoTask_InvokeIntegrationProcedure",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__ItemImplementation__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__ItemImplementation__c/XOMAutoTask_InvokeIntegrationProcedure"
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Point_of_No_Return_Tasks_Started__c</fullName>
+    <description>[Otter] Number of PONR tasks in Running, Completed, Failed or Fatally Failed state</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of PONR tasks in Running, Completed, Failed or Fatally Failed state</inlineHelpText>
+    <label>Point of No Return Tasks Started</label>
+    <summaryFilterItems>
+        <field>vlocity_cmt__OrchestrationItem__c.vlocity_cmt__State__c</field>
+        <operation>equals</operation>
+        <value>Running, Completed, Failed, Fatally Failed</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>vlocity_cmt__OrchestrationItem__c.vlocity_cmt__IsPointOfNoReturn__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>vlocity_cmt__OrchestrationItem__c.vlocity_cmt__OrchestrationPlanId__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -3,7 +3,7 @@
     <description>Creates a dependency relationship for a given orchestration item</description>
     <fieldOverrides>
         <field>Name</field>
-        <formula>"DR: " + vlocity_cmt__OrchestrationItemDefinition__c.Name + " depends on " + "XYZ"</formula>
+        <formula>&quot;DR: &quot; + vlocity_cmt__OrchestrationItemDefinition__c.Name + &quot; depends on &quot; + &quot;XYZ&quot;</formula>
     </fieldOverrides>
     <fieldOverrides>
         <field>vlocity_cmt__DependencyType__c</field>
