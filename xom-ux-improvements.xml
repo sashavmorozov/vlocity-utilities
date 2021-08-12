@@ -96,7 +96,7 @@
         <members>Asset</members>
         <members>Order</members>
         <members>OrderItem</members>
-        <members>Product2</members>
+        <!-- <members>Product2</members> -->
         <members>vlocity_cmt__AssignmentRule__c</members>
         <members>vlocity_cmt__DecompositionRelationship__c</members>
         <members>vlocity_cmt__FulfilmentRequestLine__c</members>
