@@ -214,7 +214,6 @@
         <customTabListAdditionalFields>vlocity_cmt__Pricebook__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>vlocity_cmt__RecurringTotal__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>vlocity_cmt__OneTimeTotal__c</customTabListAdditionalFields>
-        <listViewButtons>Mass_Delete</listViewButtons>
         <lookupDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CONTRACT.OWNERALIAS</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupPhoneDialogsAdditionalFields>
