@@ -32,6 +32,16 @@
         <field>vlocity_cmt__OrchestrationPlan__c.Point_of_No_Return_Tasks_Started__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.Is_Root__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__OrchestrationItem__c.Order_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
 
     <layoutAssignments>
         <layout>Asset-Otter Asset Layout</layout>

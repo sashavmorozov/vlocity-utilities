@@ -202,7 +202,7 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <compactLayoutAssignment>Order_Compact_Layout_DE</compactLayoutAssignment>
+    <compactLayoutAssignment>Otter_Order_Compact_Layout</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>

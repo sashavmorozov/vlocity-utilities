@@ -33,10 +33,10 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Request__c</field>
+            <field>vlocity_cmt__Request__c</field>
         </inputAssignments>
         <inputAssignments>
-            <field>Response__c</field>
+            <field>vlocity_cmt__Response__c</field>
         </inputAssignments>
         <inputAssignments>
             <field>vlocity_cmt__State__c</field>
