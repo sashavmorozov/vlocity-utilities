@@ -124,37 +124,39 @@ global virtual class TMF641SystemInterface extends vlocity_cmt.DefaultSystemInte
             }
 
             /* add original described_by characteristics of the child item into TMF641 request as complex (object) characteristics */
-            for (Object order_items_level2_element: order_items_level2) {
+            if (order_items_level2 != null) {
+                for (Object order_items_level2_element: order_items_level2) {
 
-                Map <String, Object> order_items_level2_element_map = (Map <String, Object>) order_items_level2_element;
+                    Map <String, Object> order_items_level2_element_map = (Map <String, Object>) order_items_level2_element;
 
-                String action = (String) order_items_level2_element_map.get('action');
-                String specificationId = (String)((Map <String, Object>) order_items_level2_element_map.get('specified_by')).get('specification_id');
-                String specificationName = (String)((Map <String, Object>) order_items_level2_element_map.get('specified_by')).get('specification_name');
-                String valueType = 'object';
+                    String action = (String) order_items_level2_element_map.get('action');
+                    String specificationId = (String)((Map <String, Object>) order_items_level2_element_map.get('specified_by')).get('specification_id');
+                    String specificationName = (String)((Map <String, Object>) order_items_level2_element_map.get('specified_by')).get('specification_name');
+                    String valueType = 'object';
 
-                List <Object> described_by_level2 = (List <Object>) order_items_level2_element_map.get('described_by');
+                    List <Object> described_by_level2 = (List <Object>) order_items_level2_element_map.get('described_by');
 
-                Map <String, String> objectCharacteristicValue = new Map <String, String> ();
+                    Map <String, String> objectCharacteristicValue = new Map <String, String> ();
 
-                for (Object described_by_element: described_by_level2) {
-                    Map <String, Object> described_by_element_map = (Map <String, Object>) described_by_element;
-                    String characteristicName = (String) described_by_element_map.get('characteristic');
-                    String characteristicValue = (String) described_by_element_map.get('value');
+                    for (Object described_by_element: described_by_level2) {
+                        Map <String, Object> described_by_element_map = (Map <String, Object>) described_by_element;
+                        String characteristicName = (String) described_by_element_map.get('characteristic');
+                        String characteristicValue = (String) described_by_element_map.get('value');
 
-                    System.debug('*** Level 2 characteristic: [' + characteristicName + ', ' + characteristicValue + ']');
-                    objectCharacteristicValue.put(characteristicName, characteristicValue);
+                        System.debug('*** Level 2 characteristic: [' + characteristicName + ', ' + characteristicValue + ']');
+                        objectCharacteristicValue.put(characteristicName, characteristicValue);
+                    }
+
+                    TMF641ServiceOrderRequest.ObjectServiceCharacteristic objectChar = new TMF641ServiceOrderRequest.ObjectServiceCharacteristic(
+                        specificationName,
+                        'object',
+                        objectCharacteristicValue
+                    );
+                    
+                    objectCharacteristicValue.put('type', specificationName);
+                    
+                    tmf641Request.orderItem[0].service.serviceCharacteristic.add(objectChar);
                 }
-
-                TMF641ServiceOrderRequest.ObjectServiceCharacteristic objectChar = new TMF641ServiceOrderRequest.ObjectServiceCharacteristic(
-                    specificationName,
-                    'object',
-                    objectCharacteristicValue
-                );
-                
-                objectCharacteristicValue.put('type', specificationName);
-                
-                tmf641Request.orderItem[0].service.serviceCharacteristic.add(objectChar);
             }
         }
 
