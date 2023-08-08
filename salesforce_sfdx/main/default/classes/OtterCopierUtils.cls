@@ -261,12 +261,16 @@ global with sharing class OtterCopierUtils implements vlocity_cmt.VlocityOpenInt
             'cloneOrchestrationScenarios'       => getMapValueBooleanSafe(input, 'cloneOrchestrationScenarios', true),
             'cloneCatalogAssignments'           => getMapValueBooleanSafe(input, 'cloneCatalogAssignments', true)
         };
-                
-        sObject clonedRecord = deepCloneRecord(sourceRecordId, objectApiName, idApiName, cloningScope);
+               
+        try {
+            sObject clonedRecord = deepCloneRecord(sourceRecordId, objectApiName, idApiName, cloningScope);
+            output.put('clonedProductId', clonedRecord.Id);
+            return clonedRecord;
+        } catch (Exception e) {
+            System.debug('The following exception has occurred: ' + e.getMessage());
+            return null;
+        }
 
-        output.put('clonedProductId', clonedRecord.Id);
-
-        return clonedRecord;
     }
 
     /**

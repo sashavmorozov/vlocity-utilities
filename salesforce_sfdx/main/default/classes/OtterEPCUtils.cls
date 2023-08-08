@@ -390,7 +390,9 @@ global with sharing class OtterEPCUtils {
             //cloning object layouts
             vlocity_cmt__ObjectLayout__c sourceObjectLayout = sourceObjectLayoutList[0];
             vlocity_cmt__ObjectLayout__c clonedSourceLayout = sourceObjectLayout.clone(preserveId, isDeepClone, preserveReadonlyTimestamps, preserveAutonumber);
-            clonedSourceLayout.name = '(Reinherited) ' + targetObjectTypeName + ' Layout from ' + sourceObjectTypeName;
+            //clonedSourceLayout.name = '(Reinherited) ' + targetObjectTypeName + ' Layout from ' + sourceObjectTypeName;
+            clonedSourceLayout.name = targetObjectTypeName + '-Layout';
+
             clonedSourceLayout.name = clonedSourceLayout.name.left(80); //trim layout name due to managed package limitations
             clonedSourceLayout.vlocity_cmt__SubclassId__c = targetObjectType.Id;
             objectLayoutsForInsert.add(clonedSourceLayout);
