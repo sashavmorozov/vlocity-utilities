@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Quote_Total_Margin_Validation__c</fullName>
+    <description>Indicates either the quote meets (or not) the quote margin guidelines</description>
+    <externalId>false</externalId>
+    <formula>if(AND(NOT(ISBLANK(Otter_Quote_Total_Margin_Pct__c)), NOT(ISBLANK(Otter_Quote_Total_Margin_Guidance_Pct__c))),
+  if(Otter_Quote_Total_Margin_Pct__c &lt; Otter_Quote_Total_Margin_Guidance_Pct__c, "❌", "✔"), 
+  "No margin data available yet")</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates either the quote meets (or not) the quote margin guidelines</inlineHelpText>
+    <label>Quote Total Margin Validation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

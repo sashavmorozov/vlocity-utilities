@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Enterprise_Quote_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>QuoteNumber</fields>
+    <fields>RecordTypeId</fields>
+    <fields>OpportunityId</fields>
+    <fields>AccountId</fields>
+    <fields>Otter_Quote_Total_Charge__c</fields>
+    <fields>Otter_Quote_Total_Cost__c</fields>
+    <fields>Otter_Quote_Total_Margin_Pct__c</fields>
+    <fields>Otter_Quote_Total_Margin_Validation__c</fields>
+    <label>Otter Enterprise Quote Compact Layout</label>
+</CompactLayout>
