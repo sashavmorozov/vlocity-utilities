@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Approval_Level_Required__c</fullName>
+    <description>Indicates which level of approval is required based on a predetermined scale. The gap between the quote margin guidance and actual quote margin determines the required approval level: 
+ - up to 5% - Level 1
+ - between 5% and 10% - Level 2 (10%)
+ - above 10% - Level 3</description>
+    <externalId>false</externalId>
+    <formula>if (Otter_Quote_Total_Margin_Guidance_Pct__c - Otter_Quote_Total_Margin_Pct__c &lt;= 0,
+  &quot;No approval required&quot;,
+  if (Otter_Quote_Total_Margin_Guidance_Pct__c - Otter_Quote_Total_Margin_Pct__c &lt;= 0.05,
+  &quot;Level 1&quot;,
+    if (Otter_Quote_Total_Margin_Guidance_Pct__c - Otter_Quote_Total_Margin_Pct__c &lt;= 0.10,
+    &quot;Level 2&quot;,
+      if (Otter_Quote_Total_Margin_Guidance_Pct__c - Otter_Quote_Total_Margin_Pct__c &gt; 0.1,
+        &quot;Level 3&quot;,
+        &quot;aa&quot;
+      ) 
+    )
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates which level of approval is required based on a predetermined scale. The gap between the quote margin guidance and actual quote margin determines the required approval level: 
+ - up to 5% - Level 1
+ - between 5% and 10% - Level 2 (10%)
+ - above 10% - Level 3</inlineHelpText>
+    <label>Approval Level Required</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

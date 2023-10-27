@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Approval_Level_Description__c</fullName>
+    <description>Summary of required approval level</description>
+    <externalId>false</externalId>
+    <formula>case( Otter_Approval_Level_Required__c,
+		&quot;Level 1&quot;, &quot;Sales Manager&quot;,
+		&quot;Level 2&quot;, &quot;Sales Manager, Product Manager&quot;,
+		&quot;Level 3&quot;, &quot;Sales Manager, Product Manager, Finance Manager&quot;,
+		&quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Summary of required approval level</inlineHelpText>
+    <label>Approval Level Description</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

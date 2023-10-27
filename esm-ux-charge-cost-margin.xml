@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+     
+    <types>
+        <name>FlexiPage</name>
+        <members>Otter_Enterprise_Quote_Page</members>
+    </types>
+    
+    <types>
+        <name>Layout</name>
+        <members>Quote-Otter Enterprise Quote Layout</members>
+    </types>
+    
+    
+    <types>
+        <name>CompactLayout</name>
+        <members>Quote.Otter_Enterprise_Quote_Compact_Layout</members>
+    </types>
+    
+    
+    <types>
+        <name>Profile</name>
+        <members>Admin-esm</members>
+    </types>
+    
+
+    <types>
+        <name>CustomObject</name>
+        <members>Quote</members>
+    </types>   
+
+    <types>
+        <name>CustomField</name>
+
+        <members>Quote.Otter_Approval_Level_Required__c</members>
+        <members>Quote.Otter_Approval_Level_Description__c</members>
+        <members>Quote.Otter_Quote_Total_Charge__c</members>
+        <members>Quote.Otter_Quote_Total_Cost__c</members>
+        <members>Quote.Otter_Quote_Total_Margin__c</members>
+        <members>Quote.Otter_Quote_Total_Margin_Pct__c</members>
+        <members>Quote.Otter_Quote_Total_Margin_Guidance_Pct__c</members>
+        <members>Quote.Otter_Quote_Total_Margin_Validation__c</members>
+        <members>Quote.Otter_One_Time_Margin__c</members>
+        <members>Quote.Otter_One_Time_Margin_Pct__c</members>
+        <members>Quote.Otter_One_Time_Margin_Guidance__c</members>
+        <members>Quote.Otter_One_Time_Margin_Validation__c</members>
+        <members>Quote.Otter_Recurring_Margin__c</members>
+        <members>Quote.Otter_Recurring_Margin_Pct__c</members>
+        <members>Quote.Otter_Recurring_Margin_Guidance__c</members>
+        <members>Quote.Otter_Recurring_Margin_Validation__c</members>
+    </types>
+
+    <version>57.0</version>
+</Package>
+
+<!-- https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_types_list.htm#manifest_standard_objects 
+
+-->
