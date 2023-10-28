@@ -80,7 +80,7 @@
         <members>Otter_Fulfilment_Request_LineStatus_Path</members>
         <members>Otter_Fulfilment_Request_Status_Path</members>
         <members>Otter_Orchestration_Item_State_Path</members>
-        <members>Otter_Order_Fulfillment_Status_Path</members>
+        <!--<members>Otter_Order_Fulfillment_Status_Path</members>-->
 
         <name>PathAssistant</name>
     </types>
