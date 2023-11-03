@@ -43,28 +43,8 @@
         <readable>true</readable>
     </fieldPermissions>
 
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Approval_Level_Required__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Approval_Level_Description__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Quote_Total_Charge__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Quote_Total_Cost__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Quote_Total_Margin__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Quote_Total_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>true</editable><field> Quote.Otter_Quote_Total_Margin_Guidance_Pct__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Quote_Total_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_One_Time_Margin__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_One_Time_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>true</editable><field> Quote.Otter_One_Time_Margin_Guidance__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_One_Time_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Recurring_Margin__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Recurring_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>true</editable><field> Quote.Otter_Recurring_Margin_Guidance__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Recurring_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
-
     <layoutAssignments>
         <layout>Asset-Otter Asset Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Quote-Otter Enterprise Quote Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Order-Otter Order Layout</layout>
