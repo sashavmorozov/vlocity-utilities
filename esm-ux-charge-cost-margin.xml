@@ -5,7 +5,6 @@
         <name>FlexiPage</name>
         <members>Otter_Enterprise_Quote_Page</members>
     </types>
-    
     <types>
         <name>Layout</name>
         <members>Quote-Otter Enterprise Quote Layout</members>
@@ -17,18 +16,16 @@
         <members>Quote.Otter_Enterprise_Quote_Compact_Layout</members>
     </types>
     
-    
     <types>
         <name>Profile</name>
-        <members>Admin-esm</members>
+        <members>Admin</members>
     </types>
     
-
     <types>
-        <name>CustomObject</name>
         <members>Quote</members>
+        <name>CustomObject</name>
     </types>   
-
+    
     <types>
         <name>CustomField</name>
 
@@ -50,7 +47,7 @@
         <members>Quote.Otter_Recurring_Margin_Validation__c</members>
     </types>
 
-    <version>57.0</version>
+    <version>59.0</version>
 </Package>
 
 <!-- https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_types_list.htm#manifest_standard_objects 

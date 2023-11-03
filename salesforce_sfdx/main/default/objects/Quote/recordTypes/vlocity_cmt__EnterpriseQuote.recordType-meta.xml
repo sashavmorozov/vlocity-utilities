@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__EnterpriseQuote</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Otter_Enterprise_Quote_Compact_Layout</compactLayoutAssignment>
+    <description>Use enterprise quote for quoting large multi-site or multi-subscriber customers when you want one single large quote.</description>
+    <label>Enterprise Quote</label>
+</RecordType>
