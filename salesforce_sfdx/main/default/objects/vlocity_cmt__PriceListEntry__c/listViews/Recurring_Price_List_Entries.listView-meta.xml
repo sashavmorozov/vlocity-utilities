@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recurring_Price_List_Entries</fullName>
+    <booleanFilter>1 OR 2 OR 3</booleanFilter>
+    <columns>NAME</columns>
+    <columns>vlocity_cmt__PriceListId__c</columns>
+    <columns>vlocity_cmt__ProductId__c</columns>
+    <columns>vlocity_cmt__PromotionId__c</columns>
+    <columns>vlocity_cmt__PricingElementAmount__c</columns>
+    <columns>vlocity_cmt__DisplayText__c</columns>
+    <columns>vlocity_cmt__IsBasePrice__c</columns>
+    <columns>vlocity_cmt__IsVirtualPrice__c</columns>
+    <columns>vlocity_cmt__IsActive__c</columns>
+    <columns>vlocity_cmt__EffectiveFromDate__c</columns>
+    <columns>vlocity_cmt__EffectiveUntilDate__c</columns>
+    <columns>vlocity_cmt__PricingElementId__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>vlocity_cmt__PricingElementId__c</field>
+        <operation>contains</operation>
+        <value>MRC</value>
+    </filters>
+    <filters>
+        <field>vlocity_cmt__PricingElementId__c</field>
+        <operation>contains</operation>
+        <value>Recurring</value>
+    </filters>
+    <filters>
+        <field>vlocity_cmt__PricingElementId__c</field>
+        <operation>contains</operation>
+        <value>Monthly</value>
+    </filters>
+    <label>Recurring Price List Entries</label>
+</ListView>
