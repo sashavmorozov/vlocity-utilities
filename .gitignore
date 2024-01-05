@@ -16,3 +16,12 @@
 .sfdx/typings/lwc/
 
 *.log
+
+.vlocity/
+vlocity-temp/
+
+VlocityBuildLog.yaml
+
+.sfdx/indexes/lwc/custom-components.json
+
+.vscode/settings.json

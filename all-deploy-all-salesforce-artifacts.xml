@@ -40,6 +40,7 @@
         <members>Otter_System_Interface_Record_Page</members>
         <members>Otter_System_Record_Page</members>
         <members>Otter_Order_Product_Record_Page</members>
+        <members>Otter_Enterprise_Quote_Page</members>
     
         <name>FlexiPage</name>
     </types>
@@ -55,6 +56,7 @@
         <members>vlocity_cmt__System__c-Otter System Layout</members>
         <members>Asset-Otter Asset Layout</members>
         <members>Order-Otter Order Layout</members>
+        <members>Quote-Otter Enterprise Quote Layout</members>
         <name>Layout</name>
     </types>
 
@@ -73,6 +75,7 @@
         <members>Asset.Otter_Asset_Compact_Layout</members>
         <members>Order.Otter_Order_Compact_Layout</members>
         <members>OrderItem.Otter_Order_Product_Compact_Layout</members>
+        <members>Quote.Otter_Enterprise_Quote_Compact_Layout</members>
         <name>CompactLayout</name>
     </types>
 
@@ -95,7 +98,7 @@
     
     <types>
         <members>Asset</members>
-        <!--<members>Quote</members>-->
+        <members>Quote</members>
         <members>Order</members>
         <members>OrderItem</members>
         <!-- <members>Product2</members> -->
@@ -132,6 +135,24 @@
         <members>vlocity_cmt__OrchestrationDependencyDefinition__c.vlocity_cmt__OrchestrationItemDefinitionId__c</members>
         <members>vlocity_cmt__SystemInterface__c.vlocity_cmt__SystemId__c</members>
         <members>Asset.Is_Root__c</members>
+
+        <members>Quote.Otter_Approval_Level_Required__c</members>
+        <members>Quote.Otter_Approval_Level_Description__c</members>
+        <members>Quote.Otter_Quote_Total_Charge__c</members>
+        <members>Quote.Otter_Quote_Total_Cost__c</members>
+        <members>Quote.Otter_Quote_Total_Margin__c</members>
+        <members>Quote.Otter_Quote_Total_Margin_Pct__c</members>
+        <members>Quote.Otter_Quote_Total_Margin_Guidance_Pct__c</members>
+        <members>Quote.Otter_Quote_Total_Margin_Validation__c</members>
+        <members>Quote.Otter_One_Time_Margin__c</members>
+        <members>Quote.Otter_One_Time_Margin_Pct__c</members>
+        <members>Quote.Otter_One_Time_Margin_Guidance__c</members>
+        <members>Quote.Otter_One_Time_Margin_Validation__c</members>
+        <members>Quote.Otter_Recurring_Margin__c</members>
+        <members>Quote.Otter_Recurring_Margin_Pct__c</members>
+        <members>Quote.Otter_Recurring_Margin_Guidance__c</members>
+        <members>Quote.Otter_Recurring_Margin_Validation__c</members>
+
         <name>CustomField</name>
     </types>
 
@@ -159,10 +180,7 @@
         <name>QuickAction</name>
     </types>
 
-    <!-- <types>
-        <members>Asset</members>
-        <name>CustomObject</name>
-    </types> -->
+
 
 
     <version>51.0</version>

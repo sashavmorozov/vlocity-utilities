@@ -161,7 +161,7 @@ global virtual class TMF641SystemInterface extends vlocity_cmt.DefaultSystemInte
         }
 
 		String tmf641RequestAsString = JSON.serializePretty(tmf641Request, true);
-        item.Callout_Request_Payload__c = tmf641RequestAsString;
+        item.vlocity_cmt__Request__c = tmf641RequestAsString;
         return tmf641RequestAsString;
     }
 
@@ -206,7 +206,7 @@ global virtual class TMF641SystemInterface extends vlocity_cmt.DefaultSystemInte
         super.processResponse(item, url, path, orderObj, resp);
 
         String response = resp.getBody();
-        item.Callout_Response_Payload_Sync__c = response;
+        item.vlocity_cmt__Response__c = response;
 
         /* additional error processing business logic */
         /*

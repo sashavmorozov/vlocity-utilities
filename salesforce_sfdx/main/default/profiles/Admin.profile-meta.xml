@@ -1,46 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>false</custom>
-
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Approval_Level_Required__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Approval_Level_Description__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Quote_Total_Charge__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Quote_Total_Cost__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Quote_Total_Margin__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Quote_Total_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>true</editable><field> Quote.Otter_Quote_Total_Margin_Guidance_Pct__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Quote_Total_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_One_Time_Margin__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_One_Time_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>true</editable><field> Quote.Otter_One_Time_Margin_Guidance__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_One_Time_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Recurring_Margin__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Recurring_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>true</editable><field> Quote.Otter_Recurring_Margin_Guidance__c</field><readable>true</readable></fieldPermissions>
-    <fieldPermissions><editable>false</editable><field> Quote.Otter_Recurring_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
+   
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__FulfilmentRequestLine__c.Customer_Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__FulfilmentRequestLine__c.Orchestration_Plan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__OrchestrationPlan__c.Is_PONR_Reached__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>vlocity_cmt__OrchestrationPlan__c.Plan_Execution_Completed_At__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>vlocity_cmt__OrchestrationPlan__c.Plan_Execution_Started_At__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__OrchestrationPlan__c.Point_of_No_Return_Tasks_Started__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.Is_Root__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__OrchestrationItem__c.Order_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
 
     <layoutAssignments>
-        <layout>Quote-Otter Enterprise Quote Layout</layout>
+        <layout>Asset-Otter Asset Layout</layout>
     </layoutAssignments>
-
     <layoutAssignments>
-        <layout>Quote-Otter Enterprise Quote Layout</layout>
-        <recordType>Quote.vlocity_cmt__EnterpriseQuote</recordType>
+        <layout>Order-Otter Order Layout</layout>
     </layoutAssignments>
-
     <layoutAssignments>
-        <layout>Quote-Otter Enterprise Quote Layout</layout>
-        <recordType>Quote.vlocity_cmt__MasterQuote</recordType>
+        <layout>vlocity_cmt__ItemImplementation__c-Otter Item Implementation Layout</layout>
     </layoutAssignments>
-
     <layoutAssignments>
-        <layout>Quote-Otter Enterprise Quote Layout</layout>
-        <recordType>Quote.vlocity_cmt__SubQuote</recordType>
+        <layout>vlocity_cmt__ManualQueue__c-Otter Manual Queue Layout</layout>
     </layoutAssignments>
-
     <layoutAssignments>
-        <layout>Quote-Otter Enterprise Quote Layout</layout>
-        <recordType>Quote.vlocity_cmt__WorkingCart</recordType>
+        <layout>vlocity_cmt__OrchestrationPlanDefinition__c-Otter Orchestration Plan Definition Layout</layout>
     </layoutAssignments>
-
+    <layoutAssignments>
+        <layout>vlocity_cmt__OrchestrationPlan__c-Otter Orchestration Plan Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>vlocity_cmt__System__c-Otter System Layout</layout>
+    </layoutAssignments>
+    
 </Profile>
