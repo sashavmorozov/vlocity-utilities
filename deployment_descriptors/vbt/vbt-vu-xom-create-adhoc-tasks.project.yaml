@@ -1,0 +1,40 @@
+projectPath: vlocity
+autoUpdateSettings: true
+autoRetryErrors: true
+
+manifest:
+  - OrchestrationPlanDefinition/Ad Hoc Tasks
+  - OrchestrationItemDefinition/Manual-Task-Template_Ad-Hoc-Tasks
+  - quickActions/%vlocity_namespace%__OrchestrationPlan__c.Add_Task.quickAction
+  - flows/XOM_Add_Ad_Hoc_Manual_Task.flow
+
+queries:
+#    - VlocityDataPackType: DataRaptor
+#      query: Select Id from %vlocity_namespace%__DRBundle__c where Name like 'EPC on Steroids%'
+    
+#    - VlocityDataPackType: IntegrationProcedure
+#      query: Select Id from %vlocity_namespace%__OmniScript__c where vlocity_cmt__Type__c = 'EOS'
+    
+#    - VlocityDataPackType: IntegrationProcedure
+#      query: Select Id from %vlocity_namespace%__OmniScript__c where vlocity_cmt__Type__c = 'EPC'
+
+#deploySalesforce
+#Custom override datapack settings
+#OverrideSettings:
+#  SObjects:
+#    Product2:
+#      FilterFields:
+#      - vlocity_namespace__CategoryData__c
+#      - vlocity_namespace__AttributeMetadata__c
+#      - vlocity_namespace__JSONAttribute__c
+#      - vlocity_namespace__AttributeDefaultValues__c
+#    store objects based on name
+#    vlocity_namespace__AttributeAssignment__c:
+#      FilterFields:
+#      - vlocity_namespace__ObjectLink__c
+#    vlocity_namespace__VlocityUITemplate__c:
+#      FilterFields:
+#      - vlocity_namespace__SampleJson__c
+#    vlocity_namespace__DRBundle__c:
+#      FilterFields:
+#      #- vlocity_namespace__SampleInputJSON__c

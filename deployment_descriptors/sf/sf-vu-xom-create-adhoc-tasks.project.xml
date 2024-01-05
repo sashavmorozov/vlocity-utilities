@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>XOM_Add_Ad_Hoc_Manual_Task</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>vlocity_cmt__OrchestrationPlan__c.Add_Task</members>
+        <name>QuickAction</name>
+    </types>
+    <version>59.0</version>
+</Package>
