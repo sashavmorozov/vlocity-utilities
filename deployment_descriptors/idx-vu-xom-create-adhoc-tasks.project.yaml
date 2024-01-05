@@ -1,0 +1,11 @@
+Name: idx-vu-xom-create-adhoc-tasks
+ignoreDependencies: false
+VlocityDataPackKeys:
+    - OrchestrationPlanDefinition/Ad Hoc Tasks
+    - quickActions/%vlocity_namespace%__OrchestrationPlan__c.Add_Task.quickAction
+    - flows/XOM_Add_Ad_Hoc_Manual_Task.flow
+VlocityTypesToFetch:
+    - OrchestrationPlanDefinition
+SalesforceTypesToFetch:
+    - Flow
+    - QuickAction
