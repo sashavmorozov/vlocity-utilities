@@ -1,0 +1,13 @@
+{
+    "%vlocity_namespace%__GlobalKey__c": "60e0f773-376f-9966-2610-e6210f19c205",
+    "%vlocity_namespace%__IsSchedulingEnabled__c": false,
+    "%vlocity_namespace%__SchedulingExpirationIntervalSeconds__c": 31557600,
+    "%vlocity_namespace%__Scope__c": "Global",
+    "%vlocity_namespace%__ShowOrder__c": 99,
+    "IsLocked": false,
+    "MayEdit": true,
+    "Name": "Ad Hoc Tasks",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__OrchestrationPlanDefinition__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__OrchestrationPlanDefinition__c/Ad Hoc Tasks"
+}
