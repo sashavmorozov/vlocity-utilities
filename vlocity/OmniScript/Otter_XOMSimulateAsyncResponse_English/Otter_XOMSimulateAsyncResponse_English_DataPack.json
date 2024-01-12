@@ -1,0 +1,32 @@
+{
+    "%vlocity_namespace%__AdditionalInformation__c": "Otter. Simulates an async response for async callouts in XOM",
+    "%vlocity_namespace%__DisableMetadataCache__c": false,
+    "%vlocity_namespace%__ElementTypeToHTMLTemplateList__c": "{\"ElementTypeToHTMLTemplateList\":[]}",
+    "%vlocity_namespace%__Element__c": [
+        "Otter_XOMSimulateAsyncResponse_English_Element_DataRaptorExtractAction_GetOrderID.json",
+        "Otter_XOMSimulateAsyncResponse_English_Element_Step_Simulate_Response_from_External_System.json",
+        "Otter_XOMSimulateAsyncResponse_English_Element_TextBlock_Information.json",
+        "Otter_XOMSimulateAsyncResponse_English_Element_TextBlock2.json",
+        "Otter_XOMSimulateAsyncResponse_English_Element_Text_Orchestration_Item_ID.json",
+        "Otter_XOMSimulateAsyncResponse_English_Element_Text_Order_ID.json",
+        "Otter_XOMSimulateAsyncResponse_English_Element_Text_Callback_URL.json",
+        "Otter_XOMSimulateAsyncResponse_English_Element_TextBlock3.json",
+        "Otter_XOMSimulateAsyncResponse_English_Element_RestAction_Simulate.json",
+        "Otter_XOMSimulateAsyncResponse_English_Element_Navigate_Navigate_to_Orchestration_Item.json"
+    ],
+    "%vlocity_namespace%__IsLwcEnabled__c": true,
+    "%vlocity_namespace%__IsProcedure__c": false,
+    "%vlocity_namespace%__IsReusable__c": false,
+    "%vlocity_namespace%__IsTest__c": false,
+    "%vlocity_namespace%__Language__c": "English",
+    "%vlocity_namespace%__OmniProcessType__c": "OmniScript",
+    "%vlocity_namespace%__PropertySet__c": "Otter_XOMSimulateAsyncResponse_English_PropertySet.json",
+    "%vlocity_namespace%__SubType__c": "XOMSimulateAsyncResponse",
+    "%vlocity_namespace%__Type__c": "Otter",
+    "IsLocked": false,
+    "MayEdit": true,
+    "Name": "OtterXOMSimulateWorkOrderResponse",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__OmniScript__c/Otter/XOMSimulateAsyncResponse/English"
+}
