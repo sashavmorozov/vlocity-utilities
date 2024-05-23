@@ -3,9 +3,9 @@
     <fullName>Otter_Fulfillment_Request_Line_Compact_Layout</fullName>
     <fields>Name</fields>
     <fields>vlocity_cmt__Action__c</fields>
-    <fields>Customer_Order__c</fields>
+    <fields>Otter_Customer_Order__c</fields>
     <fields>vlocity_cmt__Product2Id__c</fields>
-    <fields>Orchestration_Plan__c</fields>
+    <fields>Otter_Orchestration_Plan__c</fields>
     <fields>vlocity_cmt__InventoryItemId__c</fields>
     <label>Otter Fulfillment Request Line Compact Layout</label>
 </CompactLayout>

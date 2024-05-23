@@ -319,15 +319,36 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>vlocity_cmt__AppliesTo__c</fields>
+        <fields>vlocity_cmt__QuoteItemId__c</fields>
+        <fields>vlocity_cmt__PricingVariableId__c</fields>
+        <fields>vlocity_cmt__Amount__c</fields>
+        <fields>vlocity_cmt__Source__c</fields>
+        <relatedList>vlocity_cmt__QuotePricingAdjustment__c.vlocity_cmt__QuoteId__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>vlocity_cmt__QuoteLineItemId__c</fields>
+        <fields>vlocity_cmt__RelationshipType__c</fields>
+        <fields>vlocity_cmt__RelatedQuoteLineItemId__c</fields>
+        <relatedList>vlocity_cmt__QuoteLineItemRelationship__c.vlocity_cmt__QuoteId__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>vlocity_cmt__QuoteProductRollup__c.vlocity_cmt__QuoteId__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>QUOTE_LI.PRODUCT2</fields>
+        <fields>vlocity_cmt__Action__c</fields>
         <fields>QUOTE_LI.QUANTITY</fields>
         <fields>vlocity_cmt__QuoteMemberId__c</fields>
-        <fields>vlocity_cmt__QuoteGroupId__c</fields>
         <fields>vlocity_cmt__RecurringCharge__c</fields>
-        <fields>vlocity_cmt__RecurringTotal__c</fields>
         <fields>vlocity_cmt__OneTimeCharge__c</fields>
-        <fields>vlocity_cmt__OneTimeTotal__c</fields>
-        <fields>QUOTE_LI.DISCOUNT</fields>
+        <fields>vlocity_cmt__AssetId__c</fields>
+        <fields>vlocity_cmt__AssetReferenceId__c</fields>
+        <fields>vlocity_cmt__PremisesId__c</fields>
+        <fields>vlocity_cmt__ServicePointId__c</fields>
         <relatedList>RelatedQuoteLineItemList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -375,7 +396,6 @@
         <fields>SALES.ACCOUNT.NAME</fields>
         <fields>vlocity_cmt__FulfilmentStatus__c</fields>
         <fields>ORDERS.STATUS</fields>
-        <fields>Indicator__c</fields>
         <fields>ORDERS.EFFECTIVE_DATE</fields>
         <fields>ORDERS.TOTAL_AMOUNT</fields>
         <relatedList>Order.vlocity_cmt__QuoteId__c</relatedList>
@@ -384,7 +404,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8d000009EzaJ</masterLabel>
+        <masterLabel>00h5t000002Nqvf</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

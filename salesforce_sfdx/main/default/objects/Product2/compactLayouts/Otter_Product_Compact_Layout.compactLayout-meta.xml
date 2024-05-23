@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Product_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>ProductCode</fields>
+    <fields>vlocity_cmt__SpecificationType__c</fields>
+    <fields>vlocity_cmt__SpecificationSubType__c</fields>
+    <fields>vlocity_cmt__ObjectTypeId__c</fields>
+    <fields>vlocity_cmt__VersionLabel__c</fields>
+    <label>Otter Product Compact Layout</label>
+</CompactLayout>

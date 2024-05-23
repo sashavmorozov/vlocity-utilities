@@ -38,6 +38,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>header</name>
@@ -51,6 +52,7 @@
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -60,6 +62,7 @@
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.vlocity_cmt__AssignmentType__c</fieldItem>
+                <identifier>Recordvlocity_cmt__AssignmentType__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-a9d89767-a76b-459a-a2de-9cc72ef81d19</name>
@@ -69,11 +72,13 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__Priority__c</fieldItem>
+                <identifier>Recordvlocity_cmt__Priority__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__DestinationQueueId__c</fieldItem>
+                <identifier>Recordvlocity_cmt__DestinationQueueId__cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.vlocity_cmt__AssignmentType__c}</leftValue>
@@ -86,6 +91,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__DestinationUserId__c</fieldItem>
+                <identifier>Recordvlocity_cmt__DestinationUserId__cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.vlocity_cmt__AssignmentType__c}</leftValue>
@@ -106,6 +112,7 @@
                     <value>Facet-a9d89767-a76b-459a-a2de-9cc72ef81d19</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -115,6 +122,7 @@
                     <value>Facet-8f93a8c4-96fb-4b61-b6e2-56b600137448</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-1e713b9a-2b7a-4ce8-b1e7-d512a0ee3e34</name>
@@ -124,6 +132,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.CreatedById</fieldItem>
+                <identifier>RecordCreatedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-477de027-dc36-4d19-8ebe-ba7db3629d0e</name>
@@ -133,6 +142,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.LastModifiedById</fieldItem>
+                <identifier>RecordLastModifiedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-a6028031-28ec-4fc4-a7db-d8dff269f0b8</name>
@@ -146,6 +156,7 @@
                     <value>Facet-477de027-dc36-4d19-8ebe-ba7db3629d0e</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -155,6 +166,7 @@
                     <value>Facet-a6028031-28ec-4fc4-a7db-d8dff269f0b8</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-f17401ca-ca2c-4971-93d4-99054d23393d</name>
@@ -172,6 +184,7 @@
                     <value>Rule Configuration</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -185,6 +198,7 @@
                     <value>System Information</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-dad38267-eee6-4166-af50-c1392bb2e13e</name>
@@ -194,6 +208,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>vlocity_cmt:xomComplexConditions</componentName>
+                <identifier>vlocity_cmt_xomComplexConditions</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-72e6082d-e14d-4530-8af9-c53718c01e29</name>
@@ -215,6 +230,7 @@
                     <value>accordionSection2</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
+                <identifier>customSection</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-87f1cc7f-47c6-43d9-905c-2b94313144c7</name>
@@ -232,6 +248,7 @@
                     <value>accordionSection2</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordion</componentName>
+                <identifier>flexipage_accordion</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-cbc49482-7c85-4083-a97f-ee05e29ac5c5</name>
@@ -245,6 +262,7 @@
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField2</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-7db3e7f0-157c-4165-9dba-ff941adc00c8</name>
@@ -254,6 +272,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__GlobalKey__c</fieldItem>
+                <identifier>Recordvlocity_cmt__GlobalKey__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-37b71f6b-72a4-4c51-b343-e9cf2363db3f</name>
@@ -267,6 +286,7 @@
                     <value>Facet-7db3e7f0-157c-4165-9dba-ff941adc00c8</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column5</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -276,6 +296,7 @@
                     <value>Facet-37b71f6b-72a4-4c51-b343-e9cf2363db3f</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column6</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-6bbc57ae-b0bf-42af-905e-0359d30427ec</name>
@@ -285,6 +306,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__ConditionData__c</fieldItem>
+                <identifier>Recordvlocity_cmt__ConditionData__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-efe86067-6492-4d40-a849-6ff1b9591779</name>
@@ -298,6 +320,7 @@
                     <value>Facet-efe86067-6492-4d40-a849-6ff1b9591779</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column7</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-e7720e02-c0af-487d-8b5b-22919cf7f418</name>
@@ -315,6 +338,7 @@
                     <value>Deployment Management</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -328,6 +352,7 @@
                     <value>Rule Conditions</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-r6eca3uttbg</name>
@@ -349,6 +374,7 @@
                     <value>Rule Configuration</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -366,6 +392,7 @@
                     <value>Rule Conditions</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -379,6 +406,7 @@
                     <value>Advanced</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab3</identifier>
             </componentInstance>
         </itemInstances>
         <name>maintabs</name>
@@ -392,6 +420,7 @@
                     <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

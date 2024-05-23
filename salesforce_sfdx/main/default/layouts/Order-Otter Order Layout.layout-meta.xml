@@ -97,26 +97,75 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Type</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>vlocity_cmt__FulfilmentStatus__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>vlocity_cmt__SubmittedToOmDate__c</field>
+                <field>Type</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>vlocity_cmt__OrchestrationPlanId__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Otter_Total_Order_Processing_Time_Days__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Order Fulfillment Timeline</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Otter_Order_Processing_Started__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Otter_Order_Processing_Finished__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Order Accuracy Information</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Otter_Had_Order_Processing_Incidents__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Ott_Number_of_Order_Processing_Incidents__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>In-Flight Changes Information</label>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>vlocity_cmt__SupplementalAction__c</field>
             </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>vlocity_cmt__SupersededOrderId__c</field>
@@ -201,16 +250,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Configure_Order</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Order.vlocity_cmt__ViewOrchestrationPlan</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>1</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>vlocity_cmt__AmendmentHistory</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>2</sortOrder>
@@ -235,6 +274,16 @@
             <actionType>CustomButton</actionType>
             <sortOrder>6</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Configure_Order</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Order.vlocity_cmt__ViewOrchestrationPlan</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>1</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <relatedLists>
         <fields>Product2</fields>
@@ -242,6 +291,8 @@
         <fields>vlocity_cmt__OneTimeTotal__c</fields>
         <fields>vlocity_cmt__RecurringTotal__c</fields>
         <fields>vlocity_cmt__LineNumber__c</fields>
+        <fields>vlocity_cmt__AssetId__c</fields>
+        <fields>vlocity_cmt__AssetReferenceId__c</fields>
         <relatedList>RelatedOrderItemList</relatedList>
         <sortField>vlocity_cmt__LineNumber__c</sortField>
         <sortOrder>Asc</sortOrder>
@@ -280,9 +331,9 @@
         <fields>NAME</fields>
         <fields>vlocity_cmt__AccountId__c</fields>
         <fields>vlocity_cmt__State__c</fields>
-        <fields>Plan_Execution_Started_At__c</fields>
-        <fields>Plan_Execution_Completed_At__c</fields>
-        <fields>Is_PONR_Reached__c</fields>
+        <fields>Otter_Plan_Execution_Started_At__c</fields>
+        <fields>Otter_Plan_Execution_Completed_At__c</fields>
+        <fields>Otter_Is_PONR_Reached__c</fields>
         <relatedList>vlocity_cmt__OrchestrationPlan__c.vlocity_cmt__OrderId__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -291,15 +342,54 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>vlocity_cmt__FulfilmentRequestLine__c.Customer_Order__c</relatedList>
+        <relatedList>vlocity_cmt__FulfilmentRequestLine__c.Otter_Customer_Order__c</relatedList>
     </relatedLists>
-    <relatedObjects>ContractId</relatedObjects>
+    <relatedLists>
+        <relatedList>RelatedNoteList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>vlocity_cmt__OrderGroup__c.vlocity_cmt__OrderId__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>vlocity_cmt__OrderMember__c.vlocity_cmt__OrderId__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ORDERS.ORDER_NUMBER</fields>
+        <fields>ORDER.NAME</fields>
+        <fields>SALES.ACCOUNT.NAME</fields>
+        <fields>ORDERS.STATUS</fields>
+        <fields>vlocity_cmt__Pricebook__c</fields>
+        <fields>vlocity_cmt__RecurringTotal__c</fields>
+        <fields>vlocity_cmt__OneTimeTotal__c</fields>
+        <relatedList>Order.vlocity_cmt__ParentOrderId__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>QUOTE.NAME</fields>
+        <fields>OPPORTUNITY.NAME</fields>
+        <fields>QUOTE.ISSYNCING</fields>
+        <fields>QUOTE.EXPIRATIONDATE</fields>
+        <fields>QUOTE.SUBTOTAL</fields>
+        <fields>QUOTE.TOTALPRICE</fields>
+        <relatedList>Quote.vlocity_cmt__SyncedOrderId__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ORDERS.ORDER_NUMBER</fields>
+        <fields>ORDER.NAME</fields>
+        <fields>SALES.ACCOUNT.NAME</fields>
+        <fields>ORDERS.STATUS</fields>
+        <fields>vlocity_cmt__Pricebook__c</fields>
+        <fields>vlocity_cmt__RecurringTotal__c</fields>
+        <fields>vlocity_cmt__OneTimeTotal__c</fields>
+        <relatedList>Order.vlocity_cmt__SupersededOrderId__c</relatedList>
+    </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0900000D1vMn</masterLabel>
+        <masterLabel>00h5t000002Nqwo</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

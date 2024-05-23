@@ -155,7 +155,7 @@
                     <stringValue>Reference</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Customer_Order__c</field>
+            <field>Otter_Customer_Order__c</field>
             <value>
                 <elementReference>myVariable_current.vlocity_cmt__FulfilmentRequestID__r.vlocity_cmt__OrderId__c</elementReference>
             </value>
@@ -191,7 +191,7 @@
                     <stringValue>Reference</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Orchestration_Plan__c</field>
+            <field>Otter_Orchestration_Plan__c</field>
             <value>
                 <elementReference>myVariable_current.vlocity_cmt__FulfilmentRequestID__r.vlocity_cmt__orchestrationPlanId__c</elementReference>
             </value>

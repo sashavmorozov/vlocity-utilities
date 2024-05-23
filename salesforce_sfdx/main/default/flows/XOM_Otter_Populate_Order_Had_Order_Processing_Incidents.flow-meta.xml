@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>Populates Order Had Order Processing Incidents field when an orchestration item fatally fails</description>
+    <formulas>
+        <name>Number_of_Incidents_plus_one</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.vlocity_cmt__OrchestrationPlanId__r.vlocity_cmt__OrderId__r.Ott_Number_of_Order_Processing_Incidents__c} + 1</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>[XOM.Otter] Populate Order Had Order Processing Incidents {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>[XOM.Otter] Populate Order Had Order Processing Incidents</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Increment_the_number_of_incidents</name>
+        <label>Increment the number of incidents</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Ott_Number_of_Order_Processing_Incidents__c</field>
+            <value>
+                <elementReference>Number_of_Incidents_plus_one</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.vlocity_cmt__OrchestrationPlanId__r.vlocity_cmt__OrderId__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Tag_order_as_had_incidents</name>
+        <label>Tag order as had incidents</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Increment_the_number_of_incidents</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Otter_Had_Order_Processing_Incidents__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.vlocity_cmt__OrchestrationPlanId__r.vlocity_cmt__OrderId__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Tag_order_as_had_incidents</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>vlocity_cmt__State__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Fatally Failed</stringValue>
+            </value>
+        </filters>
+        <object>vlocity_cmt__OrchestrationItem__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

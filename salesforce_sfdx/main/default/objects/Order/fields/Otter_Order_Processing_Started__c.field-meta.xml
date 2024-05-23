@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Order_Processing_Started__c</fullName>
+    <description>Indicates a moment when an order has been submitted to order management for processing</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates a moment when an order has submitted to order management for processing</inlineHelpText>
+    <label>Order Processing Started</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

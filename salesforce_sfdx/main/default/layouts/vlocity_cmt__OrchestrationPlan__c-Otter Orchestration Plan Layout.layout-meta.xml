@@ -18,19 +18,19 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Plan_Execution_Started_At__c</field>
+                <field>Otter_Plan_Execution_Started_At__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Plan_Execution_Completed_At__c</field>
+                <field>Otter_Plan_Execution_Completed_At__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Point_of_No_Return_Tasks_Started__c</field>
+                <field>Otter_Point_of_No_Return_Tasks_Started__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Is_PONR_Reached__c</field>
+                <field>Otter_Is_PONR_Reached__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -108,7 +108,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>vlocity_cmt__FulfilmentRequestLine__c.Orchestration_Plan__c</relatedList>
+        <relatedList>vlocity_cmt__FulfilmentRequestLine__c.Otter_Orchestration_Plan__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

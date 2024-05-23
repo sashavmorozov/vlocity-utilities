@@ -69,4 +69,40 @@ global with sharing class VlocityOpenInterfaceBoilerplate implements vlocity_cmt
         outputMap.put('message', null);
     }
 
+    public static void functionB (Map<String, Object> inputMap, Map<String, Object> outputMap, Map<String, Object> optionsMap) {
+        //retrieve input values from the input map
+        final String RECORD_ID_KEY = 'recordId';        
+        String recordId = (String) inputMap.get(RECORD_ID_KEY);
+        
+        if (String.isBlank(recordId)) {
+
+            String message = 'Input value (' + RECORD_ID_KEY + ') is empty';
+            System.debug(LoggingLevel.ERROR, 'OtterTools > VlocityOpenInterfaceBoilerplate > functionA: ' + message);
+
+            outputMap.put('status', 'FAILED');
+            outputMap.put('message', message);
+            return;
+        }
+
+        System.debug(LoggingLevel.INFO, 'OtterTools > VlocityOpenInterfaceBoilerplate > functionA: input value ' + '(' + RECORD_ID_KEY + '): ' + recordId);
+
+        /**************** BUSINESS LOGIC HERE **************/
+
+        /** 
+         * Here you can put business logic based on input parameters
+         * The logic can be taken out into a separate class for readability
+         * The last step is to add the results into the outputMap like this
+         * outputMap.put('resultA', 'valueA');
+         * outputMap.put('resultB', 'valueB');
+         * Output is going to be accessible from Omniscript as well
+        */
+
+
+        /***************************************************/
+
+        outputMap.put('result', 'STUB VALUE');
+        outputMap.put('status', 'SUCCESS');
+        outputMap.put('message', null);
+    }
+
 }

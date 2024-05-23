@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
     <choices>
         <name>Decompose_Another_Spec_Into_Current_Spec_Picklist_Value</name>
         <choiceText>Decompose another (higher-level) specification into the current specification</choiceText>
@@ -102,7 +103,7 @@
         <inputAssignments>
             <field>Name</field>
             <value>
-                <stringValue>DR: {!Selected_Source_Specification_Name} > {!Selected_Target_Specification_Name}</stringValue>
+                <stringValue>DR: {!Selected_Source_Specification_Name} &gt; {!Selected_Target_Specification_Name}</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -132,7 +133,7 @@
         </connector>
         <fields>
             <name>Decomposition_Type_Display_Text</name>
-            <fieldText>&lt;p>What type of decomposition relationship you want to set up?&lt;/p></fieldText>
+            <fieldText>&lt;p&gt;What type of decomposition relationship you want to set up?&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -161,7 +162,7 @@
         </connector>
         <fields>
             <name>Create_DR_Display_Text</name>
-            <fieldText>&lt;p>Create Decomposition Relationship&lt;/p></fieldText>
+            <fieldText>&lt;p&gt;Create Decomposition Relationship&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -358,7 +359,7 @@
         </connector>
         <fields>
             <name>Correct_Input_Display_Text</name>
-            <fieldText>&lt;p>A specification cannot be decomposed into itself&lt;/p></fieldText>
+            <fieldText>&lt;p&gt;A specification cannot be decomposed into itself&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>

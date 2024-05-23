@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_14214446</developerName>
+        <masterLabel>Order Processing Time</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Order.Otter_Total_Order_Processing_Time_Days__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>1</to>
+            </sourceValues>
+            <value>Less than 1 day</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1</from>
+                <to>5</to>
+            </sourceValues>
+            <value>Between 1 and 5 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>5</from>
+                <to>10</to>
+            </sourceValues>
+            <value>Between 5 and 10 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>10</from>
+                <to>30</to>
+            </sourceValues>
+            <value>Between 10 and 30 days</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>30</from>
+            </sourceValues>
+            <value>Over 30 days</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>ORDER_NUMBER</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_OWNER</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Order.Otter_Total_Order_Processing_Time_Days__c</field>
+    </columns>
+    <columns>
+        <field>Order.Otter_Order_Processing_Started__c</field>
+    </columns>
+    <columns>
+        <field>Order.Otter_Order_Processing_Finished__c</field>
+    </columns>
+    <columns>
+        <field>Order.vlocity_cmt__OrchestrationPlanId__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Order.Ott_Number_of_Order_Processing_Incidents__c</field>
+    </columns>
+    <description>Orders. Orders Submitted Quarterly</description>
+    <filter>
+        <criteriaItems>
+            <column>Order.vlocity_cmt__OrchestrationPlanId__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Quarter</dateGranularity>
+        <field>ORDER_CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Orders. Orders Submitted Quarterly</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OrderList</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ORDER_EFFECTIVE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

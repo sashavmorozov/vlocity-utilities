@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>vlocity_cmt__OrchestrationItem__c$Name</field>
+    </columns>
+    <columns>
+        <field>vlocity_cmt__OrchestrationItem__c$vlocity_cmt__State__c</field>
+    </columns>
+    <columns>
+        <field>vlocity_cmt__OrchestrationItem__c$vlocity_cmt__AssignedToManualQueueId__c</field>
+    </columns>
+    <columns>
+        <field>vlocity_cmt__OrchestrationItem__c$vlocity_cmt__AssignedToUserId__c</field>
+    </columns>
+    <columns>
+        <field>vlocity_cmt__OrchestrationItem__c$vlocity_cmt__RequestedStartDate__c</field>
+    </columns>
+    <columns>
+        <field>vlocity_cmt__OrchestrationItem__c$vlocity_cmt__ExpectedCompletionDate__c</field>
+    </columns>
+    <columns>
+        <field>vlocity_cmt__OrchestrationItem__c$vlocity_cmt__StartDate__c</field>
+    </columns>
+    <columns>
+        <field>vlocity_cmt__OrchestrationItem__c$vlocity_cmt__DueDate__c</field>
+    </columns>
+    <columns>
+        <field>vlocity_cmt__OrchestrationItem__c$vlocity_cmt__OrchestrationItemType__c</field>
+    </columns>
+    <columns>
+        <field>vlocity_cmt__OrchestrationItem__c$vlocity_cmt__Priority__c</field>
+    </columns>
+    <customDetailFormulas>
+        <calculatedFormula>IF(ISBLANK(vlocity_cmt__OrchestrationItem__c.vlocity_cmt__AssignedToUserId__c.Name), &apos;Not Assigned&apos;, &apos;Assigned&apos;)</calculatedFormula>
+        <dataType>Text</dataType>
+        <developerName>CDF1</developerName>
+        <label>Assignment Status</label>
+        <scale>2</scale>
+    </customDetailFormulas>
+    <description>Tasks. Tasks Jeopardy Status</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>vlocity_cmt__OrchestrationItem__c$vlocity_cmt__JeopardyStatus__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>vlocity_cmt__OrchestrationItem__c$Otter_Account_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>vlocity_cmt__OrchestrationItem__c$Otter_Order_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Tasks. Tasks Jeopardy Status</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Otter_Orchestration_Items__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>vlocity_cmt__OrchestrationItem__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

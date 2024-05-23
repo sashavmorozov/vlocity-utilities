@@ -1,86 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>58.0</apiVersion>
-    <assignments>
-        <name>Assign_Target_Swimlane_Existing</name>
-        <label>Assign Target Swimlane - Existing</label>
-        <locationX>50</locationX>
-        <locationY>674</locationY>
-        <assignmentItems>
-            <assignToReference>ParentFRLId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Ad_Hoc_Task.vlocity_cmt__FulfilmentRequestLineId__r.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Create_Orchestration_Item</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Assign_Target_Swimlane_New</name>
-        <label>Assign Target Swimlane - New</label>
-        <locationX>314</locationX>
-        <locationY>890</locationY>
-        <assignmentItems>
-            <assignToReference>ParentFRLId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Create_Fulfillment_Request_Line</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Create_Orchestration_Item</targetReference>
-        </connector>
-    </assignments>
-    <decisions>
-        <name>Decision_Ad_Hoc_Tasks_Exist</name>
-        <label>Decision Ad Hoc Tasks Exist</label>
-        <locationX>182</locationX>
-        <locationY>566</locationY>
-        <defaultConnector>
-            <targetReference>Create_Fulfillment_Request</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Ad_Hoc_Task_Exist</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Ad_Hoc_Task.Id</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assign_Target_Swimlane_Existing</targetReference>
-            </connector>
-            <label>Ad Hoc Task Exist</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>decision_Create_Dependencies</name>
-        <label>Create Dependencies?</label>
-        <locationX>182</locationX>
-        <locationY>1190</locationY>
-        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>checkbox_Add_Dependencies</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Create_Dependencies_Depends_On</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <description>Otter. Manually add an ad-hoc task (including dependencies) to an orchestration plan</description>
     <dynamicChoiceSets>
         <name>Priority</name>
         <dataType>Picklist</dataType>
@@ -122,8 +42,8 @@
     <loops>
         <name>Loop_over_Selected_Complete_Before_Records</name>
         <label>Loop over Selected Complete Before Records</label>
-        <locationX>50</locationX>
-        <locationY>1814</locationY>
+        <locationX>176</locationX>
+        <locationY>1082</locationY>
         <collectionReference>dataTable_CompleteBefore.selectedRows</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -133,8 +53,8 @@
     <loops>
         <name>Loop_over_Selected_Depends_On_Records</name>
         <label>Loop over Selected Depends On Records</label>
-        <locationX>50</locationX>
-        <locationY>1514</locationY>
+        <locationX>176</locationX>
+        <locationY>782</locationY>
         <collectionReference>dataTable_DependsOn_1.selectedRows</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -166,8 +86,8 @@
     <recordCreates>
         <name>Create_Dependency_Complete_Before</name>
         <label>Create Dependency (Complete Before)</label>
-        <locationX>138</locationX>
-        <locationY>1922</locationY>
+        <locationX>264</locationX>
+        <locationY>1190</locationY>
         <connector>
             <targetReference>Loop_over_Selected_Complete_Before_Records</targetReference>
         </connector>
@@ -201,8 +121,8 @@
     <recordCreates>
         <name>Create_Dependency_Depends_On</name>
         <label>Create Dependency (Depends On)</label>
-        <locationX>138</locationX>
-        <locationY>1622</locationY>
+        <locationX>264</locationX>
+        <locationY>890</locationY>
         <connector>
             <targetReference>Loop_over_Selected_Depends_On_Records</targetReference>
         </connector>
@@ -234,82 +154,12 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
-        <name>Create_Fulfillment_Request</name>
-        <label>Create Fulfillment Request</label>
-        <locationX>314</locationX>
-        <locationY>674</locationY>
-        <connector>
-            <targetReference>Create_Fulfillment_Request_Line</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>vlocity_cmt__OrderId__c</field>
-            <value>
-                <elementReference>recordId.vlocity_cmt__OrderId__r.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>vlocity_cmt__Status__c</field>
-            <value>
-                <stringValue>In Progress</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>vlocity_cmt__orchestrationPlanId__c</field>
-            <value>
-                <elementReference>recordId.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <object>vlocity_cmt__FulfilmentRequest__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Fulfillment_Request_Line</name>
-        <label>Create Fulfillment Request Line</label>
-        <locationX>314</locationX>
-        <locationY>782</locationY>
-        <connector>
-            <targetReference>Assign_Target_Swimlane_New</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Customer_Order__c</field>
-            <value>
-                <elementReference>recordId.vlocity_cmt__OrderId__r.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Orchestration_Plan__c</field>
-            <value>
-                <elementReference>recordId.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>vlocity_cmt__Action__c</field>
-            <value>
-                <stringValue>Add</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>vlocity_cmt__FulfilmentRequestID__c</field>
-            <value>
-                <elementReference>Create_Fulfillment_Request</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>vlocity_cmt__FulfilmentStatus__c</field>
-            <value>
-                <stringValue>In Progress</stringValue>
-            </value>
-        </inputAssignments>
-        <object>vlocity_cmt__FulfilmentRequestLine__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
         <name>Create_Orchestration_Item</name>
         <label>Create Orchestration Item</label>
-        <locationX>182</locationX>
-        <locationY>1082</locationY>
+        <locationX>176</locationX>
+        <locationY>674</locationY>
         <connector>
-            <targetReference>decision_Create_Dependencies</targetReference>
+            <targetReference>Loop_over_Selected_Depends_On_Records</targetReference>
         </connector>
         <inputAssignments>
             <field>Name</field>
@@ -332,7 +182,7 @@
         <inputAssignments>
             <field>vlocity_cmt__FulfilmentRequestLineId__c</field>
             <value>
-                <elementReference>ParentFRLId</elementReference>
+                <stringValue>a6b7S000000TUinQAG</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -344,13 +194,13 @@
         <inputAssignments>
             <field>vlocity_cmt__OrchestrationItemDefinitionId__c</field>
             <value>
-                <elementReference>Get_Ad_Hoc_Orchestration_Item_Definition.Id</elementReference>
+                <stringValue>aBc7S000000sZ9bSAE</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>vlocity_cmt__OrchestrationItemType__c</field>
             <value>
-                <stringValue>ManualTask</stringValue>
+                <stringValue>Manual Task</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -381,65 +231,35 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
-        <description>Find the ad hoc task definition (by predefined name)</description>
-        <name>Get_Ad_Hoc_Orchestration_Item_Definition</name>
-        <label>Get Ad Hoc Orchestration Item Definition</label>
-        <locationX>182</locationX>
-        <locationY>134</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Ad_Hoc_Task</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Manual Task Template</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>vlocity_cmt__OrchestrationItemDefinition__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <description>Find an existing ad hoc task within the same plan. This is necessary to put new ad hoc tasks into the same swimlane (FRL) on the diagram</description>
-        <name>Get_Ad_Hoc_Task</name>
-        <label>Get Ad Hoc Task</label>
-        <locationX>182</locationX>
+        <name>Get_Fulfillment_Requests</name>
+        <label>Get Fulfillment Requests</label>
+        <locationX>176</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Orchestration_Items</targetReference>
+            <targetReference>Create_New_Orchestration_Item</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>vlocity_cmt__OrchestrationItemDefinitionId__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Ad_Hoc_Orchestration_Item_Definition.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>vlocity_cmt__OrchestrationPlanId__c</field>
+            <field>vlocity_cmt__orchestrationPlanId__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>vlocity_cmt__OrchestrationItem__c</object>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>vlocity_cmt__FulfilmentRequest__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Get the list of orchestration items from the plan</description>
         <name>Get_Orchestration_Items</name>
         <label>Get Orchestration Items</label>
-        <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Create_New_Orchestration_Item</targetReference>
+            <targetReference>Get_Fulfillment_Requests</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -458,8 +278,8 @@
     <screens>
         <name>Create_Dependencies_Depends_On</name>
         <label>Create Dependencies - Depends On</label>
-        <locationX>50</locationX>
-        <locationY>1298</locationY>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -506,7 +326,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-d3eb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Orchestration Item Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;vlocity_cmt__OrchestrationItemType__c&quot;,&quot;guid&quot;:&quot;column-9aa7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Orchestration Item Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;vlocity_cmt__State__c&quot;,&quot;guid&quot;:&quot;column-eb72&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;State&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;&quot;,&quot;guid&quot;:&quot;column-fdb3&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-d3eb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Orchestration Item Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;vlocity_cmt__OrchestrationItemType__c&quot;,&quot;guid&quot;:&quot;column-9aa7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Orchestration Item Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;vlocity_cmt__ManualQueueId__c&quot;,&quot;guid&quot;:&quot;column-c355&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Manual Queue&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -542,20 +362,19 @@
         <description>Create New Orchestration Item</description>
         <name>Create_New_Orchestration_Item</name>
         <label>Create New Orchestration Item</label>
-        <locationX>182</locationX>
-        <locationY>458</locationY>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Decision_Ad_Hoc_Tasks_Exist</targetReference>
+            <targetReference>Create_Dependencies_Depends_On</targetReference>
         </connector>
         <fields>
             <name>text_Orchestration_Item_Name</name>
             <dataType>String</dataType>
             <fieldText>Orchestration Item Name</fieldText>
             <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -574,7 +393,6 @@
                     <fieldText>Priority</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <helpText>&lt;p&gt;Task priority will help the teams to plan accordingly&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -595,7 +413,6 @@
                     <fieldText>Queue</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <helpText>&lt;p&gt;Indicates the queue where the new task will be assigned&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                 </fields>
                 <inputParameters>
@@ -620,7 +437,6 @@
                     <dataType>DateTime</dataType>
                     <fieldText>Requested Start Date</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -639,7 +455,6 @@
                     <dataType>DateTime</dataType>
                     <fieldText>Requested Completion Date</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -659,7 +474,6 @@
             <fieldText>I want to add dependencies on the next step</fieldText>
             <fieldType>InputField</fieldType>
             <helpText>&lt;p&gt;You can indicate that your new task will depend on another task (or a set of tasks) or should complete before another task (or a set of tasks)&lt;/p&gt;</helpText>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -668,13 +482,13 @@
     <screens>
         <name>screen_Create_Dependencies_Complete_Before</name>
         <label>Create Dependencies - Complete Before</label>
-        <locationX>50</locationX>
-        <locationY>1406</locationY>
+        <locationX>176</locationX>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Loop_over_Selected_Depends_On_Records</targetReference>
+            <targetReference>Create_Orchestration_Item</targetReference>
         </connector>
         <fields>
             <name>displayText_CompleteBeforeInstructions</name>
@@ -716,7 +530,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-d3eb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Orchestration Item Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;vlocity_cmt__OrchestrationItemType__c&quot;,&quot;guid&quot;:&quot;column-9aa7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Orchestration Item Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;vlocity_cmt__State__c&quot;,&quot;guid&quot;:&quot;column-4fa8&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;State&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-d3eb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Orchestration Item Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;vlocity_cmt__OrchestrationItemType__c&quot;,&quot;guid&quot;:&quot;column-9aa7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Orchestration Item Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;vlocity_cmt__ManualQueueId__c&quot;,&quot;guid&quot;:&quot;column-c355&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Manual Queue&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -749,20 +563,13 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Ad_Hoc_Orchestration_Item_Definition</targetReference>
+            <targetReference>Get_Orchestration_Items</targetReference>
         </connector>
     </start>
     <status>Active</status>
-    <variables>
-        <name>ParentFRLId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>true</isOutput>
-    </variables>
     <variables>
         <description>Current record</description>
         <name>recordId</name>

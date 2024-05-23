@@ -157,7 +157,7 @@
             <processMetadataValues>
                 <name>leftHandSideReferenceTo</name>
                 <value>
-                    <stringValue/>
+                    <stringValue></stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -166,7 +166,7 @@
                     <stringValue>Formula</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Plan_Execution_Completed_At__c</field>
+            <field>Otter_Plan_Execution_Completed_At__c</field>
             <value>
                 <elementReference>formula_2_myRule_1_A1_3634896049</elementReference>
             </value>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Master_Order_Compact_Layout</fullName>
+    <fields>OrderNumber</fields>
+    <fields>AccountId</fields>
+    <fields>Otter_Delivery_Manager__c</fields>
+    <fields>Otter_Delivery_Coordinator__c</fields>
+    <fields>vlocity_cmt__QuoteId__c</fields>
+    <label>Otter Master Order Compact Layout</label>
+</CompactLayout>

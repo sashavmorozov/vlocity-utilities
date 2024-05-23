@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Number_of_In_Progress_Tasks__c</fullName>
+    <description>Number of tasks that are either ready for execution or already being executed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of tasks that are either ready for execution or already being executed</inlineHelpText>
+    <label>Number of In Progress Tasks</label>
+    <summaryFilterItems>
+        <field>vlocity_cmt__OrchestrationItem__c.vlocity_cmt__State__c</field>
+        <operation>equals</operation>
+        <value>Ready, Running</value>
+    </summaryFilterItems>
+    <summaryForeignKey>vlocity_cmt__OrchestrationItem__c.vlocity_cmt__OrchestrationPlanId__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

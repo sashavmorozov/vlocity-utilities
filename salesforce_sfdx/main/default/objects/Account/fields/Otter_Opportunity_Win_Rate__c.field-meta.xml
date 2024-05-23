@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Opportunity_Win_Rate__c</fullName>
+    <description>Opportunity win rate</description>
+    <externalId>false</externalId>
+    <formula>Otter_Closed_Won_Opportunities__c / (Otter_Closed_Won_Opportunities__c + Otter_Closed_Lost_Opportunities__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Opportunity win rate</inlineHelpText>
+    <label>Opportunity Win Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Percent</type>
+</CustomField>

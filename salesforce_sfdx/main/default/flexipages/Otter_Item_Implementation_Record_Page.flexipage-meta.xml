@@ -38,6 +38,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>header</name>
@@ -47,6 +48,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-70218fd9-3dd1-4ac9-9328-294d42e5ffef</name>
@@ -56,6 +58,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__Implementation__c</fieldItem>
+                <identifier>Recordvlocity_cmt__Implementation__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-79d16a02-d433-4be9-bb1d-6465ed9b214c</name>
@@ -69,6 +72,7 @@
                     <value>Facet-70218fd9-3dd1-4ac9-9328-294d42e5ffef</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -78,6 +82,7 @@
                     <value>Facet-79d16a02-d433-4be9-bb1d-6465ed9b214c</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-83a70ff0-c38a-4899-bfff-0fdb04a6baad</name>
@@ -87,6 +92,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.CreatedById</fieldItem>
+                <identifier>RecordCreatedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-317b2a79-e06d-4ae2-a99f-769483500215</name>
@@ -96,6 +102,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.LastModifiedById</fieldItem>
+                <identifier>RecordLastModifiedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-b4d7414a-8ce4-42b9-8b1d-75f8115479af</name>
@@ -109,6 +116,7 @@
                     <value>Facet-317b2a79-e06d-4ae2-a99f-769483500215</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -118,6 +126,7 @@
                     <value>Facet-b4d7414a-8ce4-42b9-8b1d-75f8115479af</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-8b19252d-dd99-4c9a-8e46-70fbd28a1c66</name>
@@ -135,6 +144,7 @@
                     <value>Item Configuration</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -148,6 +158,7 @@
                     <value>System Information</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -173,6 +184,7 @@
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>detailTabContent</name>
@@ -182,6 +194,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField2</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-92891850-bf16-4444-9457-f3c106661c79</name>
@@ -191,6 +204,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__GlobalKey__c</fieldItem>
+                <identifier>Recordvlocity_cmt__GlobalKey__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-181f9013-6494-44ea-aca9-9554964e50f1</name>
@@ -204,6 +218,7 @@
                     <value>Facet-92891850-bf16-4444-9457-f3c106661c79</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column5</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -213,6 +228,7 @@
                     <value>Facet-181f9013-6494-44ea-aca9-9554964e50f1</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column6</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-795effd9-bfb3-4361-9f0b-59e803985895</name>
@@ -230,6 +246,7 @@
                     <value>Deployment Management</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection3</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-98bc3f3e-e7e1-4988-bbc0-e1f91e6fd71b</name>
@@ -251,6 +268,7 @@
                     <value>Item Configuration</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -264,6 +282,7 @@
                     <value>Advanced</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab2</identifier>
             </componentInstance>
         </itemInstances>
         <name>maintabs</name>
@@ -277,6 +296,7 @@
                     <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

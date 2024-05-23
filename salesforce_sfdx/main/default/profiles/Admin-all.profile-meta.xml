@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>false</custom>
+
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_Approval_Level_Description__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_Approval_Level_Required__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Quote.Otter_One_Time_Margin_Guidance__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_One_Time_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_One_Time_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_One_Time_Margin__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_Quote_Total_Charge__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_Quote_Total_Cost__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Quote.Otter_Quote_Total_Margin_Guidance_Pct__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_Quote_Total_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_Quote_Total_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_Quote_Total_Margin__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Quote.Otter_Recurring_Margin_Guidance__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_Recurring_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_Recurring_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Quote.Otter_Recurring_Margin__c</field><readable>true</readable></fieldPermissions>
+
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_Number_of_Contracted_Months__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_Quote_Line_Total_Charge__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_Quote_Line_Total_Cost__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_Quote_Line_Total_Margin__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>QuoteLineItem.Otter_Quote_Line_Total_Margin_Guidance_P__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_Quote_Line_Total_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_Quote_Line_Total_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_One_Time_Margin__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>QuoteLineItem.Otter_One_Time_Margin_Guidance__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_One_Time_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_One_Time_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_Recurring_Margin__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>QuoteLineItem.Otter_Recurring_Margin_Guidance__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_Recurring_Margin_Pct__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>QuoteLineItem.Otter_Recurring_Margin_Validation__c</field><readable>true</readable></fieldPermissions>
+
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Total_Number_of_Tasks__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Number_of_In_Progress_Tasks__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Number_of_Processed_Tasks__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Number_of_Unprocessed_Tasks__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Order_Fulfillment_Progress__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Plan_Execution_Completed_At__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Plan_Execution_Started_At__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Is_PONR_Reached__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Point_of_No_Return_Tasks_Started__c</field><readable>true</readable></fieldPermissions>
+
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationItem__c.Otter_Account_Name__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationItem__c.Otter_Order_Number__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationItem__c.Otter_Record_URL__c</field><readable>true</readable></fieldPermissions>
+
+    <fieldPermissions><editable>false</editable><field>Account.Otter_Open_Opportunities__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Account.Otter_Open_Opportunities_Value__c</field><readable>true</readable></fieldPermissions>        
+    <fieldPermissions><editable>false</editable><field>Account.Otter_Closed_Lost_Opportunities__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Account.Otter_Closed_Lost_Opportunities_Value__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Account.Otter_Closed_Won_Opportunities__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Account.Otter_Closed_Won_Opportunities_Value__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Account.Otter_Opportunity_Win_Rate__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Account.Otter_Opportunity_Value_Win_Rate__c</field><readable>true</readable></fieldPermissions>
+
+    <fieldPermissions><editable>true</editable><field>Order.Otter_Delivery_Coordinator__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Order.Otter_Delivery_Manager__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Order.Otter_Had_Order_Processing_Incidents__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Order.Ott_Number_of_Order_Processing_Incidents__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Order.Otter_Order_Processing_Finished__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Order.Otter_Order_Processing_Started__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Order.Otter_Total_Order_Processing_Time_Days__c</field><readable>true</readable></fieldPermissions>
+
+
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__System__c.Otter_Number_of_Endpoints__c</field><readable>true</readable></fieldPermissions> 
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__FulfilmentRequestLine__c.Otter_Customer_Order__c</field><readable>true</readable></fieldPermissions> 
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__FulfilmentRequestLine__c.Otter_Orchestration_Plan__c</field><readable>true</readable></fieldPermissions> 
+    
+</Profile>

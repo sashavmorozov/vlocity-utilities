@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Closed_Lost_Opportunities_Value__c</fullName>
+    <description>Total value of closed lost opportunities</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Total value of closed lost opportunities</inlineHelpText>
+    <label>Closed Lost Opportunities Value</label>
+    <summarizedField>Opportunity.Amount</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>equals</operation>
+        <value>Closed Lost</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

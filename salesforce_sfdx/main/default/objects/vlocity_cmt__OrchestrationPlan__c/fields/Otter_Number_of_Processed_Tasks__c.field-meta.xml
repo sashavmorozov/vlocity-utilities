@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Number_of_Processed_Tasks__c</fullName>
+    <description>Number of processed tasks in the orchestration plan</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of processed tasks in the orchestration plan</inlineHelpText>
+    <label>Number of Processed Tasks</label>
+    <summaryFilterItems>
+        <field>vlocity_cmt__OrchestrationItem__c.vlocity_cmt__State__c</field>
+        <operation>equals</operation>
+        <value>Completed, Amended, Canceled, Skipped, Discarded, Failed Discarded</value>
+    </summaryFilterItems>
+    <summaryForeignKey>vlocity_cmt__OrchestrationItem__c.vlocity_cmt__OrchestrationPlanId__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_One_Time_Margin__c</fullName>
+    <description>One time total price less one time total cost</description>
+    <externalId>false</externalId>
+    <formula>vlocity_cmt__EffectiveOneTimeTotal__c - vlocity_cmt__EffectiveOneTimeCostTotal__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>One time total price less one time total cost</inlineHelpText>
+    <label>One Time Margin</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

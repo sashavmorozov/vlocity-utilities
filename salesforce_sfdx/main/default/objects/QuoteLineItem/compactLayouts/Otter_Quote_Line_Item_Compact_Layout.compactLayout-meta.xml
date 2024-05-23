@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Quote_Line_Item_Compact_Layout</fullName>
+    <fields>Product2Id</fields>
+    <fields>Quantity</fields>
+    <fields>Otter_Quote_Line_Total_Charge__c</fields>
+    <fields>Otter_Quote_Line_Total_Cost__c</fields>
+    <fields>Otter_Quote_Line_Total_Margin__c</fields>
+    <fields>Otter_Quote_Line_Total_Margin_Pct__c</fields>
+    <label>Otter Quote Line Item Compact Layout</label>
+</CompactLayout>

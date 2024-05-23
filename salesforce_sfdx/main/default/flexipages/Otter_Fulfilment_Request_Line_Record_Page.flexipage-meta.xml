@@ -35,6 +35,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>header</name>
@@ -44,26 +45,31 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__FulfilmentStatus__c</fieldItem>
+                <identifier>Recordvlocity_cmt__FulfilmentStatus__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__Action__c</fieldItem>
+                <identifier>Recordvlocity_cmt__Action__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__SubAction__c</fieldItem>
+                <identifier>Recordvlocity_cmt__SubAction__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__ExpectedCompletionDate__c</fieldItem>
+                <identifier>Recordvlocity_cmt__ExpectedCompletionDate__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-1baa63ad-7029-4906-b8bf-bf241fa2d1af</name>
@@ -72,27 +78,32 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.Customer_Order__c</fieldItem>
+                <fieldItem>Record.Otter_Customer_Order__c</fieldItem>
+                <identifier>RecordCustomer_Order__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__Product2Id__c</fieldItem>
+                <identifier>Recordvlocity_cmt__Product2Id__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.Orchestration_Plan__c</fieldItem>
+                <fieldItem>Record.Otter_Orchestration_Plan__c</fieldItem>
+                <identifier>RecordOrchestration_Plan__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__FulfilmentRequestID__c</fieldItem>
+                <identifier>Recordvlocity_cmt__FulfilmentRequestID__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__InventoryItemId__c</fieldItem>
+                <identifier>Recordvlocity_cmt__InventoryItemId__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-cafd7e76-9adc-459d-a682-0774c3196e87</name>
@@ -106,6 +117,7 @@
                     <value>Facet-1baa63ad-7029-4906-b8bf-bf241fa2d1af</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -115,6 +127,7 @@
                     <value>Facet-cafd7e76-9adc-459d-a682-0774c3196e87</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-e28df175-c248-4dff-a21c-dfb494a2c001</name>
@@ -124,11 +137,13 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__IsPONRReached__c</fieldItem>
+                <identifier>Recordvlocity_cmt__IsPONRReached__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__FirstVersionFRLineId__c</fieldItem>
+                <identifier>Recordvlocity_cmt__FirstVersionFRLineId__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-954c3d51-2632-4638-9cec-15c6bac8d702</name>
@@ -138,11 +153,13 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__SupplementalAction__c</fieldItem>
+                <identifier>Recordvlocity_cmt__SupplementalAction__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__SupersededFRLineId__c</fieldItem>
+                <identifier>Recordvlocity_cmt__SupersededFRLineId__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-f8be347d-7d1f-40f4-ae33-c323e07a0787</name>
@@ -156,6 +173,7 @@
                     <value>Facet-954c3d51-2632-4638-9cec-15c6bac8d702</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -165,6 +183,7 @@
                     <value>Facet-f8be347d-7d1f-40f4-ae33-c323e07a0787</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-733394cd-b578-4192-a07a-574e19b113d7</name>
@@ -174,6 +193,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.CreatedById</fieldItem>
+                <identifier>RecordCreatedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-16aac0b4-1a1f-4a5b-bda4-4d17d4568a62</name>
@@ -183,6 +203,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.LastModifiedById</fieldItem>
+                <identifier>RecordLastModifiedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-92587206-5d7e-40cf-9d21-70961027a886</name>
@@ -196,6 +217,7 @@
                     <value>Facet-16aac0b4-1a1f-4a5b-bda4-4d17d4568a62</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column5</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -205,6 +227,7 @@
                     <value>Facet-92587206-5d7e-40cf-9d21-70961027a886</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column6</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-134a0137-6584-4342-b29a-c22822900af3</name>
@@ -222,6 +245,7 @@
                     <value>Fulfilment Request Line Details</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -235,6 +259,7 @@
                     <value>In-Flight Change Management</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -248,6 +273,7 @@
                     <value>System Information</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection3</identifier>
             </componentInstance>
         </itemInstances>
         <name>detailTabContent</name>
@@ -256,7 +282,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>jsonAttributeViewer</componentName>
+                <componentName>jsonAttributeViewer2</componentName>
+                <identifier>jsonAttributeViewer2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-509a3273-3306-454f-a7e3-e92e544245c8</name>
@@ -266,6 +293,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__JSONAttribute__c</fieldItem>
+                <identifier>Recordvlocity_cmt__JSONAttribute__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-fe96ca47-3bce-4076-8ab1-1dc5379bfe9c</name>
@@ -279,6 +307,7 @@
                     <value>Facet-fe96ca47-3bce-4076-8ab1-1dc5379bfe9c</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column7</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-dd3af353-aa89-4d6f-a2ed-0f44036c7c10</name>
@@ -296,6 +325,7 @@
                     <value>JSON Attribute</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-6c8735f5-7c4f-4959-857b-c76a096cccca</name>
@@ -317,6 +347,7 @@
                     <value>Standard.Tab.detail</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>detailTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -334,6 +365,7 @@
                     <value>Attributes</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -347,6 +379,7 @@
                     <value>Advanced</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab2</identifier>
             </componentInstance>
         </itemInstances>
         <name>maintabs</name>
@@ -364,6 +397,7 @@
                     <value>linear</value>
                 </componentInstanceProperties>
                 <componentName>runtime_sales_pathassistant:pathAssistant</componentName>
+                <identifier>runtime_sales_pathassistant_pathAssistant</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -373,6 +407,7 @@
                     <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

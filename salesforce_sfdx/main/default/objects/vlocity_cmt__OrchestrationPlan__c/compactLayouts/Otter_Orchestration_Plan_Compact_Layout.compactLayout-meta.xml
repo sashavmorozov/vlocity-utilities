@@ -5,8 +5,8 @@
     <fields>vlocity_cmt__AccountId__c</fields>
     <fields>vlocity_cmt__OrderId__c</fields>
     <fields>vlocity_cmt__State__c</fields>
-    <fields>Plan_Execution_Started_At__c</fields>
-    <fields>Plan_Execution_Completed_At__c</fields>
-    <fields>Is_PONR_Reached__c</fields>
+    <fields>Otter_Plan_Execution_Started_At__c</fields>
+    <fields>Otter_Plan_Execution_Completed_At__c</fields>
+    <fields>Otter_Is_PONR_Reached__c</fields>
     <label>Otter Orchestration Plan Compact Layout</label>
 </CompactLayout>

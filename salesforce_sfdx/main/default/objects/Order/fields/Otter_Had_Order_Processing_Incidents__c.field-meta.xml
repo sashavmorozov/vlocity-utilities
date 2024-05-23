@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Had_Order_Processing_Incidents__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates if any incidents (fatal) occurred during order processing</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates if any incidents (fatal) occurred during order processing</inlineHelpText>
+    <label>Had Order Processing Incidents</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

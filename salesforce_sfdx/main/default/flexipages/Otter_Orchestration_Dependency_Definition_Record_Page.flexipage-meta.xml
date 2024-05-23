@@ -38,6 +38,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>header</name>
@@ -51,11 +52,13 @@
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__OrchestrationPlanDefinition__c</fieldItem>
+                <identifier>Recordvlocity_cmt__OrchestrationPlanDefinition__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -65,6 +68,7 @@
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.vlocity_cmt__Scope__c</fieldItem>
+                <identifier>Recordvlocity_cmt__Scope__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e4eeda53-973b-47b4-9649-f8351721dae3</name>
@@ -74,6 +78,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__OrchestrationItemDefinitionId__c</fieldItem>
+                <identifier>Recordvlocity_cmt__OrchestrationItemDefinitionId__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -83,11 +88,13 @@
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.vlocity_cmt__DependencyType__c</fieldItem>
+                <identifier>Recordvlocity_cmt__DependencyType__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__DependencyItemDefinitionId__c</fieldItem>
+                <identifier>Recordvlocity_cmt__DependencyItemDefinitionId__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-0175ebf3-b222-42bc-8f91-744b7a55e65f</name>
@@ -101,6 +108,7 @@
                     <value>Facet-e4eeda53-973b-47b4-9649-f8351721dae3</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -110,6 +118,7 @@
                     <value>Facet-0175ebf3-b222-42bc-8f91-744b7a55e65f</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-eccf977a-dda3-4e54-916e-331cc9e43e04</name>
@@ -119,6 +128,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.CreatedById</fieldItem>
+                <identifier>RecordCreatedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ac65cc6e-fe0e-4b9d-9de8-09f1ba187f8b</name>
@@ -128,6 +138,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.LastModifiedById</fieldItem>
+                <identifier>RecordLastModifiedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-b97cbd93-cd6e-4889-93a4-06cd6e8fab5e</name>
@@ -141,6 +152,7 @@
                     <value>Facet-ac65cc6e-fe0e-4b9d-9de8-09f1ba187f8b</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -150,6 +162,7 @@
                     <value>Facet-b97cbd93-cd6e-4889-93a4-06cd6e8fab5e</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-eabb52b2-215a-404f-80ed-0212c8d727c0</name>
@@ -167,6 +180,7 @@
                     <value>Dependency Configuration</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -180,6 +194,7 @@
                     <value>System Information</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection2</identifier>
             </componentInstance>
         </itemInstances>
         <name>detailTabContent</name>
@@ -189,6 +204,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField2</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-d71fd558-93b5-4366-8ab7-2531ccaf6533</name>
@@ -198,6 +214,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.vlocity_cmt__GlobalKey__c</fieldItem>
+                <identifier>Recordvlocity_cmt__GlobalKey__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-c870c837-1bb5-4290-90bf-05bb9c8735f9</name>
@@ -211,6 +228,7 @@
                     <value>Facet-d71fd558-93b5-4366-8ab7-2531ccaf6533</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column5</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -220,6 +238,7 @@
                     <value>Facet-c870c837-1bb5-4290-90bf-05bb9c8735f9</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column6</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-4fbde31e-5137-4218-9e34-698dbd3e6fd8</name>
@@ -237,6 +256,7 @@
                     <value>Deployment Management</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection3</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-e01566e8-8f5f-403e-9b3f-ed12e7e06944</name>
@@ -258,6 +278,7 @@
                     <value>Dependency Configuration</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -271,6 +292,7 @@
                     <value>Advanced</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab2</identifier>
             </componentInstance>
         </itemInstances>
         <name>maintabs</name>
@@ -284,6 +306,7 @@
                     <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

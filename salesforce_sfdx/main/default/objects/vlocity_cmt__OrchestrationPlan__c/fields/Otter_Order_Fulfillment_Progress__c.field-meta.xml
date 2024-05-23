@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Otter_Order_Fulfillment_Progress__c</fullName>
+    <description>Orchestration plan completion progress based on the number of processed tasks. This value does not take into account durations of the tasks themselves</description>
+    <externalId>false</externalId>
+    <formula>IF(Otter_Total_Number_of_Tasks__c &lt;&gt; 0,  Otter_Number_of_Processed_Tasks__c / Otter_Total_Number_of_Tasks__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Orchestration plan completion progress based on the number of processed tasks. This value does not take into account durations of the tasks themselves</inlineHelpText>
+    <label>Order Fulfillment Progress</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>
