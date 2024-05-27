@@ -16,32 +16,18 @@
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
+    
     <compactLayoutAssignment>Otter_Price_List_Entry_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
+    
     <description>An entry in a price list is a specific price, cost, fee, discount or adjustment defined within a price list. A given price list entry may be defined for an offer, a promotion, or some other context. The price list entry defines the terms and conditions of the pricing including the duration of the pricing as well as policies governing the pricing.</description>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
-    <enableLicensing>false</enableLicensing>
-    <enableReports>false</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
+    
     <label>Price List Entry</label>
     <nameField>
         <label>Reference Number</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>Price List Entries</pluralLabel>
-    <searchLayouts></searchLayouts>
+    
     <sharingModel>ControlledByParent</sharingModel>
-    <visibility>Public</visibility>
 </CustomObject>

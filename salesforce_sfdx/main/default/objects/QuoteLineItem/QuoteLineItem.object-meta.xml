@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Otter_Orchestration_Plan_Record_Page</content>
+        <content>Otter_Quote_Line_Item_Record_Page</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -12,22 +11,13 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Otter_Orchestration_Plan_Record_Page</content>
+        <content>Otter_Quote_Line_Item_Record_Page</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
 
-    <compactLayoutAssignment>Otter_Orchestration_Plan_Compact_Layout</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
+    <compactLayoutAssignment>Otter_Quote_Line_Item_Compact_Layout</compactLayoutAssignment>
 
-    <label>Orchestration Plan</label>
-    <nameField>
-        <displayFormat>Plan{0000000}</displayFormat>
-        <label>Orchestration Plan Name</label>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Orchestration Plans</pluralLabel>
-
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>
