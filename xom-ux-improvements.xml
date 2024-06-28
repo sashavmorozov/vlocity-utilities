@@ -119,15 +119,15 @@
     </types>   
 
     <types>
-        <members>vlocity_cmt__OrchestrationPlan__c.Is_PONR_Reached__c</members>
-        <members>vlocity_cmt__OrchestrationPlan__c.Plan_Execution_Completed_At__c</members>
-        <members>vlocity_cmt__OrchestrationPlan__c.Plan_Execution_Started_At__c</members>
-        <members>vlocity_cmt__OrchestrationPlan__c.Point_of_No_Return_Tasks_Started__c</members>
-        <members>vlocity_cmt__FulfilmentRequestLine__c.Customer_Order__c</members>
-        <members>vlocity_cmt__FulfilmentRequestLine__c.Orchestration_Plan__c</members>
+        <members>vlocity_cmt__OrchestrationPlan__c.Otter_Is_PONR_Reached__c</members>
+        <members>vlocity_cmt__OrchestrationPlan__c.Otter_Plan_Execution_Completed_At__c</members>
+        <members>vlocity_cmt__OrchestrationPlan__c.Otter_Plan_Execution_Started_At__c</members>
+        <members>vlocity_cmt__OrchestrationPlan__c.Otter_Point_of_No_Return_Tasks_Started__c</members>
+        <members>vlocity_cmt__FulfilmentRequestLine__c.Otter_Customer_Order__c</members>
+        <members>vlocity_cmt__FulfilmentRequestLine__c.Otter_Orchestration_Plan__c</members>
 
         <members>vlocity_cmt__OrchestrationItem__c.vlocity_cmt__OrchestrationPlanId__c</members>
-        <members>vlocity_cmt__OrchestrationItem__c.Order_Id__c</members>
+        <members>vlocity_cmt__OrchestrationItem__c.Otter_Order_Number__c</members>
         <members>vlocity_cmt__OrchestrationItemDefinition__c.vlocity_cmt__OrchestrationPlanDefinitionId__c</members>
         <members>vlocity_cmt__OrchestrationDependencyDefinition__c.vlocity_cmt__OrchestrationItemDefinitionId__c</members>
         <members>vlocity_cmt__SystemInterface__c.vlocity_cmt__SystemId__c</members>

@@ -24,9 +24,9 @@
                         <valueListItems>
                             <value>Submit</value>
                         </valueListItems>
-                        <valueListItems>
+                        <!-- <valueListItems>
                             <value>CustomButton.Quote.CreateOrder</value>
-                        </valueListItems>
+                        </valueListItems> -->
                         <valueListItems>
                             <value>CustomButton.Quote.vlocity_cmt__Configure</value>
                         </valueListItems>

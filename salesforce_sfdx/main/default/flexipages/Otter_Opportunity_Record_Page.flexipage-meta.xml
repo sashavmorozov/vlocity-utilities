@@ -22,12 +22,12 @@
                         <valueListItems>
                             <value>ChangeRecordType</value>
                         </valueListItems>
-                        <valueListItems>
+                        <!-- <valueListItems>
                             <value>Opportunity.Einstein_Configuration_Insights</value>
-                        </valueListItems>
-                        <valueListItems>
+                        </valueListItems> -->
+                        <!-- <valueListItems>
                             <value>Opportunity.Einstein_Configuration_Score</value>
-                        </valueListItems>
+                        </valueListItems> -->
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -181,7 +181,7 @@
         <name>Facet-0a4a2521-7ab7-409e-a60a-1c5d7abd32b5</name>
         <type>Facet</type>
     </flexiPageRegions>
-    <flexiPageRegions>
+    <!--<flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -231,6 +231,7 @@
         <name>Facet-d898ae2c-fe1c-4e7b-bf43-ffb93956b2ec</name>
         <type>Facet</type>
     </flexiPageRegions>
+    -->
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -250,7 +251,7 @@
                 <identifier>flexipage_tab9</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
+        <!-- <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -263,7 +264,7 @@
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab10</identifier>
             </componentInstance>
-        </itemInstances>
+        </itemInstances> -->
         <name>Facet-6d122b83-078f-46fd-aa6f-e21fb0a11aff</name>
         <type>Facet</type>
     </flexiPageRegions>

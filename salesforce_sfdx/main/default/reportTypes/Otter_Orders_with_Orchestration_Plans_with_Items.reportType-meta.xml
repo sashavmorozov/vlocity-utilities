@@ -987,11 +987,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LastActivityDate</field>
-            <table>Order.vlocity_cmt__OrchestrationPlans__r.vlocity_cmt__OrchestrationItems__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>vlocity_cmt__Account__c</field>
             <table>Order.vlocity_cmt__OrchestrationPlans__r.vlocity_cmt__OrchestrationItems__r</table>
         </columns>

@@ -4,32 +4,32 @@
    
     <fieldPermissions>
         <editable>false</editable>
-        <field>vlocity_cmt__FulfilmentRequestLine__c.Customer_Order__c</field>
+        <field>vlocity_cmt__FulfilmentRequestLine__c.Otter_Customer_Order__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>vlocity_cmt__FulfilmentRequestLine__c.Orchestration_Plan__c</field>
+        <field>vlocity_cmt__FulfilmentRequestLine__c.Otter_Orchestration_Plan__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>vlocity_cmt__OrchestrationPlan__c.Is_PONR_Reached__c</field>
+        <field>vlocity_cmt__OrchestrationPlan__c.Otter_Is_PONR_Reached__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>vlocity_cmt__OrchestrationPlan__c.Plan_Execution_Completed_At__c</field>
+        <field>vlocity_cmt__OrchestrationPlan__c.Otter_Plan_Execution_Completed_At__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>vlocity_cmt__OrchestrationPlan__c.Plan_Execution_Started_At__c</field>
+        <field>vlocity_cmt__OrchestrationPlan__c.Otter_Plan_Execution_Started_At__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>vlocity_cmt__OrchestrationPlan__c.Point_of_No_Return_Tasks_Started__c</field>
+        <field>vlocity_cmt__OrchestrationPlan__c.Otter_Point_of_No_Return_Tasks_Started__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -39,7 +39,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>vlocity_cmt__OrchestrationItem__c.Order_Id__c</field>
+        <field>vlocity_cmt__OrchestrationItem__c.Otter_Order_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
 

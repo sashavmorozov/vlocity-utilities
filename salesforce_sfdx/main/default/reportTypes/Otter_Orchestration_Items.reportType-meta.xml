@@ -38,11 +38,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LastActivityDate</field>
-            <table>vlocity_cmt__OrchestrationItem__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>vlocity_cmt__OrchestrationPlanId__c</field>
             <table>vlocity_cmt__OrchestrationItem__c</table>
         </columns>

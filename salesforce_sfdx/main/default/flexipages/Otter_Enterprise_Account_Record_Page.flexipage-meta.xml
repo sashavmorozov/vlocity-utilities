@@ -788,10 +788,10 @@
                     <name>parentFieldApiName</name>
                     <value>Account.Id</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
+                <!-- <componentInstanceProperties>
                     <name>relatedListApiName</name>
                     <value>Leads__r</value>
-                </componentInstanceProperties>
+                </componentInstanceProperties> -->
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
                     <value>ADVGRID</value>
@@ -2638,7 +2638,7 @@
         <name>Facet-278a42c8-cb8f-494e-a3da-a98fd28a9f4e</name>
         <type>Facet</type>
     </flexiPageRegions>
-    <flexiPageRegions>
+<!--     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -2697,8 +2697,8 @@
         </itemInstances>
         <name>Facet-09daf3fc-0572-4d18-ad3a-5f368a2688ea</name>
         <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
+    </flexiPageRegions> -->
+<!--    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -2716,6 +2716,7 @@
         <name>Facet-7b0a6fa3-e2ae-4456-9fc5-9e1f774164bf</name>
         <type>Facet</type>
     </flexiPageRegions>
+    -->
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -2735,7 +2736,7 @@
                 <identifier>flexipage_tab6</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
+        <!-- <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
@@ -2752,8 +2753,8 @@
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab5</identifier>
             </componentInstance>
-        </itemInstances>
-        <itemInstances>
+        </itemInstances> -->
+        <!-- <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -2767,6 +2768,7 @@
                 <identifier>flexipage_tab7</identifier>
             </componentInstance>
         </itemInstances>
+    -->
         <name>Facet-4cd2f79a-b48e-4803-a385-9cd36079c5c4</name>
         <type>Facet</type>
     </flexiPageRegions>
