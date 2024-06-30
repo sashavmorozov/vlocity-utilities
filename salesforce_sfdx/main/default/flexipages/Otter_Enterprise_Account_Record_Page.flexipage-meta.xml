@@ -7,9 +7,9 @@
                 <componentInstanceProperties>
                     <name>actionNames</name>
                     <valueList>
-                        <valueListItems>
+                        <!-- <valueListItems>
                             <value>Account.COMESM_NewEsmOpportunity</value>
-                        </valueListItems>
+                        </valueListItems> -->
                         <valueListItems>
                             <value>CustomButton.Account.vlocity_cmt__CreateEnterpriseQuote</value>
                         </valueListItems>
@@ -19,9 +19,9 @@
                         <valueListItems>
                             <value>Edit</value>
                         </valueListItems>
-                        <valueListItems>
+                        <!-- <valueListItems>
                             <value>Account.Create_New_Contact</value>
-                        </valueListItems>
+                        </valueListItems> -->
                         <valueListItems>
                             <value>EnableCustomerPortalUser</value>
                         </valueListItems>
@@ -764,122 +764,6 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-3953ead4-e6f9-4939-8b94-f0adf6063091</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>actionNames</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>New</value>
-                        </valueListItems>
-                    </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>adminFilters</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>maxRecordsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Account.Id</value>
-                </componentInstanceProperties>
-                <!-- <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Leads__r</value>
-                </componentInstanceProperties> -->
-                <componentInstanceProperties>
-                    <name>relatedListDisplayType</name>
-                    <value>ADVGRID</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListFieldAliases</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>FULL_NAME</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>LEAD.TITLE</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>LEAD.COMPANY</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>LEAD.STATUS</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>LEAD.EMAIL</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>LEAD.PHONE</value>
-                        </valueListItems>
-                    </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListLabel</name>
-                    <value>Leads</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>sortFieldAlias</name>
-                    <value>__DEFAULT__</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>sortFieldOrder</name>
-                    <value>Default</value>
-                </componentInstanceProperties>
-                <componentName>lst:dynamicRelatedList</componentName>
-                <identifier>lst_dynamicRelatedList3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-ee6c5931-6b65-408d-8ad9-25d98636b6a1</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-ee6c5931-6b65-408d-8ad9-25d98636b6a1</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Leads</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>name</name>
-                    <value>accordionSection1</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:accordionSection</componentName>
-                <identifier>flexipage_accordionSection16</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-d3f71d9d-5941-476d-aa3d-cbf401157cd9</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>accordionSections</name>
-                    <value>Facet-d3f71d9d-5941-476d-aa3d-cbf401157cd9</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>defaultSectionName</name>
-                    <value>accordionSection1</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:accordion</componentName>
-                <identifier>flexipage_accordion5</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-03233812-d10a-4c44-9de8-33385888f736</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -2383,88 +2267,15 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>dashboardId</name>
-                    <value>Account_Summary1</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>enableNotifications</name>
+                    <name>decorate</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>enableSubscriptions</name>
-                    <value>true</value>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;ℹ️ Placeholder - Add CRMA Dashboard(s) here ℹ️&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>height</name>
-                    <value>300</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>hideOnError</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>openLinksInNewWindow</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>openLocation</name>
-                    <value>OPEN_IN_STUDIO</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showHeader</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showSharing</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showTitle</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>wave:waveDashboard</componentName>
-                <identifier>wave_waveDashboard</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>dashboard</name>
-                    <value>sbqqea__PricingGuidance</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>enableNotifications</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>enableSubscriptions</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>height</name>
-                    <value>300</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>openLocation</name>
-                    <value>OPEN_IN_STUDIO</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showHeader</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showSharing</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showTitle</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>state</name>
-                </componentInstanceProperties>
-                <componentName>wave:waveDashboardLwc</componentName>
-                <identifier>wave_waveDashboardLwc</identifier>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-241ac611-f426-4c5d-a179-03be47c1f328</name>
@@ -2497,20 +2308,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab4</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-03233812-d10a-4c44-9de8-33385888f736</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Marketing</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab10</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -2638,85 +2435,24 @@
         <name>Facet-278a42c8-cb8f-494e-a3da-a98fd28a9f4e</name>
         <type>Facet</type>
     </flexiPageRegions>
-<!--     <flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>dashboardId</name>
-                    <value>Account_Embedded</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>enableNotifications</name>
+                    <name>decorate</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>enableSubscriptions</name>
-                    <value>true</value>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;ℹ️ Placeholder - Add Quip Document here &lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;ℹ️&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>filter</name>
-                    <value>{&quot;datasets&quot;:{&quot;Order_FOR_DEMO1&quot;:[{&quot;fields&quot;:[&quot;Account_ID&quot;],&quot;filter&quot;:{&quot;operator&quot;:&quot;in&quot;,&quot;values&quot;:[&quot;$Id&quot;]},&quot;locked&quot;:true,&quot;hidden&quot;:true}],&quot;Quote_FOR_DEMO1&quot;:[{&quot;fields&quot;:[&quot;Account_ID&quot;],&quot;filter&quot;:{&quot;operator&quot;:&quot;in&quot;,&quot;values&quot;:[&quot;$Id&quot;]},&quot;locked&quot;:true,&quot;hidden&quot;:true}],&quot;Opportunity_FOR_DEMO1&quot;:[{&quot;fields&quot;:[&quot;Account_ID&quot;],&quot;filter&quot;:{&quot;operator&quot;:&quot;in&quot;,&quot;values&quot;:[&quot;$Id&quot;]},&quot;locked&quot;:true,&quot;hidden&quot;:true}]}}</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>height</name>
-                    <value>600</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>hideOnError</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>openLinksInNewWindow</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>openLocation</name>
-                    <value>OPEN_IN_STUDIO</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showHeader</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showSharing</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showTitle</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentName>wave:waveDashboard</componentName>
-                <identifier>wave_waveDashboard1</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>runtime_sales_insights:accountInsightsContainer</componentName>
-                <identifier>runtime_sales_insights_accountInsightsContainer</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-09daf3fc-0572-4d18-ad3a-5f368a2688ea</name>
-        <type>Facet</type>
-    </flexiPageRegions> -->
-<!--    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>configurationData</name>
-                    <value>{&quot;appBuilderConfig&quot;:{&quot;optionSelected&quot;:4},&quot;templateRecordFieldName&quot;:&quot;SDO_Quip_URL__c&quot;,&quot;documentRecordFieldName&quot;:&quot;SDO_Quip_Account_Plan__c&quot;}</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>height</name>
-                    <value>600</value>
-                </componentInstanceProperties>
-                <componentName>forceContent:embeddedQuipComponent</componentName>
-                <identifier>forceContent_embeddedQuipComponent</identifier>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-7b0a6fa3-e2ae-4456-9fc5-9e1f774164bf</name>
         <type>Facet</type>
     </flexiPageRegions>
-    -->
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -2736,25 +2472,7 @@
                 <identifier>flexipage_tab6</identifier>
             </componentInstance>
         </itemInstances>
-        <!-- <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>active</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-09daf3fc-0572-4d18-ad3a-5f368a2688ea</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Standard.Tab.insights</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab5</identifier>
-            </componentInstance>
-        </itemInstances> -->
-        <!-- <itemInstances>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -2768,7 +2486,6 @@
                 <identifier>flexipage_tab7</identifier>
             </componentInstance>
         </itemInstances>
-    -->
         <name>Facet-4cd2f79a-b48e-4803-a385-9cd36079c5c4</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -193,7 +193,7 @@
     <types>
         <members>Otter_Asset_Record_Page</members>
         <members>Otter_Decomposition_Relationship_Record_Page</members>
-        <members>Otter_Enterprise_Account_Record_Page</members>
+        <members>Otter_Enterprise_Account_Record_Page</members> 
         <members>Otter_Enterprise_Quote_Page</members>
         <members>Otter_Fulfilment_Request_Line_Record_Page</members>
         <members>Otter_Fulfilment_Request_Record_Page</members>
@@ -228,7 +228,7 @@
         <members>XOM_Complete_Task</members>
         <members>XOM_Create_Decomposition_Relationship_Combined</members>
         <members>XOM_Create_Dependency_Relationship</members>
-        <members>XOM_Notify_user_when_task_is_assigned</members>
+        <!--<members>XOM_Notify_user_when_task_is_assigned</members>-->
         <members>XOM_Otter_Populate_Order_Had_Order_Processing_Incidents</members>
         <members>XOM_Otter_Populate_Order_Processing_Finished_Timestamp</members>
         <members>XOM_Otter_Populate_Order_Processing_Started_Timestamp</members>
@@ -269,7 +269,7 @@
         <members>Otter_Fulfilment_Request_LineStatus_Path</members>
         <members>Otter_Fulfilment_Request_Status_Path</members>
         <members>Otter_Orchestration_Item_State_Path</members>
-        <members>Otter_Order_Fulfillment_Status_Path</members>
+        <!--<members>Otter_Order_Fulfillment_Status_Path</members>-->
         <name>PathAssistant</name>
     </types>
     <types>
