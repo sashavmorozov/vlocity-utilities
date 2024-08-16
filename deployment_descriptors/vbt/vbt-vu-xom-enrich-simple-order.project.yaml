@@ -1,0 +1,33 @@
+projectPath: vlocity
+autoUpdateSettings: true
+autoRetryErrors: true
+
+manifest:
+  - OmniScript/Otter_EnrichSimpleOrder_English
+  - DataRaptor/Otter_DRE_GetContactsByOrderId
+  - Document/CACDAJCCAe489977c92ee41f2aa2b8848a6067643/Green-Check-Mark-PNG-Free-Download-png
+  - objects/Order/webLinks/Enrich_Order.webLink
+
+queries:
+#
+
+#deploySalesforce
+#Custom override datapack settings
+#OverrideSettings:
+#  SObjects:
+#    Product2:
+#      FilterFields:
+#      - vlocity_namespace__CategoryData__c
+#      - vlocity_namespace__AttributeMetadata__c
+#      - vlocity_namespace__JSONAttribute__c
+#      - vlocity_namespace__AttributeDefaultValues__c
+#    store objects based on name
+#    vlocity_namespace__AttributeAssignment__c:
+#      FilterFields:
+#      - vlocity_namespace__ObjectLink__c
+#    vlocity_namespace__VlocityUITemplate__c:
+#      FilterFields:
+#      - vlocity_namespace__SampleJson__c
+#    vlocity_namespace__DRBundle__c:
+#      FilterFields:
+#      #- vlocity_namespace__SampleInputJSON__c
