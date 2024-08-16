@@ -1,6 +1,5 @@
 - [Salesforce Industries Sample Data Generator (Orders and Assets)](#salesforce-industries-sample-data-generator--orders-and-assets-)
 - [Required Classes](#required-classes)
-- [Required Config](#required-config)
 - [Process](#process)
   * [Create a set of template customer orders](#create-a-set-of-template-customer-orders)
   * [Update OtterDataGenerator with the created IDs](#update-otterdatagenerator-with-the-created-ids)
@@ -20,6 +19,14 @@ This tool simplifies the creation of sample data tailored to the Salesforce Indu
 
 The tool is not tailored to clone ESM multi-site orders yet. Think about simpler single site orders.
 
+## Pre-Requisites
+1. Salesforce org with Communications Cloud package (vlocity_cmt)
+2. A tool to execute anonymous Apex on the org (VS Code, Developer Console or any other client)
+3. Commercial product catalog for the products for which you want to create assets (install base)
+4. Order management configuration for the products for which you want to create assets (install base)
+5. A couple of additional Apex classes (see [Required Classes](#required-classes))
+6. Order templates should be set up upfront as the basis for data creation (see [Create a set of template customer orders](#create-a-set-of-template-customer-orders))
+
 ## Required Classes
 
 Take these classes and create them in your org (vlocity_cmt package is required, Comms IDO is a good org example)
@@ -28,11 +35,6 @@ Take these classes and create them in your org (vlocity_cmt package is required,
 * OtterDataGenerator
 
 All classes are available at https://github.com/sashavmorozov/vlocity-utilities/tree/master/salesforce_sfdx/main/default/classes. Take only these 3 classes, nothing else is required
-
-## Required Config
-
-* Product catalog for your use case
-* Orchestration scenarios for your use case (should include assetization step)
 
 ## Process
 
@@ -46,26 +48,11 @@ The data will be generated based on template customer orders: they will be clone
 5. Do not submit this order, just leave it in draft, copy order Salesforce ID (e.g. `801d1000001owWbAAI`) into a notepad
 6. Repeat steps 2-5 to create as many order templates as you need (e.g. separate templates for different flavors of internet, mobile, cloud, etc.)
 
-### Update OtterDataGenerator with the created IDs
-At this moment, the IDs are hardcoded into the class. Not fantastic but this is a quick and dirty approach to get started. Later on this may be taken out into a configuration. For now, you need to update the class:
-
-1. Open the class
-2. Look fot this piece of code and replace the IDs with the IDs from your template orders
-
-```js
-List<String> orderTemplateIds = new List<String> {
-                '801d1000001owWbAAI',
-                '801d1000001owWcAAI',
-                '801d1000001p56mAAA'
-
-            };
-```
- 3. Save the updated class to your org
- 4. We are ready to generate some data now
-
 ### Clone the orders using your templates
 Run this piece of code as an anonymous Apex. This will create a number of new customer orders (for randomly selected accounts) using the templates you created. Today the max number of clones you can create in a single transaction is `20`. Not much but a good start.
 If you need to create 1000 orders - execute this piece 50 times, sequencially. Do not try to wrap it into a for-loop, this will likely fail.
+
+**ACTION REQUIRED**: before running this snippet, update the IDs in the `orderTemplateIds` list with IDs of the order templates you created before.
 
 Creating 20 clones will take about 20 seconds. 
 
@@ -75,29 +62,22 @@ Creating 20 clones will take about 20 seconds.
  * Can support up to 20 new orders at this moment
  * Need more orders? Execute this method sequencially as many times as needed
  */
+
+Integer numberOfClonedOrders = 20;
+List<String> orderTemplateIds = new List<String> {
+                '801d1000001owWbAAI', /* order template 1 */
+                '801d1000001owWcAAI', /* order template 2 */
+                '801d1000001p56mAAA'  /* order template N */
+            };
  
-OtterDataGenerator.cloneOrder(20);
+OtterDataGenerator.cloneOrder(numberOfClonedOrders, orderTemplateIds);
 ```
 
 The output will look like this
-```
+```log
 09:59:49.577 (7930513744)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Smith - San Francisco Residence using 801d1000001owWbAAI
 09:59:50.742 (8759399462)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Smith - San Francisco Residence using 801d1000001owWbAAI
-09:59:50.742 (9400485460)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Allied Technologies using 801d1000001p56mAAA
-09:59:51.803 (10012153453)|USER_DEBUG|[48]|DEBUG|******** Added a new order for AB Partners, Inc. using 801d1000001p56mAAA
-09:59:52.818 (10835390957)|USER_DEBUG|[48]|DEBUG|******** Added a new order for AB Partners, Inc. using 801d1000001owWbAAI
-09:59:52.818 (11445632968)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Advanced Interconnections Corp using 801d1000001p56mAAA
-09:59:53.850 (12046860795)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Benjamin Young using 801d1000001owWcAAI
-09:59:53.850 (12658315477)|USER_DEBUG|[48]|DEBUG|******** Added a new order for CPQ Temp Account using 801d1000001p56mAAA
-09:59:55.18 (13209367732)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Allied Technologies using 801d1000001owWcAAI
-09:59:55.18 (14016500607)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Allied Technologies using 801d1000001owWbAAI
-09:59:56.29 (14814847159)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Sustainable Audio* using 801d1000001owWbAAI
-09:59:57.195 (15399674653)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Employnet using 801d1000001p56mAAA
-09:59:57.195 (15934956752)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Benjamin Young using 801d1000001owWcAAI
-09:59:58.343 (16532415814)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Bob Warkentine using 801d1000001owWcAAI
-09:59:59.367 (17383744876)|USER_DEBUG|[48]|DEBUG|******** Added a new order for CTW Resellers using 801d1000001owWbAAI
-09:59:59.367 (18241605771)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Data Mart using 801d1000001owWbAAI
-10:00:00.383 (18891600187)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Employnet using 801d1000001p56mAAA
+...
 10:00:01.460 (19477151532)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Allied Technologies using 801d1000001owWcAAI
 10:00:01.460 (20089992352)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Aims Social using 801d1000001owWcAAI
 10:00:02.673 (20991335197)|USER_DEBUG|[48]|DEBUG|******** Added a new order for Bronze Partners using 801d1000001owWbAAI
@@ -141,7 +121,7 @@ OtterDataGenerator.forceSubmitOrdersAsync(customerOrdersList);
 ```
 
 Expected output
-```
+```log
 10:08:36.250 (6270492739)|USER_DEBUG|[3]|DEBUG|**** To be submitted: 20 orders
 10:08:36.250 (6270750125)|USER_DEBUG|[5]|DEBUG|****     Order: 00001987 / 801d1000001pWQHAA2
 ...
@@ -184,7 +164,7 @@ OtterDataGenerator.forceAssetizeOrders(customerOrdersList);
 ```
 
 Expected output:
-```
+```log
 ...
 10:19:45.819 (5915406024)|USER_DEBUG|[113]|DEBUG|*** OtterDataGenerator: force skipping Walled Garden Self Install (a3Ad10000000CpNEAU)
 10:19:45.819 (5915542751)|USER_DEBUG|[113]|DEBUG|*** OtterDataGenerator: force skipping Walled Garden Self Install (a3Ad10000000CvpEAE)
@@ -216,7 +196,7 @@ System.debug('*** Total number of assets: ' + at.size());
 ```
 
 Expected outcome:
-```
+```log
 10:28:13.39 (84391374)|USER_DEBUG|[2]|DEBUG|*** Total number of assets: 1041
 ```
 

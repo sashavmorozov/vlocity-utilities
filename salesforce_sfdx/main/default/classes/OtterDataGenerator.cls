@@ -6,17 +6,17 @@ public with sharing class OtterDataGenerator implements Queueable {
 
     }
 
-    public static void cloneOrder(Integer numberOfClones) {
+    public static void cloneOrder(Integer numberOfClones, List<String> orderTemplateIds) {
         String vpnOrderTemplate = '801090000028d3uAAA';
         String batchId = String.valueOf(DateTime.now().getTime());
 
         for (Integer i = 0; i < numberOfClones; i++){
-            List<String> orderTemplateIds = new List<String> {
+            /* List<String> orderTemplateIds = new List<String> {
                 '801d1000001owWbAAI',
                 '801d1000001owWcAAI',
                 '801d1000001p56mAAA'
 
-            };
+            }; */
     
             String orderTemplateId = orderTemplateIds[Integer.valueOf(Math.random() * orderTemplateIds.size())];
     
