@@ -43,6 +43,21 @@
         <readable>true</readable>
     </fieldPermissions>
 
+    <fieldPermissions><editable>false</editable><field>Order.Ott_Number_of_Order_Processing_Incidents__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Order.Otter_Order_Processing_Finished__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Order.Otter_Order_Processing_Started__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Order.Otter_Total_Order_Processing_Time_Days__c</field><readable>true</readable></fieldPermissions>
+
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Total_Number_of_Tasks__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Number_of_In_Progress_Tasks__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Number_of_Processed_Tasks__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Number_of_Unprocessed_Tasks__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Order_Fulfillment_Progress__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Plan_Execution_Completed_At__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Plan_Execution_Started_At__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Is_PONR_Reached__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>vlocity_cmt__OrchestrationPlan__c.Otter_Point_of_No_Return_Tasks_Started__c</field><readable>true</readable></fieldPermissions>
+
     <layoutAssignments>
         <layout>Asset-Otter Asset Layout</layout>
     </layoutAssignments>

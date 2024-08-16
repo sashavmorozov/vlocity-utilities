@@ -1,0 +1,44 @@
+{
+    "%vlocity_namespace%__Active__c": true,
+    "%vlocity_namespace%__OmniScriptId__c": {
+        "Name": "Otter_EnrichSimpleOrder",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__OmniScript__c/Otter/EnrichSimpleOrder/English",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c"
+    },
+    "%vlocity_namespace%__ParentElementId__c": {
+        "%vlocity_namespace%__OmniScriptId__c": {
+            "Name": "Otter_EnrichSimpleOrder",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__OmniScript__c/Otter/EnrichSimpleOrder/English",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c"
+        },
+        "Name": "Step_Completed",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Otter/EnrichSimpleOrder/English/Step_Completed",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__Element__c"
+    },
+    "%vlocity_namespace%__ParentElementName__c": "Step_Completed",
+    "%vlocity_namespace%__ParentElementType__c": "Step",
+    "%vlocity_namespace%__PropertySet__c": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "documentNames": [
+            "CACDAJCCAe489977c92ee41f2aa2b8848a6067643"
+        ],
+        "label": "TextBlock3",
+        "sanitize": false,
+        "show": null,
+        "text": "<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"/servlet/servlet.ImageServer?id=015Hp000007X3zIIAS&amp;docName=CACDAJCCAe489977c92ee41f2aa2b8848a6067643&amp;oid=00DHp000003SSauMAG\" alt=\"\" width=\"128\" height=\"128\" /></p>",
+        "textKey": ""
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": false,
+    "%vlocity_namespace%__Type__c": "Text Block",
+    "IsLocked": false,
+    "MayEdit": true,
+    "Name": "TextBlock3",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__Element__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Otter/EnrichSimpleOrder/English/TextBlock3"
+}

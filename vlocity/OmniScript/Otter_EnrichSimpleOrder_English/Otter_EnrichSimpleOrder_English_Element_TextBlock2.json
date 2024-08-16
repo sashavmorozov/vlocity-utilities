@@ -1,0 +1,41 @@
+{
+    "%vlocity_namespace%__Active__c": true,
+    "%vlocity_namespace%__OmniScriptId__c": {
+        "Name": "Otter_EnrichSimpleOrder",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__OmniScript__c/Otter/EnrichSimpleOrder/English",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c"
+    },
+    "%vlocity_namespace%__ParentElementId__c": {
+        "%vlocity_namespace%__OmniScriptId__c": {
+            "Name": "Otter_EnrichSimpleOrder",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__OmniScript__c/Otter/EnrichSimpleOrder/English",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c"
+        },
+        "Name": "Step_About",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Otter/EnrichSimpleOrder/English/Step_About",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__Element__c"
+    },
+    "%vlocity_namespace%__ParentElementName__c": "Step_About",
+    "%vlocity_namespace%__ParentElementType__c": "Step",
+    "%vlocity_namespace%__PropertySet__c": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "label": "TextBlock2",
+        "sanitize": false,
+        "show": null,
+        "text": "<p>This guided process can be used to collect key administrative information to support order delivery process</p>\n<ul>\n<li>This process is executed before an order is actually submitted to fulfillment (think of this as an enrichment process)</li>\n<li>This process can be executed by a service delivery agent (fulfillment operations) or a customer directly</li>\n<li>The input parameter: customer order identifier (Salesforce Id)</li>\n<li>The process allows to capture:\n<ul>\n<li>Contact details (for administrative and technical aspects)</li>\n<li>Appointment details (preferred date and timeslot)</li>\n<li>Billing details or preferences</li>\n<li>Any other remarks</li>\n</ul>\n</li>\n<li>Once the information is captured, it can be reflected back to Salesforce (nothing is configured in this omniscript the demonstration purposes)</li>\n</ul>\n<p><br />For more information: refer to PLACEHOLDER_URL</p>",
+        "textKey": ""
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": false,
+    "%vlocity_namespace%__Type__c": "Text Block",
+    "IsLocked": false,
+    "MayEdit": true,
+    "Name": "TextBlock2",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__Element__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Otter/EnrichSimpleOrder/English/TextBlock2"
+}

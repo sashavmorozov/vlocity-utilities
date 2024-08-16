@@ -1,0 +1,9 @@
+projectPath: vlocity
+autoUpdateSettings: true
+autoRetryErrors: true
+
+manifest:
+  - OmniScript/Otter_EnrichSimpleOrder_English
+  - DataRaptor/Otter_DRE_GetContactsByOrderId
+  - Document/CACDAJCCAe489977c92ee41f2aa2b8848a6067643/Green-Check-Mark-PNG-Free-Download-png
+  - objects/Order/webLinks/Enrich_Order.webLink
