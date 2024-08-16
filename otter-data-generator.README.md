@@ -8,8 +8,12 @@
   * [Submit cloned orders to Customer Order Management](#submit-cloned-orders-to-customer-order-management)
   * [Force push to assetization](#force-push-to-assetization)
 - [Grand Finale](#grand-finale)
-  * [Potential Simple Improvements:](#potential-simple-improvements-)
-  * [Potential Advanced Improvements:](#potential-advanced-improvements-)
+- [Improvements](#improvements)
+  * [Potential Simple Improvements](#potential-simple-improvements)
+  * [Potential Advanced Improvements](#potential-advanced-improvements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -217,12 +221,12 @@ Expected outcome:
 10:28:13.39 (84391374)|USER_DEBUG|[2]|DEBUG|*** Total number of assets: 1041
 ```
 
-
-### Potential Simple Improvements:
+## Improvements
+### Potential Simple Improvements
 1. Support quote cloning
 2. Move out order template IDs out from the OtterDataGenerator
 
-### Potential Advanced Improvements:
+### Potential Advanced Improvements
 1. Use ESM quote cloning
 2. Bulkify order cloning
 3. Bulkify order submission (consider using ESM)
