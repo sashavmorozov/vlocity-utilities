@@ -1,3 +1,18 @@
+- [Salesforce Industries Sample Data Generator (Orders and Assets)](#salesforce-industries-sample-data-generator--orders-and-assets-)
+- [Required Classes](#required-classes)
+- [Required Config](#required-config)
+- [Process](#process)
+  * [Create a set of template customer orders](#create-a-set-of-template-customer-orders)
+  * [Update OtterDataGenerator with the created IDs](#update-otterdatagenerator-with-the-created-ids)
+  * [Clone the orders using your templates](#clone-the-orders-using-your-templates)
+  * [Submit cloned orders to Customer Order Management](#submit-cloned-orders-to-customer-order-management)
+  * [Force push to assetization](#force-push-to-assetization)
+- [Grand Finale](#grand-finale)
+  * [Potential Simple Improvements:](#potential-simple-improvements-)
+  * [Potential Advanced Improvements:](#potential-advanced-improvements-)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 ## Salesforce Industries Sample Data Generator (Orders and Assets)
 
 This tool simplifies the creation of sample data tailored to the Salesforce Industries product catalog. While not a one-click solution, it provides clear instructions to guide you through generating and submitting customer orders. You'll need to patiently execute anonymous Apex methods and set up a few custom classes, with all references provided. Currently, the tool supports customer orders only—quotes are not yet supported. To get started, you'll first need to create template customer orders, which will be cloned, submitted to COM, and assetized.
