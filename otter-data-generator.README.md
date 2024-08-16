@@ -14,9 +14,6 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 ## Salesforce Industries Sample Data Generator (Orders and Assets)
 
 This tool simplifies the creation of sample data tailored to the Salesforce Industries product catalog. While not a one-click solution, it provides clear instructions to guide you through generating and submitting customer orders. You'll need to patiently execute anonymous Apex methods and set up a few custom classes, with all references provided. Currently, the tool supports customer orders only—quotes are not yet supported. To get started, you'll first need to create template customer orders, which will be cloned, submitted to COM, and assetized.
@@ -29,6 +26,8 @@ Take these classes and create them in your org (vlocity_cmt package is required,
 * UUIDGenerator
 * OtterXOMOrderUtils
 * OtterDataGenerator
+
+All classes are available at https://github.com/sashavmorozov/vlocity-utilities/tree/master/salesforce_sfdx/main/default/classes. Take only these 3 classes, nothing else is required
 
 ## Required Config
 
