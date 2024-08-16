@@ -191,7 +191,7 @@ That is it. You created a whole bunch of new orders, submitted them to COM and C
 To check the total number of assets, run this code:
 
 ```js
-list<asset> at = [select id, name, vlocity_cmt__AssetReferenceId__c from asset where vlocity_cmt__AssetReferenceId__c = '309fa779-5122-46c0-847b-c63b157d6215'];
+list<asset> at = [select id, name, vlocity_cmt__AssetReferenceId__c from asset];
 System.debug('*** Total number of assets: ' + at.size());
 ```
 
