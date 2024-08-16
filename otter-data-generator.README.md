@@ -11,6 +11,11 @@ Take these classes and create them in your org (vlocity_cmt package is required,
 * OtterXOMOrderUtils
 * OtterDataGenerator
 
+## Required Config
+
+* Product catalog for your use case
+* Orchestration scenarios for your use case (should include assetization step)
+
 ## Process
 
 ### Create a set of template customer orders
@@ -91,12 +96,17 @@ Make sure that `Fulfilment Status` of the new orders appear as `Draft`. This sho
 OtterDataGenerator.fixFulfillmentStatus(); //just in case
 ```
 
+### Submit cloned orders to Customer Order Management
+To create assets, we will use standard capabilities of COM. Thus, the cloned orders have to be submitted to COM.
+This method can accept up to 50 orders at a time. The method chooses ready-to-submit cloned orders and then push them into COM.
+If you have 1000 orders - then execute this code 20 times.
+The method itself take around 10 seconds to complete but it starts a set of new jobs that will be executed in background (takes longer)
 
+```js
 /*
  *
  * Submit cloned orders to COM
- * Async method
- * Can accept up to 50 orders in one go but works quite quickly
+ * Async method, can accept up to 50 orders in one go but works quite quickly
  * Creates async apex jobs for each order to submit (up to 50 jobs at a time)
  * If you see the jobs failing - try to reexecute
  * Can execute as many times as you want
@@ -110,12 +120,40 @@ for (order o: customerOrdersList) {
 
 OtterDataGenerator.forceSubmitOrdersAsync(customerOrdersList);
 
+```
+
+Expected output
+```
+10:08:36.250 (6270492739)|USER_DEBUG|[3]|DEBUG|**** To be submitted: 20 orders
+10:08:36.250 (6270750125)|USER_DEBUG|[5]|DEBUG|****     Order: 00001987 / 801d1000001pWQHAA2
+...
+10:08:36.250 (6270905599)|USER_DEBUG|[5]|DEBUG|****     Order: 00002006 / 801d1000001pWQaAAM
+10:08:36.250 (6293670766)|USER_DEBUG|[31]|ERROR|OtterTools > OtterXOMOrderUtils > submitOrderAsync: submission process for the order with Id 801d1000001pWQHAA2 is scheduled. Follow the progress (and possible errors) in Salesforce Job with Id 707d1000001VGhT
+...
+```
+
+If everything works as expected, you will be able to see the list of orders **with a reference to an Orchestration Plan**
+![image](https://github.com/user-attachments/assets/a158db53-013e-4f0f-b7cf-af201a78a1f8)
+
+Two reasons I saw why it doesn't happen:
+* Fulfilment Status on your orders is empty
+* You request to run more than 50 processes at a time (request max 50)
+* Or some background processes are not completed yet - wait a little before executing the code
 
 
+### Force push to assetization
+For every order - I expect you already have an orchestration plan that includes a step to assetize it. Can be partial or complete assetization - both are supported. If you don't have the process set up yet - return to the very beginning and set them up first.
+This method just "pushes" the orchestration process to the assetization stage and let COM to execute assetization.
 
+Technically, you can request to force assetize many orders at once (1000+) but sometimes COM struggles to execute mass assetization request. So, if you see errors - **reduce the limit in the query below**.
+Keep executing this method until all your orders are completed and assetized
+
+**IMPORTANT**: COM often struggles to assetize orders if an order contains multiple partial assetization steps.
+
+```js
 /*
  *
- * Force creation of customer assets
+ * Forces creation of customer assets
  * Sync method, just updates the tasks and let the assetization to take care of asset creation
  * Can accept a lot of orders
  * Assetization tasks themselves can fail in COM due to a lot of such requests happening in parallel
@@ -125,9 +163,41 @@ List<Order> customerOrdersList = [select id, ordernumber from order where vlocit
 system.debug(customerOrdersList);
 
 OtterDataGenerator.forceAssetizeOrders(customerOrdersList);
+```
+
+Expected output:
+```
+...
+10:19:45.819 (5915406024)|USER_DEBUG|[113]|DEBUG|*** OtterDataGenerator: force skipping Walled Garden Self Install (a3Ad10000000CpNEAU)
+10:19:45.819 (5915542751)|USER_DEBUG|[113]|DEBUG|*** OtterDataGenerator: force skipping Walled Garden Self Install (a3Ad10000000CvpEAE)
+10:19:47.712 (7809563973)|USER_DEBUG|[137]|DEBUG|*** OtterDataGenerator: force ready Create Mobile Assets (a3Ad10000000Ch9EAE)
+...
+```
+
+Ideally, in the list of orchestration plans, you will see all new orcehstration plans as `Completed`
+![image](https://github.com/user-attachments/assets/f5a11c4d-1ceb-4221-bf92-857326e51b36)
+
+Ideally, in the list of assets, you will see all new assets created
+![image](https://github.com/user-attachments/assets/dadceff4-5e3e-48ae-9019-d9da02991964)
+
+If you see some orchstration plans are still `In progress` - check the list of orchestration items. If there are errors like this - just run the code one (or more) times more. Until all the items are marked as `Completed`
+![image](https://github.com/user-attachments/assets/baf442c3-0b86-40e8-8052-3e308d25d2fa)
 
 
+## Grand Finale
 
-////////////
+That is it. You created a whole bunch of new orders, submitted them to COM and COM created lots of new assets. These assets can now be seen on the list of assets and within customer account as well
+
+![image](https://github.com/user-attachments/assets/9b645805-bc22-430c-8386-675d27407c2d)
+
+To check the total number of assets, run this code:
+
+```js
 list<asset> at = [select id, name, vlocity_cmt__AssetReferenceId__c from asset where vlocity_cmt__AssetReferenceId__c = '309fa779-5122-46c0-847b-c63b157d6215'];
-System.debug(at);
+System.debug('*** Total number of assets: ' + at.size());
+```
+
+Expected outcome:
+```
+10:28:13.39 (84391374)|USER_DEBUG|[2]|DEBUG|*** Total number of assets: 1041
+```
