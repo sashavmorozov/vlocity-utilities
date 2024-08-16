@@ -24,9 +24,9 @@ The data will be generated based on template customer orders: they will be clone
 1. Create a template customer account
 2. Create a customer order
 3. Open CPQ and add whatever products you need to represent what a customer typically orders
-4. Do not submit this order, just leave it in draft, copy order Salesforce ID (e.g. `801d1000001owWbAAI`) into a notepad
-5. Repeat steps 2-4 to create as many order templates as you need (e.g. separate templates for different flavors of internet, mobile, cloud, etc.)
-6. 
+4. You can add promotions, override pricing, etc. This should work just fine
+5. Do not submit this order, just leave it in draft, copy order Salesforce ID (e.g. `801d1000001owWbAAI`) into a notepad
+6. Repeat steps 2-5 to create as many order templates as you need (e.g. separate templates for different flavors of internet, mobile, cloud, etc.)
 
 ### Update OtterDataGenerator with the created IDs
 At this moment, the IDs are hardcoded into the class. Not fantastic but this is a quick and dirty approach to get started. Later on this may be taken out into a configuration. For now, you need to update the class:
@@ -186,7 +186,7 @@ If you see some orchstration plans are still `In progress` - check the list of o
 
 ## Grand Finale
 
-That is it. You created a whole bunch of new orders, submitted them to COM and COM created lots of new assets. These assets can now be seen on the list of assets and within customer account as well
+That is it. You created a whole bunch of new orders, submitted them to COM and COM created lots of new assets. These assets can now be seen on the list of assets and within customer account as well. You can now use these assets for MACDs, reports and analytics, AI/ML, etc.
 
 ![image](https://github.com/user-attachments/assets/9b645805-bc22-430c-8386-675d27407c2d)
 
@@ -201,3 +201,15 @@ Expected outcome:
 ```
 10:28:13.39 (84391374)|USER_DEBUG|[2]|DEBUG|*** Total number of assets: 1041
 ```
+
+
+### Potential Simple Improvements:
+1. Support quote cloning
+2. Move out order template IDs out from the OtterDataGenerator
+
+### Potential Advanced Improvements:
+1. Use ESM quote cloning
+2. Bulkify order cloning
+3. Bulkify order submission (consider using ESM)
+4. Support multi-site quotes and orders
+
