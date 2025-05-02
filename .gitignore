@@ -3,6 +3,8 @@
 
 .vlocity/vlocity_utilities_local.project.yaml
 
+.sfdx/tools/
+
 .sfdx/tools/tempApex.input
 
 .sfdx/tools/apex.db
